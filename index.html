@@ -2,7 +2,7 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>AB 複讀練習器</title>
 <style>
 :root{--bg:#fff;--sub:#f5f6f8;--tx:#1b1d21;--tx2:#5f6670;--bd:#d9dde3;--ac:#1d6fe8;--acs:#e8f0fd}
@@ -13,9 +13,10 @@ h1{font-size:22px;margin:4px 0 2px}h2{font-size:17px;margin:22px 0 8px}
 .sub{color:var(--tx2);font-size:14px}
 .box{border:1px solid var(--bd);border-radius:12px;padding:12px;background:var(--sub);display:grid;gap:10px}
 .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
-button,.btn{font:inherit;font-size:14px;padding:6px 12px;border-radius:8px;border:1px solid var(--bd);background:var(--bg);color:var(--tx);cursor:pointer}
+button,.btn{font:inherit;font-size:14px;padding:6px 12px;border-radius:8px;border:1px solid var(--bd);background:var(--bg);color:var(--tx);cursor:pointer;touch-action:manipulation}
 button.pri{background:var(--ac);border-color:var(--ac);color:#fff}button:disabled{opacity:.45;cursor:default}
 button.s{padding:4px 8px;font-size:13px;font-family:ui-monospace,Menlo,monospace}
+button.s.mini{font-family:inherit;font-weight:700}
 input[type=text],input[type=number],textarea,select{font:inherit;font-size:14px;padding:6px 8px;border-radius:8px;border:1px solid var(--bd);background:var(--bg);color:var(--tx)}
 input[type=number]{width:90px}textarea{width:100%;min-height:120px;font-family:ui-monospace,Menlo,monospace;font-size:13px}
 label.f{display:flex;flex-direction:column;font-size:12px;color:var(--tx2);gap:2px}
@@ -23,13 +24,44 @@ label.f{display:flex;flex-direction:column;font-size:12px;color:var(--tx2);gap:2
 .player{background:#000;border-radius:12px;overflow:hidden}
 .player video,.player audio{width:100%;display:block;max-height:440px}
 .yt{position:relative;padding-top:56.25%}.yt>*{position:absolute;inset:0;width:100%;height:100%}
-.rates button.on,.tabs button.on{background:var(--acs);border-color:var(--ac);color:var(--ac);font-weight:600}
+button.on,.rates button.on,.tabs button.on{background:var(--acs);border-color:var(--ac);color:var(--ac);font-weight:600}
 .sec{border:1px solid var(--bd);border-radius:10px;padding:8px;background:var(--sub);display:grid;gap:6px}
-.sec.on{border-color:var(--ac);box-shadow:0 0 0 1px var(--ac)}
-.sec .lb{flex:1 1 160px;cursor:pointer;font-size:14px}
+.sec.on{border-color:var(--ac);box-shadow:0 0 0 1px var(--ac);background:var(--acs)}
+.sec .lb{flex:1 1 160px;cursor:pointer;font-size:14px;overflow-wrap:anywhere;min-width:0}
+.sec .time{white-space:nowrap}
 .msg{font-size:14px;color:var(--tx2);min-height:1em}.hint{font-size:12px;color:var(--tx2)}
 .hide{display:none!important}
 .recent a{color:var(--ac);cursor:pointer;text-decoration:none;font-size:14px}
+#dock{display:none}
+@media (max-width:480px){
+  html{scroll-padding-top:8px;scroll-padding-bottom:12px}
+  main{padding:10px 10px 16px}
+  h1{font-size:20px}
+  button,.btn,input[type=text],input[type=number],select{min-height:44px;max-width:100%}
+  input[type=checkbox]{width:24px;height:24px}
+  label.row{min-height:44px}
+  button,.btn{padding:10px 12px}
+  button.s{min-height:44px;min-width:44px;padding:8px 12px;font-size:15px}
+  input[type=text],input[type=number],select,textarea{font-size:16px}
+  .row{gap:8px}
+  .box>.row>input[type=text]{flex:1 1 100%}
+  .sec{padding:10px;scroll-margin-top:8px;scroll-margin-bottom:12px}
+  .sec .lb{flex:1 1 100%;font-size:16px;line-height:1.45}
+  .sec .time{font-size:14px}
+  .sec-top .js-op{flex:1 1 calc(25% - 8px)}
+  .player{width:auto;margin:0 -10px;border-radius:0}
+  .player.is-video video{width:100%;max-height:none;aspect-ratio:16/9;height:auto;object-fit:contain;background:#000;display:block}
+  .player audio{width:100%;min-height:54px}
+  body.has-player{height:100vh;height:100dvh;display:flex;flex-direction:column;overflow:hidden}
+  body.has-player main{flex:1 1 auto;min-height:0;overflow:auto;width:100%;padding:10px 10px 12px}
+  body.has-player #dock{
+    display:flex;gap:6px;position:static;flex:none;z-index:30;
+    padding:8px 8px calc(8px + env(safe-area-inset-bottom));
+    background:var(--bg);border-top:1px solid var(--bd);
+    box-shadow:0 -6px 20px rgba(0,0,0,.12)
+  }
+  body.has-player #dock button{flex:1 1 0;min-width:0;min-height:44px;padding:8px 2px;font-size:12px;line-height:1.15;white-space:nowrap}
+}
 </style>
 </head>
 <body>
@@ -40,7 +72,9 @@ label.f{display:flex;flex-direction:column;font-size:12px;color:var(--tx2);gap:2
 <h2>1. 選擇來源</h2>
 <div class="box">
   <div class="row"><label class="btn">選擇本機檔案（mp3 / m4a / mp4）<input id="file" type="file" accept="audio/*,video/*,.mp3,.m4a,.mp4" class="hide"></label></div>
-  <div class="row"><input id="yturl" type="text" placeholder="貼上 YouTube 網址或影片 ID" style="flex:1 1 240px"><button id="ytload">載入 YouTube</button></div>
+  <div class="row"><input id="ytsearch" type="text" placeholder="搜尋 YouTube（開新分頁）" style="flex:1 1 220px" autocomplete="off" enterkeyhint="search"><button type="button" id="ytsearchgo">搜尋</button></div>
+  <div class="hint">YouTube 不允許嵌入首頁或搜尋頁，搜尋會在新分頁開啟結果。複製影片網址後按「貼上連結」。</div>
+  <div class="row"><input id="yturl" type="text" placeholder="貼上 YouTube 網址或影片 ID" style="flex:1 1 240px" autocomplete="off"><button type="button" id="ytpaste">貼上連結</button><button type="button" id="ytload" class="pri">載入 YouTube</button></div>
   <div id="recentWrap" class="hide"><div class="hint">最近使用</div><div id="recent" class="row recent"></div></div>
 </div>
 
@@ -48,7 +82,7 @@ label.f{display:flex;flex-direction:column;font-size:12px;color:var(--tx2);gap:2
 <h2>2. 播放器</h2>
 <div class="player" id="player"></div>
 <div class="box" style="margin-top:10px">
-  <div class="row"><button id="play" class="pri">播放 (Space)</button><span class="mono" id="now">0:00.0</span><span class="mono hint" id="loopInfo"></span></div>
+  <div class="row" id="transport"><button type="button" id="prevSec">上一段</button><button type="button" id="play" class="pri">播放 (Space)</button><button type="button" id="nextSec">下一段</button><span class="mono" id="now">0:00.0</span><span class="mono hint" id="loopInfo"></span></div>
   <div class="row" id="rowA"></div>
   <div class="row" id="rowB"></div>
   <div class="row">
@@ -59,7 +93,7 @@ label.f{display:flex;flex-direction:column;font-size:12px;color:var(--tx2);gap:2
   <div class="row"><span class="hint">速度</span><div class="row rates" id="rates"></div></div>
   <div class="hint" id="rateNote"></div>
   <div class="row"><button id="addSec" class="pri">加入目前 A-B 為段落</button></div>
-  <div class="hint">快捷鍵：Space 播放/暫停 · A / B 設定端點 · L 循環開關 · ←/→ 跳 2 秒（Shift 為 0.5 秒）</div>
+  <div class="hint">快捷鍵：Space 播放/暫停 · A / B 設定端點 · L 循環開關 · , / . 或 PageUp / PageDown 上一段/下一段 · ←/→ 跳 2 秒（Shift 為 0.5 秒）</div>
 </div>
 <div class="msg" id="msg"></div>
 
@@ -87,9 +121,17 @@ label.f{display:flex;flex-direction:column;font-size:12px;color:var(--tx2);gap:2
 
 <h2 id="secHead" class="hide"></h2>
 <div id="secs" style="display:grid;gap:6px"></div>
-<div class="row" style="margin-top:8px"><button id="clear" class="hide">清除全部段落</button></div>
+<div class="row" style="margin-top:8px"><button type="button" id="clear" class="hide">清除全部段落</button></div>
 </div>
 </main>
+<nav class="dock" id="dock" aria-label="播放控制">
+  <button type="button" id="dockPrev">上一段</button>
+  <button type="button" id="dockPlay" class="pri">播放</button>
+  <button type="button" id="dockNext">下一段</button>
+  <button type="button" id="dockA">A</button>
+  <button type="button" id="dockB">B</button>
+  <button type="button" id="dockLoop" aria-pressed="false">循環</button>
+</nav>
 
 <script id="core">
 // ===== pure functions (tested in node) =====
@@ -136,7 +178,8 @@ if(typeof module!=="undefined")module.exports={fmt:fmt,ytId:ytId,parseTs:parseTs
 (function(){
 var $=function(id){return document.getElementById(id);};
 var LOCAL_RATES=[0.5,0.6,0.7,0.75,0.8,0.9,1,1.25];
-var S={src:null,A:null,B:null,loop:false,count:0,waiting:false,secs:[],active:-1,edit:-1,rate:1,ytRates:[0.25,0.5,0.75,1,1.25,1.5,1.75,2],tab:"silence",mem:{}};
+var S={src:null,A:null,B:null,loop:false,once:false,count:0,waiting:false,secs:[],active:-1,edit:-1,rate:1,ytRates:[0.25,0.5,0.75,1,1.25,1.5,1.75,2],tab:"silence",mem:{}};
+var lastHl=-2;
 var media=null,ytp=null,ytReady=false,P=null;
 function msg(t){$("msg").textContent=t||"";}
 function uid(){return Math.random().toString(36).slice(2,9);}
@@ -162,9 +205,10 @@ function renderRecent(){var r=sget("abrep:recent")||[],w=$("recent");w.innerHTML
 function setSource(src){
   if(S.src&&S.src.url)URL.revokeObjectURL(S.src.url);
   if(ytp){try{ytp.destroy();}catch(e){}ytp=null;ytReady=false;}
-  S.src=src;S.A=S.B=null;S.loop=false;$("loop").checked=false;S.count=0;S.active=-1;S.edit=-1;S.rate=1;
+  S.src=src;S.A=S.B=null;S.loop=false;S.once=false;$("loop").checked=false;S.count=0;S.active=-1;S.edit=-1;S.rate=1;lastHl=-2;
   var st=sget("abrep:"+src.key);S.secs=(st||[]).map(function(s){return {id:uid(),a:s.a,b:s.b,label:s.label};});
-  $("playerArea").classList.remove("hide");var pl=$("player");pl.innerHTML="";
+  $("playerArea").classList.remove("hide");document.body.classList.add("has-player");var pl=$("player");pl.innerHTML="";
+  pl.classList.toggle("is-video",src.kind==="yt"||!!src.isVideo);
   if(src.kind==="file"){media=document.createElement(src.isVideo?"video":"audio");media.controls=true;media.setAttribute("playsinline","");media.src=src.url;pl.appendChild(media);P=fileApi(media);}
   else{media=null;P=ytApi();var w=document.createElement("div");w.className="yt";var d=document.createElement("div");d.id="ytp";w.appendChild(d);pl.appendChild(w);makeYt(src.vid);}
   if(src.kind==="yt"&&S.tab==="silence")S.tab="transcript";
@@ -199,12 +243,15 @@ function renderTabs(){var isYt=S.src&&S.src.kind==="yt";var t=[["silence","靜�
   var w=$("tabs");w.innerHTML="";t.forEach(function(x){var b=document.createElement("button");b.textContent=x[1];if(S.tab===x[0])b.className="on";b.onclick=function(){S.tab=x[0];renderTabs();};w.appendChild(b);});
   ["silence","transcript","split","json"].forEach(function(k){$("tab-"+k).classList.toggle("hide",S.tab!==k);});}
 function renderSecs(){var w=$("secs");w.innerHTML="";var n=S.secs.length;$("secHead").textContent="4. 段落（"+n+"）";$("secHead").classList.toggle("hide",!n);$("clear").classList.toggle("hide",!n);
-  S.secs.forEach(function(s,i){var d=document.createElement("div");d.className="sec"+(S.active===i?" on":"");
-    var r=document.createElement("div");r.className="row";
-    var pb=document.createElement("button");pb.className="s";pb.style.fontWeight="600";pb.textContent="▶ "+fmt(s.a)+"–"+fmt(s.b);pb.onclick=function(){playSec(i);};r.appendChild(pb);
-    var lb=document.createElement("span");lb.className="lb";lb.textContent=s.label;lb.onclick=function(){playSec(i);};r.appendChild(lb);
-    [["↑",function(){mv(i,-1);}],["↓",function(){mv(i,1);}],[S.edit===i?"完成":"編輯",function(){S.edit=S.edit===i?-1:i;renderSecs();}],["刪除",function(){S.secs.splice(i,1);if(S.active===i)S.active=-1;S.edit=-1;save();renderSecs();}]]
-      .forEach(function(x){var b=document.createElement("button");b.className="s";b.textContent=x[0];b.onclick=x[1];r.appendChild(b);});
+  S.secs.forEach(function(s,i){var d=document.createElement("div");d.className="sec"+(S.active===i?" on":"");if(S.active===i)d.setAttribute("aria-current","true");
+    var r=document.createElement("div");r.className="row sec-top";
+    var pb=document.createElement("button");pb.type="button";pb.className="s mini js-once"+(S.active===i&&S.once?" on":"");pb.textContent="▶";pb.title="播放這段一次";pb.setAttribute("aria-label","播放第 "+(i+1)+" 段一次");pb.onclick=function(){playSecOnce(i);};r.appendChild(pb);
+    var lon=S.active===i&&S.loop&&!S.once;
+    var lpb=document.createElement("button");lpb.type="button";lpb.className="s mini js-loop"+(lon?" on":"");lpb.textContent="循環";lpb.title="循環這段";lpb.setAttribute("aria-label","循環第 "+(i+1)+" 段");lpb.setAttribute("aria-pressed",lon?"true":"false");lpb.onclick=function(){toggleRowLoop(i);};r.appendChild(lpb);
+    var tm=document.createElement("span");tm.className="mono time";tm.textContent=fmt(s.a)+"–"+fmt(s.b);r.appendChild(tm);
+    var lb=document.createElement("span");lb.className="lb";lb.textContent=s.label;lb.title="播放這段一次";lb.onclick=function(){playSecOnce(i);};r.appendChild(lb);
+    [["↑","上移",function(){mv(i,-1);}],["↓","下移",function(){mv(i,1);}],[S.edit===i?"完成":"編輯",S.edit===i?"完成編輯":"編輯文字",function(){S.edit=S.edit===i?-1:i;renderSecs();}],["刪除","刪除這段",function(){delSec(i);}]]
+      .forEach(function(x){var b=document.createElement("button");b.type="button";b.className="s js-op";b.textContent=x[0];b.title=x[1];b.setAttribute("aria-label",x[1]);b.onclick=x[2];r.appendChild(b);});
     d.appendChild(r);
     if(S.edit===i){var ta=document.createElement("textarea");ta.style.minHeight="50px";ta.value=s.label;ta.oninput=function(){s.label=ta.value;lb.textContent=ta.value;save();};d.appendChild(ta);
       var r2=document.createElement("div");r2.className="row";
@@ -219,29 +266,73 @@ function renderAll(){renderAB();renderRates();renderTabs();renderSecs();}
 function r2(t){return Math.round(t*100)/100;}
 function setPoint(w,t){S[w]=r2(t);renderAB();}
 function nudge(w,d){var v=S[w]===null?P.time():S[w];S[w]=Math.max(0,r2(v+d));if(w==="A")P.seek(S.A);else if(S.B!==null)P.seek(Math.max(0,S.B-1));renderAB();}
-function setLoop(v){S.loop=v;$("loop").checked=v;S.count=0;if(v&&S.A!==null&&(P.time()<S.A||(S.B!==null&&P.time()>S.B)))P.seek(S.A);}
-function playSec(i){var s=S.secs[i];S.active=i;S.A=s.a;S.B=s.b;renderAB();setLoop(true);P.seek(s.a);P.play();renderSecs();}
-function mv(i,d){var j=i+d;if(j<0||j>=S.secs.length)return;var t=S.secs[i];S.secs[i]=S.secs[j];S.secs[j]=t;S.edit=S.edit===i?j:S.edit;save();renderSecs();}
+function setLoop(v){S.once=false;S.loop=v;$("loop").checked=v;S.count=0;if(v&&P&&S.A!==null&&(P.time()<S.A||(S.B!==null&&P.time()>S.B)))P.seek(S.A);syncSecStates(false);}
+function playSec(i){var s=S.secs[i];if(!s||!P)return;S.once=false;S.active=i;S.A=s.a;S.B=s.b;renderAB();setLoop(true);P.seek(s.a);P.play();renderSecs();scrollActiveIntoView("auto");}
+function playSecOnce(i){var s=S.secs[i];if(!s||!P)return;S.active=i;S.A=s.a;S.B=s.b;S.loop=false;$("loop").checked=false;S.count=0;S.once=true;renderAB();P.seek(s.a);P.play();renderSecs();scrollActiveIntoView("auto");}
+function toggleRowLoop(i){if(S.active===i&&S.loop&&!S.once){setLoop(false);return;}playSec(i);}
+function sectionAt(t){for(var k=0;k<S.secs.length;k++){if(t+0.02>=S.secs[k].a&&t<S.secs[k].b-0.02)return k;}return -1;}
+function stepSec(dir){if(!P)return;if(!S.secs.length){msg("還沒有段落，請先加入或自動分段。");return;}
+  var j;
+  if(S.active>=0)j=S.active+dir;
+  else{var t=P.time(),k;
+    if(dir>0){j=-1;for(k=0;k<S.secs.length;k++){if(S.secs[k].b>t+0.05){j=k;break;}}if(j<0)j=S.secs.length;}
+    else{j=-1;for(k=0;k<S.secs.length;k++)if(S.secs[k].a<t-0.05)j=k;if(j>=0&&t<S.secs[j].b-0.05)j--;}}
+  if(j<0||j>=S.secs.length){msg(dir<0?"已經是第一段。":"已經是最後一段。");return;}
+  playSec(j);msg("第 "+(j+1)+" 段 · "+fmt(S.secs[j].a)+"–"+fmt(S.secs[j].b));}
+function syncSecStates(doScroll){var rows=$("secs").children;
+  for(var i=0;i<rows.length;i++){var on=i===S.active;rows[i].classList.toggle("on",on);if(on)rows[i].setAttribute("aria-current","true");else rows[i].removeAttribute("aria-current");
+    var ob=rows[i].querySelector(".js-once");if(ob)ob.classList.toggle("on",on&&S.once);
+    var lb=rows[i].querySelector(".js-loop");if(lb){var lon=on&&S.loop&&!S.once;lb.classList.toggle("on",lon);lb.setAttribute("aria-pressed",lon?"true":"false");}}
+  var dl=$("dockLoop");if(dl){dl.classList.toggle("on",!!S.loop);dl.setAttribute("aria-pressed",S.loop?"true":"false");}
+  if(doScroll)scrollActiveIntoView("auto");}
+function scrollActiveIntoView(behavior){var rows=$("secs").children;var el=S.active>=0?rows[S.active]:null;if(!el)return;lastHl=S.active;
+  var b=behavior||"smooth";try{if(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches)b="auto";el.scrollIntoView({block:"nearest",behavior:b});}catch(e){try{el.scrollIntoView(false);}catch(e2){}}}
+function delSec(i){S.secs.splice(i,1);if(S.active===i)S.active=-1;else if(S.active>i)S.active--;if(S.edit===i)S.edit=-1;else if(S.edit>i)S.edit--;save();renderSecs();}
+function mv(i,d){var j=i+d;if(j<0||j>=S.secs.length)return;var t=S.secs[i];S.secs[i]=S.secs[j];S.secs[j]=t;if(S.active===i)S.active=j;else if(S.active===j)S.active=i;if(S.edit===i)S.edit=j;else if(S.edit===j)S.edit=i;save();renderSecs();}
 function setSecs(arr,note){S.secs=arr.map(function(s){return {id:uid(),a:s.a,b:s.b,label:s.label};});S.active=-1;S.edit=-1;save();renderSecs();msg(note);}
 function toggle(){if(!P)return;if(P.playing())P.pause();else P.play();}
 
 // loop engine (~50ms polling)
-setInterval(function(){if(!P)return;var t=P.time();$("now").textContent=fmt(t)+(P.duration()?" / "+fmt(P.duration()):"");
-  $("play").textContent=P.playing()?"暫停 (Space)":"播放 (Space)";
-  var n=parseInt($("repN").value)||0,gap=parseFloat($("gap").value)||0;
-  $("loopInfo").textContent=S.loop?"循環中 · 第 "+(S.count+1)+" 遍"+(n>0?" / "+n:""):"";
-  if(!S.loop||S.A===null||S.B===null||S.B<=S.A||S.waiting||!P.playing())return;
+setInterval(function(){if(!P)return;var t=P.time(),playing=P.playing();$("now").textContent=fmt(t)+(P.duration()?" / "+fmt(P.duration()):"");
+  $("play").textContent=playing?"暫停 (Space)":"播放 (Space)";$("dockPlay").textContent=playing?"暫停":"播放";
+  var n=parseInt($("repN").value,10)||0,gap=parseFloat($("gap").value)||0;
+  $("loopInfo").textContent=S.loop?"循環中 · 第 "+(S.count+1)+" 遍"+(n>0?" / "+n:""):(S.once?"這段播放一次":"");
+  if(playing&&!S.loop&&!S.once&&S.edit<0){var cur=sectionAt(t);if(cur>=0&&cur!==S.active){S.active=cur;syncSecStates(true);}else syncSecStates(false);}else syncSecStates(false);
+  if((!S.loop&&!S.once)||S.A===null||S.B===null||S.B<=S.A||S.waiting||!playing)return;
   if(t<S.A-0.5){P.seek(S.A);return;}
-  if(t>=S.B){S.count++;
+  if(t>=S.B){if(S.once){S.once=false;P.pause();P.seek(S.A);syncSecStates(false);return;}
+    S.count++;
     if(n>0&&S.count>=n){P.pause();P.seek(S.A);setLoop(false);return;}
     if(gap>0){S.waiting=true;P.pause();setTimeout(function(){S.waiting=false;if(S.loop){P.seek(S.A);P.play();}},gap*1000);}else P.seek(S.A);}
 },50);
 
 $("file").onchange=function(e){var f=e.target.files&&e.target.files[0];if(!f)return;var isV=/^video/.test(f.type)||/\.(mp4|webm|mov|m4v)$/i.test(f.name);
   var key="file:"+f.name+":"+f.size;setSource({kind:"file",key:key,url:URL.createObjectURL(f),isVideo:isV,file:f,name:f.name});addRecent({kind:"file",key:key,name:f.name});e.target.value="";};
+function textToId(t){var s=String(t||"").replace(/^\s+|\s+$/g,"");var id=ytId(s);if(!id)return {raw:"",id:""};var m=s.match(/https?:\/\/\S+/);var raw=m?m[0].replace(/[)\].,;]+$/,""):(s.split(/\s+/)[0]||id);if(ytId(raw)!==id)raw=id;return {raw:raw,id:id};}
+function loadFromText(t){var x=textToId(t);if(!x.id)return false;$("yturl").value=x.raw;loadYt(x.id);return true;}
+function openYtSearch(){var q=String($("ytsearch").value||"").replace(/^\s+|\s+$/g,"");if(!q){msg("請輸入搜尋關鍵字。");$("ytsearch").focus();return;}
+  var url="https://www.youtube.com/results?search_query="+encodeURIComponent(q),w=null;
+  try{w=window.open(url,"_blank","noopener,noreferrer");}catch(e){w=null;}
+  if(w){try{w.opener=null;}catch(e2){}}else msg("瀏覽器擋住了新分頁。請允許彈出視窗，或自行開啟 YouTube 搜尋。");}
+$("ytsearchgo").onclick=openYtSearch;
+$("ytsearch").onkeydown=function(e){if(e.key==="Enter"){e.preventDefault();openYtSearch();}};
 $("ytload").onclick=function(){loadYt(ytId($("yturl").value));};
 $("yturl").onkeydown=function(e){if(e.key==="Enter")loadYt(ytId($("yturl").value));};
+$("ytpaste").onclick=function(){
+  var fallback=function(){if(!loadFromText($("yturl").value))msg("無法讀取剪貼簿，請把連結貼到網址欄後按「載入 YouTube」。");};
+  var read=null;try{if(navigator.clipboard&&navigator.clipboard.readText)read=navigator.clipboard.readText();}catch(e){read=null;}
+  if(!read||!read.then){fallback();return;}
+  read.then(function(t){if(loadFromText(t))return;if(loadFromText($("yturl").value)){msg("剪貼簿不是 YouTube 連結，已改用網址欄。");return;}msg("剪貼簿裡不是 YouTube 連結，請改貼到網址欄。");},fallback);
+};
 $("play").onclick=toggle;
+$("prevSec").onclick=function(){stepSec(-1);};
+$("nextSec").onclick=function(){stepSec(1);};
+$("dockPrev").onclick=function(){stepSec(-1);};
+$("dockNext").onclick=function(){stepSec(1);};
+$("dockPlay").onclick=toggle;
+$("dockA").onclick=function(){if(P)setPoint("A",P.time());};
+$("dockB").onclick=function(){if(P)setPoint("B",P.time());};
+$("dockLoop").onclick=function(){setLoop(!S.loop);};
 $("loop").onchange=function(){setLoop($("loop").checked);};
 $("addSec").onclick=function(){if(S.A!==null&&S.B!==null&&S.B>S.A){S.secs.push({id:uid(),a:S.A,b:S.B,label:"段落 "+(S.secs.length+1)});save();renderSecs();}};
 $("clear").onclick=function(){if(confirm("確定清除全部段落？"))setSecs([],"已清除。");};
@@ -261,9 +352,11 @@ function doImport(t){try{var r=normImport(JSON.parse(t));setSecs(r,"已匯入 "+
 $("imp").onclick=function(){doImport($("json").value);};
 $("impFile").onchange=function(e){var f=e.target.files[0];if(f)f.text().then(function(t){$("json").value=t;doImport(t);});e.target.value="";};
 
-document.addEventListener("keydown",function(e){var tg=e.target;if(tg&&/^(INPUT|TEXTAREA|SELECT)$/.test(tg.tagName)&&tg.type!=="checkbox")return;if(!P||e.ctrlKey||e.metaKey||e.altKey)return;
-  var k=e.key.toLowerCase();
+document.addEventListener("keydown",function(e){if(e.isComposing)return;var tg=e.target;if(tg&&/^(INPUT|TEXTAREA|SELECT)$/.test(tg.tagName)&&tg.type!=="checkbox")return;if(!P||e.ctrlKey||e.metaKey||e.altKey)return;
+  var k=String(e.key||"").toLowerCase();
   if(k===" "){e.preventDefault();toggle();}else if(k==="a")setPoint("A",P.time());else if(k==="b")setPoint("B",P.time());else if(k==="l")setLoop(!S.loop);
+  else if(k===","||k==="pageup"||e.code==="PageUp"){e.preventDefault();stepSec(-1);}
+  else if(k==="."||k==="pagedown"||e.code==="PageDown"){e.preventDefault();stepSec(1);}
   else if(k==="arrowleft"){e.preventDefault();P.seek(P.time()-(e.shiftKey?0.5:2));}else if(k==="arrowright"){e.preventDefault();P.seek(P.time()+(e.shiftKey?0.5:2));}});
 
 renderRecent();
