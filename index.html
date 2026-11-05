@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AB 複讀練習器</title>
+<style>
+:root{--bg:#fff;--sub:#f5f6f8;--tx:#1b1d21;--tx2:#5f6670;--bd:#d9dde3;--ac:#1d6fe8;--acs:#e8f0fd}
+@media (prefers-color-scheme:dark){:root{--bg:#121417;--sub:#1c1f24;--tx:#e9ebee;--tx2:#9aa3ad;--bd:#343a42;--ac:#5b9cff;--acs:#1c2a40}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font-family:system-ui,-apple-system,"PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;line-height:1.5}
+main{max-width:860px;margin:0 auto;padding:16px}
+h1{font-size:22px;margin:4px 0 2px}h2{font-size:17px;margin:22px 0 8px}
+.sub{color:var(--tx2);font-size:14px}
+.box{border:1px solid var(--bd);border-radius:12px;padding:12px;background:var(--sub);display:grid;gap:10px}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+button,.btn{font:inherit;font-size:14px;padding:6px 12px;border-radius:8px;border:1px solid var(--bd);background:var(--bg);color:var(--tx);cursor:pointer}
+button.pri{background:var(--ac);border-color:var(--ac);color:#fff}button:disabled{opacity:.45;cursor:default}
+button.s{padding:4px 8px;font-size:13px;font-family:ui-monospace,Menlo,monospace}
+input[type=text],input[type=number],textarea,select{font:inherit;font-size:14px;padding:6px 8px;border-radius:8px;border:1px solid var(--bd);background:var(--bg);color:var(--tx)}
+input[type=number]{width:90px}textarea{width:100%;min-height:120px;font-family:ui-monospace,Menlo,monospace;font-size:13px}
+label.f{display:flex;flex-direction:column;font-size:12px;color:var(--tx2);gap:2px}
+.mono{font-family:ui-monospace,Menlo,monospace}
+.player{background:#000;border-radius:12px;overflow:hidden}
+.player video,.player audio{width:100%;display:block;max-height:440px}
+.yt{position:relative;padding-top:56.25%}.yt>*{position:absolute;inset:0;width:100%;height:100%}
+.rates button.on,.tabs button.on{background:var(--acs);border-color:var(--ac);color:var(--ac);font-weight:600}
+.sec{border:1px solid var(--bd);border-radius:10px;padding:8px;background:var(--sub);display:grid;gap:6px}
+.sec.on{border-color:var(--ac);box-shadow:0 0 0 1px var(--ac)}
+.sec .lb{flex:1 1 160px;cursor:pointer;font-size:14px}
+.msg{font-size:14px;color:var(--tx2);min-height:1em}.hint{font-size:12px;color:var(--tx2)}
+.hide{display:none!important}
+.recent a{color:var(--ac);cursor:pointer;text-decoration:none;font-size:14px}
+</style>
+</head>
+<body>
+<main>
+<h1>AB 複讀練習器</h1>
+<div class="sub">載入本機音檔／影片或 YouTube，設定 A、B 點反覆播放、切換速度，並把句子存成段落逐句練習。</div>
+
+<h2>1. 選擇來源</h2>
+<div class="box">
+  <div class="row"><label class="btn">選擇本機檔案（mp3 / m4a / mp4）<input id="file" type="file" accept="audio/*,video/*,.mp3,.m4a,.mp4" class="hide"></label></div>
+  <div class="row"><input id="yturl" type="text" placeholder="貼上 YouTube 網址或影片 ID" style="flex:1 1 240px"><button id="ytload">載入 YouTube</button></div>
+  <div id="recentWrap" class="hide"><div class="hint">最近使用</div><div id="recent" class="row recent"></div></div>
+</div>
+
+<div id="playerArea" class="hide">
+<h2>2. 播放器</h2>
+<div class="player" id="player"></div>
+<div class="box" style="margin-top:10px">
+  <div class="row"><button id="play" class="pri">播放 (Space)</button><span class="mono" id="now">0:00.0</span><span class="mono hint" id="loopInfo"></span></div>
+  <div class="row" id="rowA"></div>
+  <div class="row" id="rowB"></div>
+  <div class="row">
+    <label class="row" style="gap:6px"><input type="checkbox" id="loop"> AB 循環 (L)</label>
+    <label class="f">重複次數（0=無限）<input id="repN" type="number" value="0" min="0"></label>
+    <label class="f">每遍間隔（秒）<input id="gap" type="number" value="0" min="0" step="0.5"></label>
+  </div>
+  <div class="row"><span class="hint">速度</span><div class="row rates" id="rates"></div></div>
+  <div class="hint" id="rateNote"></div>
+  <div class="row"><button id="addSec" class="pri">加入目前 A-B 為段落</button></div>
+  <div class="hint">快捷鍵：Space 播放/暫停 · A / B 設定端點 · L 循環開關 · ←/→ 跳 2 秒（Shift 為 0.5 秒）</div>
+</div>
+<div class="msg" id="msg"></div>
+
+<h2>3. 自動分段</h2>
+<div class="row tabs" id="tabs"></div>
+<div class="box" id="tab-silence">
+  <div class="row">
+    <label class="f">靜音門檻 (dB)<input id="thr" type="number" value="-40" step="1"></label>
+    <label class="f">最短靜音（秒）<input id="minSil" type="number" value="0.4" step="0.1"></label>
+    <label class="f">最短段落（秒）<input id="minSeg" type="number" value="1" step="0.5"></label>
+  </div>
+  <div class="row"><button class="pri" id="runSil">分析並建立段落（取代現有段落）</button></div>
+  <div class="hint">段落太多：門檻調低（如 -45）或拉長最短靜音；太少：門檻調高（如 -35）。</div>
+</div>
+<div class="box" id="tab-transcript">
+  <div class="hint">貼上 YouTube「顯示轉錄稿」內容（如「0:05 Hello…」或時間與文字分行），或 SRT / VTT 字幕。</div>
+  <textarea id="tr" placeholder="0:05&#10;Tell me about yourself.&#10;0:09 I have five years of experience..."></textarea>
+  <div class="row"><button class="pri" id="runTr">解析字幕建立段落</button></div>
+</div>
+<div class="box" id="tab-split"><div class="row"><label class="f">每段秒數<input id="splitN" type="number" value="10" min="1"></label><button class="pri" id="runSplit">等分建立段落</button></div></div>
+<div class="box" id="tab-json">
+  <div class="row"><button id="exp">匯出 JSON</button><button id="dl">下載 .json</button><button id="imp">從下方 JSON 匯入</button><label class="btn">選擇 .json 檔匯入<input id="impFile" type="file" accept=".json,application/json" class="hide"></label></div>
+  <textarea id="json" placeholder="貼上先前匯出的 JSON"></textarea>
+</div>
+
+<h2 id="secHead" class="hide"></h2>
+<div id="secs" style="display:grid;gap:6px"></div>
+<div class="row" style="margin-top:8px"><button id="clear" class="hide">清除全部段落</button></div>
+</div>
+</main>
+
+<script id="core">
+// ===== pure functions (tested in node) =====
+function fmt(t){if(!isFinite(t)||t<0)t=0;var m=Math.floor(t/60),s=t-m*60;return m+":"+(s<10?"0":"")+s.toFixed(1);}
+function ytId(u){var s=String(u||"").trim();if(/^[\w-]{11}$/.test(s))return s;var m=s.match(/(?:v=|youtu\.be\/|embed\/|shorts\/|live\/)([\w-]{11})/);return m?m[1]:"";}
+function parseTs(x){var p=String(x).replace(",",".").split(":").map(parseFloat),t=0;for(var i=0;i<p.length;i++)t=t*60+(isNaN(p[i])?0:p[i]);return t;}
+function parseTranscript(txt,dur){
+  var lines=String(txt).replace(/\r/g,"").split("\n"),out=[],i=0,pending=null;
+  var cue=/((?:\d{1,2}:)?\d{1,2}:\d{2}[.,]\d{1,3})\s*-->\s*((?:\d{1,2}:)?\d{1,2}:\d{2}[.,]\d{1,3})/;
+  while(i<lines.length){
+    var l=lines[i].trim(),m=l.match(cue);
+    if(m){if(pending){out.push(pending);pending=null;}var a=parseTs(m[1]),b=parseTs(m[2]),t=[];i++;
+      while(i<lines.length&&lines[i].trim()!==""&&!cue.test(lines[i])){t.push(lines[i].trim().replace(/<[^>]+>/g,""));i++;}
+      out.push({a:a,b:b,label:t.join(" ")});continue;}
+    var y=l.match(/^\[?((?:\d{1,2}:)?\d{1,2}:\d{2}(?:\.\d+)?)\]?\s*(.*)$/);
+    if(y){if(pending)out.push(pending);pending={a:parseTs(y[1]),b:-1,label:y[2]};}
+    else if(pending&&l&&!/^\d+$/.test(l)&&l!=="WEBVTT"){pending.label=(pending.label+" "+l).trim();}
+    i++;
+  }
+  if(pending)out.push(pending);
+  out.sort(function(p,q){return p.a-q.a;});
+  for(var k=0;k<out.length;k++)if(out[k].b<0)out[k].b=k+1<out.length?out[k+1].a:(dur>out[k].a?dur:out[k].a+5);
+  return out.filter(function(s){return s.b>s.a;}).map(function(s){return {a:s.a,b:s.b,label:s.label};});
+}
+function detectSilence(data,sr,thrDb,minSil,minSeg){
+  var hop=0.02,win=Math.max(1,Math.round(sr*hop)),n=Math.floor(data.length/win),db=new Float32Array(n);
+  for(var i=0;i<n;i++){var s=0;for(var j=i*win;j<(i+1)*win;j++)s+=data[j]*data[j];db[i]=10*Math.log10(s/win+1e-12);}
+  var sil=[],st=-1;
+  for(i=0;i<=n;i++){var q=i<n&&db[i]<thrDb;if(q&&st<0)st=i;if(!q&&st>=0){if((i-st)*hop>=minSil)sil.push([st*hop,i*hop]);st=-1;}}
+  var dur=data.length/sr,segs=[],cur=0;
+  for(var k=0;k<sil.length;k++){var a=sil[k][0],b=sil[k][1];
+    if(a<=0.01){cur=Math.max(0,b-0.15);continue;}
+    if(b>=dur-0.01){if(a+0.15-cur>=0.3)segs.push({a:cur,b:Math.min(dur,a+0.15)});cur=dur;continue;}
+    if((a+b)/2-cur>=minSeg){segs.push({a:cur,b:Math.min(dur,a+0.15)});cur=Math.max(0,b-0.15);}}
+  if(dur-cur>0.3)segs.push({a:cur,b:dur});
+  return segs.map(function(s,k){return {a:Math.round(s.a*100)/100,b:Math.round(s.b*100)/100,label:"第 "+(k+1)+" 句"};});
+}
+function equalSplit(dur,n){var r=[];if(!(dur>0)||!(n>0))return r;for(var t=0,k=1;t<dur-0.2;t+=n,k++)r.push({a:t,b:Math.min(dur,t+n),label:"第 "+k+" 段"});return r;}
+function normImport(o){var arr=Array.isArray(o)?o:(o&&o.sections)||[];return arr.filter(function(s){return s&&typeof s.a==="number"&&typeof s.b==="number"&&s.b>s.a;}).map(function(s){return {a:s.a,b:s.b,label:String(s.label||"")};});}
+if(typeof module!=="undefined")module.exports={fmt:fmt,ytId:ytId,parseTs:parseTs,parseTranscript:parseTranscript,detectSilence:detectSilence,equalSplit:equalSplit,normImport:normImport};
+</script>
+
+<script id="app">
+(function(){
+var $=function(id){return document.getElementById(id);};
+var LOCAL_RATES=[0.5,0.6,0.7,0.75,0.8,0.9,1,1.25];
+var S={src:null,A:null,B:null,loop:false,count:0,waiting:false,secs:[],active:-1,edit:-1,rate:1,ytRates:[0.25,0.5,0.75,1,1.25,1.5,1.75,2],tab:"silence",mem:{}};
+var media=null,ytp=null,ytReady=false,P=null;
+function msg(t){$("msg").textContent=t||"";}
+function uid(){return Math.random().toString(36).slice(2,9);}
+// storage (try/catch, memory fallback)
+var LS=(function(){try{var s=window.localStorage;s.setItem("__t","1");s.removeItem("__t");return s;}catch(e){return null;}})();
+function sget(k){try{if(LS){var v=LS.getItem(k);return v?JSON.parse(v):null;}}catch(e){}return S.mem[k]||null;}
+function sset(k,v){try{if(LS){LS.setItem(k,JSON.stringify(v));return;}}catch(e){}S.mem[k]=v;}
+function save(){if(S.src)sset("abrep:"+S.src.key,S.secs.map(function(s){return {a:s.a,b:s.b,label:s.label};}));}
+
+// ===== common player interface =====
+function fileApi(el){return{time:function(){return el.currentTime||0;},play:function(){var p=el.play();if(p&&p.catch)p.catch(function(){});},pause:function(){el.pause();},
+  seek:function(t){el.currentTime=Math.max(0,t);},setRate:function(r){el.playbackRate=r;},playing:function(){return !el.paused;},duration:function(){return isFinite(el.duration)?el.duration:0;}};}
+function ytApi(){return{time:function(){try{return ytp.getCurrentTime()||0;}catch(e){return 0;}},play:function(){try{ytp.playVideo();}catch(e){}},pause:function(){try{ytp.pauseVideo();}catch(e){}},
+  seek:function(t){try{ytp.seekTo(Math.max(0,t),true);}catch(e){}},setRate:function(r){try{ytp.setPlaybackRate(r);}catch(e){}},
+  playing:function(){try{return ytp.getPlayerState()===1;}catch(e){return false;}},duration:function(){try{return ytp.getDuration()||0;}catch(e){return 0;}}};}
+
+// recent sources
+function addRecent(item){var r=sget("abrep:recent")||[];r=r.filter(function(x){return x.key!==item.key;});r.unshift(item);sset("abrep:recent",r.slice(0,12));renderRecent();}
+function renderRecent(){var r=sget("abrep:recent")||[],w=$("recent");w.innerHTML="";$("recentWrap").classList.toggle("hide",!r.length);
+  r.forEach(function(x){var a=document.createElement("a");a.textContent=(x.kind==="yt"?"▶ YouTube："+(x.title||x.vid):"🎧 "+x.name+"（需重新選檔）");
+    a.onclick=function(){if(x.kind==="yt")loadYt(x.vid);else{msg("瀏覽器無法自動重新開啟本機檔案，請重新選擇「"+x.name+"」，段落會自動載入。");$("file").click();}};w.appendChild(a);});}
+
+function setSource(src){
+  if(S.src&&S.src.url)URL.revokeObjectURL(S.src.url);
+  if(ytp){try{ytp.destroy();}catch(e){}ytp=null;ytReady=false;}
+  S.src=src;S.A=S.B=null;S.loop=false;$("loop").checked=false;S.count=0;S.active=-1;S.edit=-1;S.rate=1;
+  var st=sget("abrep:"+src.key);S.secs=(st||[]).map(function(s){return {id:uid(),a:s.a,b:s.b,label:s.label};});
+  $("playerArea").classList.remove("hide");var pl=$("player");pl.innerHTML="";
+  if(src.kind==="file"){media=document.createElement(src.isVideo?"video":"audio");media.controls=true;media.setAttribute("playsinline","");media.src=src.url;pl.appendChild(media);P=fileApi(media);}
+  else{media=null;P=ytApi();var w=document.createElement("div");w.className="yt";var d=document.createElement("div");d.id="ytp";w.appendChild(d);pl.appendChild(w);makeYt(src.vid);}
+  if(src.kind==="yt"&&S.tab==="silence")S.tab="transcript";
+  msg(st?"已載入此來源先前儲存的 "+st.length+" 個段落。":(LS?"":"此環境無法使用 localStorage，段落僅保存在本次開啟期間，請用「匯出 JSON」備份。"));
+  renderAll();
+}
+function makeYt(vid){
+  var go=function(){ytp=new YT.Player("ytp",{videoId:vid,playerVars:{playsinline:1,rel:0,modestbranding:1},events:{
+    onReady:function(){ytReady=true;try{var r=ytp.getAvailablePlaybackRates();if(r&&r.length)S.ytRates=r;}catch(e){}
+      try{var t=ytp.getVideoData().title;if(t)addRecent({kind:"yt",key:"yt:"+vid,vid:vid,title:t});}catch(e){}renderRates();},
+    onPlaybackRateChange:function(e){S.rate=e.data;renderRates();},
+    onError:function(e){msg("YouTube 播放錯誤（代碼 "+e.data+"）：影片可能不允許嵌入播放。");}}});};
+  if(window.YT&&window.YT.Player)go();else{window._ytq=window._ytq||[];window._ytq.push(go);loadYtScript();}
+}
+var ytScript=false;
+function loadYtScript(){if(ytScript)return;ytScript=true;window.onYouTubeIframeAPIReady=function(){(window._ytq||[]).forEach(function(f){f();});window._ytq=[];};
+  var s=document.createElement("script");s.src="https://www.youtube.com/iframe_api";s.onerror=function(){msg("無法載入 YouTube IFrame API，請檢查網路。");};document.head.appendChild(s);}
+function loadYt(id){if(!id){msg("無法辨識 YouTube 網址或影片 ID。");return;}
+  setSource({kind:"yt",key:"yt:"+id,vid:id});addRecent({kind:"yt",key:"yt:"+id,vid:id});
+  try{var u=new URL(location.href);u.searchParams.set("v",id);history.replaceState(null,"",u.toString());}catch(e){}}
+
+// ===== render =====
+function renderAB(){["A","B"].forEach(function(w){var row=$("row"+w);row.innerHTML="";
+  var b=document.createElement("button");b.textContent="設定 "+w+" ("+w+")";b.onclick=function(){setPoint(w,P.time());};row.appendChild(b);
+  var sp=document.createElement("span");sp.className="mono";sp.style.minWidth="70px";var v=S[w];sp.textContent=w+": "+(v===null?"—":fmt(v));row.appendChild(sp);
+  [-1,-0.5,-0.1,0.1,0.5,1].forEach(function(d){var x=document.createElement("button");x.className="s";x.textContent=(d>0?"+":"")+d+"s";x.onclick=function(){nudge(w,d);};row.appendChild(x);});});
+  $("addSec").disabled=!(S.A!==null&&S.B!==null&&S.B>S.A);}
+function renderRates(){var w=$("rates");w.innerHTML="";var isYt=S.src&&S.src.kind==="yt";var rs=isYt?S.ytRates:LOCAL_RATES;
+  rs.forEach(function(r){var b=document.createElement("button");b.textContent=r+"x";if(Math.abs(r-S.rate)<1e-6)b.className="on";b.onclick=function(){S.rate=r;P&&P.setRate(r);renderRates();};w.appendChild(b);});
+  $("rateNote").textContent=isYt?"YouTube 只提供它支援的速度："+rs.join("、")+"x（0.6、0.7、0.8、0.9 等無法使用）。":"";}
+function renderTabs(){var isYt=S.src&&S.src.kind==="yt";var t=[["silence","靜音偵測"],["transcript","貼上字幕"],["split","每 N 秒等分"],["json","匯出/匯入"]].filter(function(x){return !(isYt&&x[0]==="silence");});
+  var w=$("tabs");w.innerHTML="";t.forEach(function(x){var b=document.createElement("button");b.textContent=x[1];if(S.tab===x[0])b.className="on";b.onclick=function(){S.tab=x[0];renderTabs();};w.appendChild(b);});
+  ["silence","transcript","split","json"].forEach(function(k){$("tab-"+k).classList.toggle("hide",S.tab!==k);});}
+function renderSecs(){var w=$("secs");w.innerHTML="";var n=S.secs.length;$("secHead").textContent="4. 段落（"+n+"）";$("secHead").classList.toggle("hide",!n);$("clear").classList.toggle("hide",!n);
+  S.secs.forEach(function(s,i){var d=document.createElement("div");d.className="sec"+(S.active===i?" on":"");
+    var r=document.createElement("div");r.className="row";
+    var pb=document.createElement("button");pb.className="s";pb.style.fontWeight="600";pb.textContent="▶ "+fmt(s.a)+"–"+fmt(s.b);pb.onclick=function(){playSec(i);};r.appendChild(pb);
+    var lb=document.createElement("span");lb.className="lb";lb.textContent=s.label;lb.onclick=function(){playSec(i);};r.appendChild(lb);
+    [["↑",function(){mv(i,-1);}],["↓",function(){mv(i,1);}],[S.edit===i?"完成":"編輯",function(){S.edit=S.edit===i?-1:i;renderSecs();}],["刪除",function(){S.secs.splice(i,1);if(S.active===i)S.active=-1;S.edit=-1;save();renderSecs();}]]
+      .forEach(function(x){var b=document.createElement("button");b.className="s";b.textContent=x[0];b.onclick=x[1];r.appendChild(b);});
+    d.appendChild(r);
+    if(S.edit===i){var ta=document.createElement("textarea");ta.style.minHeight="50px";ta.value=s.label;ta.oninput=function(){s.label=ta.value;lb.textContent=ta.value;save();};d.appendChild(ta);
+      var r2=document.createElement("div");r2.className="row";
+      ["a","b"].forEach(function(k){var sp=document.createElement("span");sp.className="mono";sp.textContent=k.toUpperCase()+" "+fmt(s[k]);r2.appendChild(sp);
+        [-0.5,-0.1,0.1,0.5].forEach(function(dd){var b=document.createElement("button");b.className="s";b.textContent=(dd>0?"+":"")+dd;b.onclick=function(){s[k]=Math.max(0,Math.round((s[k]+dd)*100)/100);save();if(S.active===i){S.A=s.a;S.B=s.b;renderAB();}renderSecs();};r2.appendChild(b);});});
+      var u=document.createElement("button");u.className="s";u.textContent="用目前 A-B";u.onclick=function(){if(S.A!==null&&S.B!==null&&S.B>S.A){s.a=S.A;s.b=S.B;save();renderSecs();}};r2.appendChild(u);
+      d.appendChild(r2);setTimeout(function(){ta.focus();},0);}
+    w.appendChild(d);});}
+function renderAll(){renderAB();renderRates();renderTabs();renderSecs();}
+
+// ===== actions =====
+function r2(t){return Math.round(t*100)/100;}
+function setPoint(w,t){S[w]=r2(t);renderAB();}
+function nudge(w,d){var v=S[w]===null?P.time():S[w];S[w]=Math.max(0,r2(v+d));if(w==="A")P.seek(S.A);else if(S.B!==null)P.seek(Math.max(0,S.B-1));renderAB();}
+function setLoop(v){S.loop=v;$("loop").checked=v;S.count=0;if(v&&S.A!==null&&(P.time()<S.A||(S.B!==null&&P.time()>S.B)))P.seek(S.A);}
+function playSec(i){var s=S.secs[i];S.active=i;S.A=s.a;S.B=s.b;renderAB();setLoop(true);P.seek(s.a);P.play();renderSecs();}
+function mv(i,d){var j=i+d;if(j<0||j>=S.secs.length)return;var t=S.secs[i];S.secs[i]=S.secs[j];S.secs[j]=t;S.edit=S.edit===i?j:S.edit;save();renderSecs();}
+function setSecs(arr,note){S.secs=arr.map(function(s){return {id:uid(),a:s.a,b:s.b,label:s.label};});S.active=-1;S.edit=-1;save();renderSecs();msg(note);}
+function toggle(){if(!P)return;if(P.playing())P.pause();else P.play();}
+
+// loop engine (~50ms polling)
+setInterval(function(){if(!P)return;var t=P.time();$("now").textContent=fmt(t)+(P.duration()?" / "+fmt(P.duration()):"");
+  $("play").textContent=P.playing()?"暫停 (Space)":"播放 (Space)";
+  var n=parseInt($("repN").value)||0,gap=parseFloat($("gap").value)||0;
+  $("loopInfo").textContent=S.loop?"循環中 · 第 "+(S.count+1)+" 遍"+(n>0?" / "+n:""):"";
+  if(!S.loop||S.A===null||S.B===null||S.B<=S.A||S.waiting||!P.playing())return;
+  if(t<S.A-0.5){P.seek(S.A);return;}
+  if(t>=S.B){S.count++;
+    if(n>0&&S.count>=n){P.pause();P.seek(S.A);setLoop(false);return;}
+    if(gap>0){S.waiting=true;P.pause();setTimeout(function(){S.waiting=false;if(S.loop){P.seek(S.A);P.play();}},gap*1000);}else P.seek(S.A);}
+},50);
+
+$("file").onchange=function(e){var f=e.target.files&&e.target.files[0];if(!f)return;var isV=/^video/.test(f.type)||/\.(mp4|webm|mov|m4v)$/i.test(f.name);
+  var key="file:"+f.name+":"+f.size;setSource({kind:"file",key:key,url:URL.createObjectURL(f),isVideo:isV,file:f,name:f.name});addRecent({kind:"file",key:key,name:f.name});e.target.value="";};
+$("ytload").onclick=function(){loadYt(ytId($("yturl").value));};
+$("yturl").onkeydown=function(e){if(e.key==="Enter")loadYt(ytId($("yturl").value));};
+$("play").onclick=toggle;
+$("loop").onchange=function(){setLoop($("loop").checked);};
+$("addSec").onclick=function(){if(S.A!==null&&S.B!==null&&S.B>S.A){S.secs.push({id:uid(),a:S.A,b:S.B,label:"段落 "+(S.secs.length+1)});save();renderSecs();}};
+$("clear").onclick=function(){if(confirm("確定清除全部段落？"))setSecs([],"已清除。");};
+$("runSil").onclick=function(){if(!S.src||S.src.kind!=="file")return;msg("正在解碼與分析音訊…");
+  var AC=window.AudioContext||window.webkitAudioContext;if(!AC){msg("此瀏覽器不支援 Web Audio，請改用「每 N 秒等分」。");return;}
+  var ctx=new AC();S.src.file.arrayBuffer().then(function(ab){return new Promise(function(res,rej){var p=ctx.decodeAudioData(ab,res,rej);if(p&&p.then)p.then(res,rej);});}).then(function(buf){
+    var c0=buf.getChannelData(0),d=c0;if(buf.numberOfChannels>1){var c1=buf.getChannelData(1);d=new Float32Array(c0.length);for(var i=0;i<c0.length;i++)d[i]=(c0[i]+c1[i])/2;}
+    var r=detectSilence(d,buf.sampleRate,parseFloat($("thr").value)||-40,parseFloat($("minSil").value)||0.4,parseFloat($("minSeg").value)||1);
+    try{ctx.close();}catch(e){}setSecs(r,"自動分段完成："+r.length+" 段。");
+  }).catch(function(){msg("音訊解碼失敗（格式不支援），請改用「每 N 秒等分」或貼上字幕。");});};
+$("runTr").onclick=function(){var r=parseTranscript($("tr").value,P?P.duration():0);if(!r.length){msg("找不到時間戳記。支援「0:05 文字」、SRT、VTT。");return;}setSecs(r,"已從字幕建立 "+r.length+" 段。");};
+$("runSplit").onclick=function(){var d=P?P.duration():0;if(!d){msg("尚未取得長度，請先按播放一下再試。");return;}var r=equalSplit(d,parseFloat($("splitN").value)||10);setSecs(r,"已等分為 "+r.length+" 段。");};
+function exportStr(){return JSON.stringify({source:S.src?S.src.key:"",sections:S.secs.map(function(s){return {a:s.a,b:s.b,label:s.label};})},null,2);}
+$("exp").onclick=function(){var s=exportStr();$("json").value=s;try{navigator.clipboard.writeText(s).then(function(){msg("JSON 已複製到剪貼簿。");},function(){msg("JSON 已顯示在下方，請手動複製。");});}catch(e){msg("JSON 已顯示在下方，請手動複製。");}};
+$("dl").onclick=function(){var b=new Blob([exportStr()],{type:"application/json"});var a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=(S.src?S.src.key.replace(/[^\w.-]+/g,"_"):"sections")+".json";a.click();};
+function doImport(t){try{var r=normImport(JSON.parse(t));setSecs(r,"已匯入 "+r.length+" 段。");}catch(e){msg("JSON 格式錯誤。");}}
+$("imp").onclick=function(){doImport($("json").value);};
+$("impFile").onchange=function(e){var f=e.target.files[0];if(f)f.text().then(function(t){$("json").value=t;doImport(t);});e.target.value="";};
+
+document.addEventListener("keydown",function(e){var tg=e.target;if(tg&&/^(INPUT|TEXTAREA|SELECT)$/.test(tg.tagName)&&tg.type!=="checkbox")return;if(!P||e.ctrlKey||e.metaKey||e.altKey)return;
+  var k=e.key.toLowerCase();
+  if(k===" "){e.preventDefault();toggle();}else if(k==="a")setPoint("A",P.time());else if(k==="b")setPoint("B",P.time());else if(k==="l")setLoop(!S.loop);
+  else if(k==="arrowleft"){e.preventDefault();P.seek(P.time()-(e.shiftKey?0.5:2));}else if(k==="arrowright"){e.preventDefault();P.seek(P.time()+(e.shiftKey?0.5:2));}});
+
+renderRecent();
+try{var v=new URLSearchParams(location.search).get("v");if(v&&ytId(v)){$("yturl").value=v;loadYt(ytId(v));}}catch(e){}
+})();
+</script>
+</body>
+</html>
