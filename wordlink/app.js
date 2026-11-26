@@ -8,6 +8,8 @@ var state = {
   speed: 1,
   hide: false,
   gloss: true,
+  autoNext: false,
+  carryPlay: "",
   index: -1,
   playing: false,
   mode: "",
@@ -112,6 +114,7 @@ function loadSettings() {
     if (typeof saved.speed === "number") state.speed = clampSpeed(saved.speed);
     if (typeof saved.hide === "boolean") state.hide = saved.hide;
     if (typeof saved.gloss === "boolean") state.gloss = saved.gloss;
+    if (typeof saved.autoNext === "boolean") state.autoNext = saved.autoNext;
   } catch (e) {}
 }
 function saveSettings() {
@@ -121,7 +124,8 @@ function saveSettings() {
       gap: state.gap,
       speed: state.speed,
       hide: state.hide,
-      gloss: state.gloss
+      gloss: state.gloss,
+      autoNext: state.autoNext
     }));
   } catch (e) {}
 }
@@ -175,6 +179,10 @@ function renderUnit() {
   var index = unitIndex(unit);
   document.title = "Wordlink · " + (index + 1) + " " + unit.center;
   $("unitLabel").textContent = "Unit " + (index + 1) + "/" + UNITS.length;
+  $("prevUnit").textContent = "Prev unit";
+  $("nextUnit").textContent = "Next unit";
+  $("playAll").textContent = "Play all";
+  $("playAllDock").textContent = "Play all";
   $("prevUnit").disabled = index <= 0;
   $("nextUnit").disabled = index >= UNITS.length - 1;
   $("continueNote").hidden = !state.resumed;
@@ -385,7 +393,10 @@ function updateDock() {
   $("prev").disabled = !unit || state.index <= 0;
   $("next").disabled = !unit || (state.index >= len - 1 && state.index !== -1);
   $("stop").disabled = !state.playing;
-  $("playAll").setAttribute("aria-pressed", state.playing && state.mode === "all" ? "true" : "false");
+  var playingAll = state.playing && state.mode === "all" ? "true" : "false";
+  $("playAll").setAttribute("aria-pressed", playingAll);
+  $("playAllDock").setAttribute("aria-pressed", playingAll);
+  $("autoNext").setAttribute("aria-pressed", state.autoNext ? "true" : "false");
   Array.prototype.forEach.call($("repeatSeg").querySelectorAll("button"), function (btn) {
     var value = btn.getAttribute("data-repeat");
     var on = value === "inf" ? state.repeat === Infinity : Number(value) === state.repeat;
@@ -465,9 +476,19 @@ function playOnce(unit, index, doneBefore, token, mode) {
   audio.onended = function () {
     if (token !== playToken) return;
     var finished = doneBefore + 1;
+    var nxt = UNITS[unitIndex(unit) + 1];
     if (finished < state.repeat) afterGap(token, function () { playOnce(unit, index, finished, token, mode); });
     else if (mode === "all" && index + 1 < unit.sentences.length) afterGap(token, function () { playOnce(unit, index + 1, 0, token, mode); });
-    else {
+    else if (mode === "all" && state.autoNext && nxt) {
+      state.note = "Next unit…";
+      state.repNow = finished;
+      highlight();
+      afterGap(token, function () {
+        if (token !== playToken) return;
+        state.carryPlay = "all";
+        location.hash = nxt.id;
+      });
+    } else {
       state.playing = false;
       state.mode = "";
       state.repNow = finished;
@@ -539,6 +560,8 @@ function renderCard() {
   }
 }
 function onHash() {
+  var carry = state.carryPlay;
+  state.carryPlay = "";
   stopPlayback();
   state.index = -1;
   state.repNow = 0;
@@ -548,6 +571,7 @@ function onHash() {
   closeCard();
   closeReview();
   renderUnit();
+  if (carry) startPlayback(0, carry);
 }
 function bind() {
   $("prevUnit").addEventListener("click", function () {
@@ -561,7 +585,14 @@ function bind() {
   $("reviewBtn").addEventListener("click", openReview);
   $("reviewClose").addEventListener("click", closeReview);
   $("reviewBack").addEventListener("click", closeReview);
-  $("playAll").addEventListener("click", function () { startPlayback(0, "all"); });
+  function playAll() { startPlayback(0, "all"); }
+  $("playAll").addEventListener("click", playAll);
+  $("playAllDock").addEventListener("click", playAll);
+  $("autoNext").addEventListener("click", function () {
+    state.autoNext = !state.autoNext;
+    saveSettings();
+    updateDock();
+  });
   $("stop").addEventListener("click", function () {
     stopPlayback();
     state.note = "";

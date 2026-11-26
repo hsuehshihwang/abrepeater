@@ -36,6 +36,7 @@
       <p id="scene" class="scene"></p>
       <h2 id="centerName" class="center-name"></h2>
       <div id="words" class="word-row"></div>
+      <button type="button" id="playAll" class="pri play-all">Play all</button>
       <p class="link-note">These three words share one story. The marked word opens the next unit.</p>
       <blockquote id="story" class="story"></blockquote>
     </section>
@@ -49,7 +50,7 @@
 <footer id="dock" class="dock" hidden>
   <div class="transport">
     <button type="button" id="prev">Prev</button>
-    <button type="button" id="playAll" class="pri">Play all</button>
+    <button type="button" id="playAllDock" class="pri">Play all</button>
     <button type="button" id="next">Next</button>
     <button type="button" id="stop">Stop</button>
   </div>
@@ -80,6 +81,7 @@
   </div>
   <div class="toggles">
     <button type="button" id="hideText" class="tog" aria-pressed="false">Hide text</button>
+    <button type="button" id="autoNext" class="tog" aria-pressed="false">Auto next unit</button>
     <button type="button" id="glossBtn" class="tog" aria-pressed="true" lang="zh-Hant">中文</button>
   </div>
   <p id="status" class="status" aria-live="polite">Tap a sentence to listen.</p>

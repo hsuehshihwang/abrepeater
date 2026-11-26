@@ -91,18 +91,29 @@ h1 { font-size: 24px; line-height: 1.1; margin: 0; letter-spacing: -0.03em; }
 .course-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between; margin-top: 10px; }
 .unit-label { margin: 0; font-weight: 750; font-variant-numeric: tabular-nums; }
 .unit-nav { display: flex; flex-wrap: wrap; gap: 6px; }
-.unit-nav button, .pri, .tog, .transport button, .seg button, #cardClose, #reviewClose {
+.unit-nav button, .tog, .transport button, .seg button, #cardClose, #reviewClose {
   border: 1px solid var(--line-strong);
   background: var(--paper);
+  color: var(--ink);
   border-radius: 999px;
   min-height: 44px;
   padding: 8px 14px;
+  font-size: 16px;
 }
-.pri {
+button.pri {
   background: var(--green);
   border-color: var(--green);
   color: var(--on-green);
   font-weight: 700;
+  font-size: 16px;
+}
+.play-all {
+  display: block;
+  width: 100%;
+  margin: 10px 0 2px;
+  min-height: 52px;
+  border-radius: 14px;
+  font-size: 18px;
 }
 .continue-note { margin: 6px 0 0; color: var(--clay); font-size: 13px; font-weight: 700; }
 .strip {
@@ -278,10 +289,13 @@ body.is-playing .sent.on .num { animation: pulse 1.1s ease-in-out infinite; }
   gap: 6px;
 }
 .transport, .toggles, .set-row, .seg, .pair-row, .pair { display: flex; gap: 6px; align-items: center; }
+.toggles { flex-wrap: wrap; }
 .pair-row { align-items: stretch; }
 .pair { flex: 1 1 0; min-width: 0; flex-direction: column; align-items: stretch; gap: 2px; }
 .pair .lbl { width: auto; font-size: 12px; }
-.transport button, .toggles button { flex: 1 1 0; min-width: 0; white-space: nowrap; padding-left: 8px; padding-right: 8px; }
+.transport button, .toggles button { flex: 1 1 auto; min-width: min-content; white-space: nowrap; padding-left: 8px; padding-right: 8px; color: var(--ink); }
+#autoNext { flex: 1 1 100%; }
+.transport button.pri { color: var(--on-green); background: var(--green); border-color: var(--green); }
 .set-row { align-items: center; }
 .lbl { flex: none; width: 92px; font-size: 13px; font-weight: 700; }
 .lbl .zh { font-weight: 500; color: var(--muted); }
