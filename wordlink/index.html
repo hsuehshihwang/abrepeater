@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Wordlink: a B1 vocabulary listening tree. Each center word opens three words that share one small story.">
+<title>Wordlink</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="top-row">
+    <div>
+      <h1>Wordlink</h1>
+      <p class="tag">Words in a tree. Listen, then say them.</p>
+      <p class="tag zh" lang="zh-Hant">單字樹。先聽，再跟著說。</p>
+    </div>
+    <a class="site-link" href="../">AB 複讀</a>
+  </div>
+  <nav class="roots" id="roots" aria-label="Start here"></nav>
+</header>
+
+<main>
+  <p id="boot">Loading lessons…</p>
+  <div id="stage" class="stage" hidden>
+    <section class="tree-col">
+      <div class="crumb-row">
+        <button type="button" id="back" hidden>Back</button>
+        <nav id="crumb" class="crumb" aria-label="Path"></nav>
+      </div>
+      <p id="scene" class="scene"></p>
+      <div class="tree" id="tree" aria-label="Word tree">
+        <svg id="lines" aria-hidden="true"></svg>
+      </div>
+      <p class="link-note">These three words share one story. Tap <b>i</b> for the card.</p>
+      <blockquote id="story" class="story"></blockquote>
+    </section>
+    <section class="list-col">
+      <h2 class="sr">Sentences</h2>
+      <div id="list" class="list"></div>
+    </section>
+  </div>
+</main>
+
+<footer id="dock" class="dock" hidden>
+  <div class="transport">
+    <button type="button" id="prev">Prev</button>
+    <button type="button" id="playAll" class="pri">Play all</button>
+    <button type="button" id="next">Next</button>
+    <button type="button" id="stop">Stop</button>
+  </div>
+  <div class="pair-row">
+    <div class="pair">
+      <span class="lbl">Repeat <span class="zh" lang="zh-Hant">重複</span></span>
+      <div class="seg" id="repeatSeg" role="group" aria-label="Repeat each sentence">
+        <button type="button" data-repeat="1">1</button>
+        <button type="button" data-repeat="2">2</button>
+        <button type="button" data-repeat="3">3</button>
+        <button type="button" data-repeat="inf" aria-label="Repeat forever">∞</button>
+      </div>
+    </div>
+    <div class="pair">
+      <span class="lbl">Pause <span class="zh" lang="zh-Hant">間隔</span></span>
+      <div class="seg" id="gapSeg" role="group" aria-label="Pause between repeats">
+        <button type="button" data-gap="0">0s</button>
+        <button type="button" data-gap="1">1s</button>
+        <button type="button" data-gap="2">2s</button>
+        <button type="button" data-gap="3">3s</button>
+      </div>
+    </div>
+  </div>
+  <div class="set-row speed-row">
+    <span class="lbl">Speed <span class="zh" lang="zh-Hant">速度</span></span>
+    <input id="speed" type="range" min="0.6" max="1.2" step="0.1" value="1" aria-label="Playback speed" aria-valuemin="0.6" aria-valuemax="1.2" aria-valuenow="1">
+    <span id="speedVal" class="speed-val">1.0×</span>
+  </div>
+  <div class="toggles">
+    <button type="button" id="hideText" class="tog" aria-pressed="false">Hide text</button>
+    <button type="button" id="glossBtn" class="tog" aria-pressed="true" lang="zh-Hant">中文</button>
+  </div>
+  <p id="status" class="status" aria-live="polite">Tap a sentence to listen.</p>
+</footer>
+
+<div id="sheet" class="sheet" hidden>
+  <div id="sheetBack" class="sheet-back"></div>
+  <div class="sheet-card" role="dialog" aria-modal="true" aria-labelledby="cardWord">
+    <div class="sheet-top">
+      <p id="cardPos" class="pos"></p>
+      <button type="button" id="cardClose">Close</button>
+    </div>
+    <h2 id="cardWord" class="card-word"></h2>
+    <p id="cardIpa" class="ipa"></p>
+    <p id="cardDef" class="card-def"></p>
+    <p id="cardGloss" class="card-gloss" lang="zh-Hant"></p>
+    <button type="button" id="cardGo" class="pri card-go" hidden>Open</button>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,1311 @@
+{
+  "meta": {
+    "voice": "en-US-JennyNeural",
+    "rate": "-15%",
+    "word_level": "B1",
+    "english_level": "A1",
+    "note": "A unit's scene may differ from its parent. The three child words share one mini-scene."
+  },
+  "units": [
+    {
+      "id": "library",
+      "center": "library",
+      "parent_unit": null,
+      "scene": "library",
+      "scene_label": "At the library",
+      "story_link": "I want to borrow a book. The book is on the shelf. I must return it before the due date.",
+      "center_word": {
+        "word": "library",
+        "ipa": "/ˈlaɪbreri/",
+        "pos": "noun",
+        "gloss": "圖書館",
+        "definition": "A library is a place with many books. You can read there. You can borrow books there."
+      },
+      "words": [
+        {
+          "word": "borrow",
+          "ipa": "/ˈbɑːroʊ/",
+          "pos": "verb",
+          "gloss": "借入",
+          "definition": "You take something for a short time. You will give it back."
+        },
+        {
+          "word": "shelf",
+          "ipa": "/ʃelf/",
+          "pos": "noun",
+          "gloss": "書架",
+          "definition": "A shelf is a long flat board. You put books on it."
+        },
+        {
+          "word": "return",
+          "ipa": "/rɪˈtɜːrn/",
+          "pos": "verb",
+          "gloss": "歸還",
+          "definition": "You give something back. It goes back to its place."
+        }
+      ],
+      "sentences": [
+        {
+          "text": "A library is a place with books.",
+          "speaker": "jenny",
+          "audio": "audio/library/01.mp3"
+        },
+        {
+          "text": "You can read books in a library.",
+          "speaker": "jenny",
+          "audio": "audio/library/02.mp3"
+        },
+        {
+          "text": "You can sit there and be quiet.",
+          "speaker": "jenny",
+          "audio": "audio/library/03.mp3"
+        },
+        {
+          "text": "You can also take a book home.",
+          "speaker": "jenny",
+          "audio": "audio/library/04.mp3"
+        },
+        {
+          "text": "Many people visit the library each week.",
+          "speaker": "jenny",
+          "audio": "audio/library/05.mp3"
+        },
+        {
+          "text": "I want to borrow a book.",
+          "speaker": "jenny",
+          "audio": "audio/library/06.mp3"
+        },
+        {
+          "text": "The book is on the shelf.",
+          "speaker": "jenny",
+          "audio": "audio/library/07.mp3"
+        },
+        {
+          "text": "I must return it before the due date.",
+          "speaker": "jenny",
+          "audio": "audio/library/08.mp3"
+        },
+        {
+          "text": "Borrow means you take something for now.",
+          "speaker": "jenny",
+          "audio": "audio/library/09.mp3"
+        },
+        {
+          "text": "Later, you will give it back.",
+          "speaker": "jenny",
+          "audio": "audio/library/10.mp3"
+        },
+        {
+          "text": "I borrow a book from the library.",
+          "speaker": "jenny",
+          "audio": "audio/library/11.mp3"
+        },
+        {
+          "text": "You may borrow it for two weeks.",
+          "speaker": "jenny",
+          "audio": "audio/library/12.mp3"
+        },
+        {
+          "text": "Please borrow only one book now.",
+          "speaker": "jenny",
+          "audio": "audio/library/13.mp3"
+        },
+        {
+          "text": "A shelf is a long flat board.",
+          "speaker": "jenny",
+          "audio": "audio/library/14.mp3"
+        },
+        {
+          "text": "You put books on the shelf.",
+          "speaker": "jenny",
+          "audio": "audio/library/15.mp3"
+        },
+        {
+          "text": "My book is on the shelf.",
+          "speaker": "jenny",
+          "audio": "audio/library/16.mp3"
+        },
+        {
+          "text": "I take the book from the shelf.",
+          "speaker": "jenny",
+          "audio": "audio/library/17.mp3"
+        },
+        {
+          "text": "Please put it back on the shelf.",
+          "speaker": "jenny",
+          "audio": "audio/library/18.mp3"
+        },
+        {
+          "text": "Return means you give it back.",
+          "speaker": "jenny",
+          "audio": "audio/library/19.mp3"
+        },
+        {
+          "text": "The book goes back to the library.",
+          "speaker": "jenny",
+          "audio": "audio/library/20.mp3"
+        },
+        {
+          "text": "I return the book on Friday.",
+          "speaker": "jenny",
+          "audio": "audio/library/21.mp3"
+        },
+        {
+          "text": "Please return the book on time.",
+          "speaker": "jenny",
+          "audio": "audio/library/22.mp3"
+        },
+        {
+          "text": "Try not to return it late.",
+          "speaker": "jenny",
+          "audio": "audio/library/23.mp3"
+        },
+        {
+          "text": "I go to the library today.",
+          "speaker": "jenny",
+          "audio": "audio/library/24.mp3"
+        },
+        {
+          "text": "I want to borrow a book.",
+          "speaker": "jenny",
+          "audio": "audio/library/25.mp3"
+        },
+        {
+          "text": "I find that book on the shelf.",
+          "speaker": "jenny",
+          "audio": "audio/library/26.mp3"
+        },
+        {
+          "text": "Later I return the book there.",
+          "speaker": "jenny",
+          "audio": "audio/library/27.mp3"
+        },
+        {
+          "text": "Borrow, shelf, and return go together.",
+          "speaker": "jenny",
+          "audio": "audio/library/28.mp3"
+        },
+        {
+          "text": "This is a small library story.",
+          "speaker": "jenny",
+          "audio": "audio/library/29.mp3"
+        }
+      ]
+    },
+    {
+      "id": "library-rules",
+      "center": "library rules",
+      "parent_unit": null,
+      "scene": "library",
+      "scene_label": "At the library",
+      "story_link": "One rule says to be quiet. So people whisper in the library.",
+      "center_word": {
+        "word": "library rules",
+        "ipa": "/ˈlaɪbreri ruːlz/",
+        "pos": "noun",
+        "gloss": "圖書館規則",
+        "definition": "Library rules say what you must do there. They help keep the room quiet."
+      },
+      "words": [
+        {
+          "word": "quiet",
+          "ipa": "/ˈkwaɪət/",
+          "pos": "adjective",
+          "gloss": "安靜",
+          "definition": "Quiet means little noise. A quiet place is not loud."
+        },
+        {
+          "word": "rule",
+          "ipa": "/ruːl/",
+          "pos": "noun",
+          "gloss": "規則",
+          "definition": "A rule says what you can do. It also says what you cannot do."
+        },
+        {
+          "word": "whisper",
+          "ipa": "/ˈwɪspər/",
+          "pos": "verb",
+          "gloss": "小聲說",
+          "definition": "You speak in a very soft voice. People can just hear you."
+        }
+      ],
+      "sentences": [
+        {
+          "text": "Library rules help every person there.",
+          "speaker": "jenny",
+          "audio": "audio/library-rules/01.mp3"
+        },
+        {
+          "text": "A rule tells you what to do.",
+          "speaker": "jenny",
+          "audio": "audio/library-rules/02.mp3"
+        },
+        {
+          "text": "Please follow all the library rules.",
+          "speaker": "jenny",
+          "audio": "audio/library-rules/03.mp3"
+        },
+        {
+          "text": "Learn the library rules at the door.",
+          "speaker": "jenny",
+          "audio": "audio/library-rules/04.mp3"
+        },
+        {
+          "text": "One big rule is about noise.",
+          "speaker": "jenny",
+          "audio": "audio/library-rules/05.mp3"
+        },
+        {
+          "text": "One rule says to be quiet.",
+          "speaker": "jenny",
+          "audio": "audio/library-rules/06.mp3"
+        },
+        {
+          "text": "So people whisper in the library.",
+          "speaker": "jenny",
+          "audio": "audio/library-rules/07.mp3"
+        },
+        {
+          "text": "They keep their voices very soft.",
+          "speaker": "jenny",
+          "audio": "audio/library-rules/08.mp3"
+        },
+        {
+          "text": "Quiet means there is little noise.",
+          "speaker": "jenny",
+          "audio": "audio/library-rules/09.mp3"
+        },
+        {
+          "text": "A quiet room helps you read.",
+          "speaker": "jenny",
+          "audio": "audio/library-rules/10.mp3"
+        },
+        {
+          "text": "The library is a quiet place.",
+          "speaker": "jenny",
+          "audio": "audio/library-rules/11.mp3"
+        },
+        {
+          "text": "Please be quiet near other people.",
+          "speaker": "jenny",
+          "audio": "audio/library-rules/12.mp3"
+        },
+        {
+          "text": "Quiet helps people read and think.",
+          "speaker": "jenny",
+          "audio": "audio/library-rules/13.mp3"
+        },
+        {
+          "text": "A rule says what you must do.",
+          "speaker": "jenny",
+          "audio": "audio/library-rules/14.mp3"
+        },
+        {
+          "text": "It can say what not to do.",
+          "speaker": "jenny",
+          "audio": "audio/library-rules/15.mp3"
+        },
+        {
+          "text": "One rule says to be quiet.",
+          "speaker": "jenny",
+          "audio": "audio/library-rules/16.mp3"
+        },
+        {
+          "text": "The rule is on a wall sign.",
+          "speaker": "jenny",
+          "audio": "audio/library-rules/17.mp3"
+        },
+        {
+          "text": "Every person must follow the rule.",
+          "speaker": "jenny",
+          "audio": "audio/library-rules/18.mp3"
+        },
+        {
+          "text": "Whisper means you use a soft voice.",
+          "speaker": "jenny",
+          "audio": "audio/library-rules/19.mp3"
+        },
+        {
+          "text": "Other people can just hear you.",
+          "speaker": "jenny",
+          "audio": "audio/library-rules/20.mp3"
+        },
+        {
+          "text": "I whisper a word to my friend.",
+          "speaker": "jenny",
+          "audio": "audio/library-rules/21.mp3"
+        },
+        {
+          "text": "Please whisper when you are there.",
+          "speaker": "jenny",
+          "audio": "audio/library-rules/22.mp3"
+        },
+        {
+          "text": "Please do not shout, just whisper.",
+          "speaker": "jenny",
+          "audio": "audio/library-rules/23.mp3"
+        },
+        {
+          "text": "The library has one clear rule.",
+          "speaker": "jenny",
+          "audio": "audio/library-rules/24.mp3"
+        },
+        {
+          "text": "That rule says to stay quiet.",
+          "speaker": "jenny",
+          "audio": "audio/library-rules/25.mp3"
+        },
+        {
+          "text": "So we whisper and do not shout.",
+          "speaker": "jenny",
+          "audio": "audio/library-rules/26.mp3"
+        },
+        {
+          "text": "Quiet, rule, and whisper go together.",
+          "speaker": "jenny",
+          "audio": "audio/library-rules/27.mp3"
+        },
+        {
+          "text": "These three words are library rules.",
+          "speaker": "jenny",
+          "audio": "audio/library-rules/28.mp3"
+        },
+        {
+          "text": "Follow the rule and stay quiet.",
+          "speaker": "jenny",
+          "audio": "audio/library-rules/29.mp3"
+        },
+        {
+          "text": "A soft whisper keeps the room quiet.",
+          "speaker": "jenny",
+          "audio": "audio/library-rules/30.mp3"
+        }
+      ]
+    },
+    {
+      "id": "borrow",
+      "center": "borrow",
+      "parent_unit": "library",
+      "scene": "library",
+      "scene_label": "At the library",
+      "story_link": "I borrow one book from the library. I can return the book soon. Or I can renew the book. I must do this before the deadline.",
+      "center_word": {
+        "word": "borrow",
+        "ipa": "/ˈbɑːroʊ/",
+        "pos": "verb",
+        "gloss": "借入",
+        "definition": "You take something for a short time. You will give it back."
+      },
+      "words": [
+        {
+          "word": "return",
+          "ipa": "/rɪˈtɜːrn/",
+          "pos": "verb",
+          "gloss": "歸還",
+          "definition": "You give something back. It goes back to its place."
+        },
+        {
+          "word": "renew",
+          "ipa": "/rɪˈnuː/",
+          "pos": "verb",
+          "gloss": "續借",
+          "definition": "You ask for more time. You can keep the book longer."
+        },
+        {
+          "word": "deadline",
+          "ipa": "/ˈdedlaɪn/",
+          "pos": "noun",
+          "gloss": "截止日",
+          "definition": "A deadline is the last day. You must finish before that day."
+        }
+      ],
+      "sentences": [
+        {
+          "text": "Borrow means you take a book.",
+          "speaker": "jenny",
+          "audio": "audio/borrow/01.mp3"
+        },
+        {
+          "text": "The book is not your book.",
+          "speaker": "jenny",
+          "audio": "audio/borrow/02.mp3"
+        },
+        {
+          "text": "You may keep it for some time.",
+          "speaker": "jenny",
+          "audio": "audio/borrow/03.mp3"
+        },
+        {
+          "text": "Then you must give the book back.",
+          "speaker": "jenny",
+          "audio": "audio/borrow/04.mp3"
+        },
+        {
+          "text": "People borrow books at the library.",
+          "speaker": "jenny",
+          "audio": "audio/borrow/05.mp3"
+        },
+        {
+          "text": "I borrow one book from the library.",
+          "speaker": "jenny",
+          "audio": "audio/borrow/06.mp3"
+        },
+        {
+          "text": "I can return the book soon.",
+          "speaker": "jenny",
+          "audio": "audio/borrow/07.mp3"
+        },
+        {
+          "text": "Or I can renew the book.",
+          "speaker": "jenny",
+          "audio": "audio/borrow/08.mp3"
+        },
+        {
+          "text": "I must do this before the deadline.",
+          "speaker": "jenny",
+          "audio": "audio/borrow/09.mp3"
+        },
+        {
+          "text": "Return means you give the book back.",
+          "speaker": "jenny",
+          "audio": "audio/borrow/10.mp3"
+        },
+        {
+          "text": "The library gets that book again.",
+          "speaker": "jenny",
+          "audio": "audio/borrow/11.mp3"
+        },
+        {
+          "text": "I return the book on Friday.",
+          "speaker": "jenny",
+          "audio": "audio/borrow/12.mp3"
+        },
+        {
+          "text": "Please return it before the deadline.",
+          "speaker": "jenny",
+          "audio": "audio/borrow/13.mp3"
+        },
+        {
+          "text": "Do not return the book late.",
+          "speaker": "jenny",
+          "audio": "audio/borrow/14.mp3"
+        },
+        {
+          "text": "Renew means you ask for more time.",
+          "speaker": "jenny",
+          "audio": "audio/borrow/15.mp3"
+        },
+        {
+          "text": "Then you can keep the book longer.",
+          "speaker": "jenny",
+          "audio": "audio/borrow/16.mp3"
+        },
+        {
+          "text": "I renew the book at the desk.",
+          "speaker": "jenny",
+          "audio": "audio/borrow/17.mp3"
+        },
+        {
+          "text": "You can renew a book one time.",
+          "speaker": "jenny",
+          "audio": "audio/borrow/18.mp3"
+        },
+        {
+          "text": "Please renew it before the deadline.",
+          "speaker": "jenny",
+          "audio": "audio/borrow/19.mp3"
+        },
+        {
+          "text": "A deadline is the last day.",
+          "speaker": "jenny",
+          "audio": "audio/borrow/20.mp3"
+        },
+        {
+          "text": "You must finish before that day.",
+          "speaker": "jenny",
+          "audio": "audio/borrow/21.mp3"
+        },
+        {
+          "text": "My book deadline is next Monday.",
+          "speaker": "jenny",
+          "audio": "audio/borrow/22.mp3"
+        },
+        {
+          "text": "I check the deadline on my card.",
+          "speaker": "jenny",
+          "audio": "audio/borrow/23.mp3"
+        },
+        {
+          "text": "Please do not miss the deadline.",
+          "speaker": "jenny",
+          "audio": "audio/borrow/24.mp3"
+        },
+        {
+          "text": "I borrow a book from the library.",
+          "speaker": "jenny",
+          "audio": "audio/borrow/25.mp3"
+        },
+        {
+          "text": "I can return the book on time.",
+          "speaker": "jenny",
+          "audio": "audio/borrow/26.mp3"
+        },
+        {
+          "text": "Or I renew it and keep it.",
+          "speaker": "jenny",
+          "audio": "audio/borrow/27.mp3"
+        },
+        {
+          "text": "I must choose before the deadline.",
+          "speaker": "jenny",
+          "audio": "audio/borrow/28.mp3"
+        },
+        {
+          "text": "Return, renew, and deadline go together.",
+          "speaker": "jenny",
+          "audio": "audio/borrow/29.mp3"
+        }
+      ]
+    },
+    {
+      "id": "shelf",
+      "center": "shelf",
+      "parent_unit": "library",
+      "scene": "library",
+      "scene_label": "At the library",
+      "story_link": "Books by one author stay together. You find them in one section. A label shows the author name. That label is on the shelf.",
+      "center_word": {
+        "word": "shelf",
+        "ipa": "/ʃelf/",
+        "pos": "noun",
+        "gloss": "書架",
+        "definition": "A shelf is a long flat board. You put books on it."
+      },
+      "words": [
+        {
+          "word": "section",
+          "ipa": "/ˈsekʃən/",
+          "pos": "noun",
+          "gloss": "書區",
+          "definition": "A section is one part of a place. One kind of book stays there."
+        },
+        {
+          "word": "label",
+          "ipa": "/ˈleɪbəl/",
+          "pos": "noun",
+          "gloss": "標籤",
+          "definition": "A label is a small sign with words. It tells you a name."
+        },
+        {
+          "word": "author",
+          "ipa": "/ˈɔːθər/",
+          "pos": "noun",
+          "gloss": "作者",
+          "definition": "An author is a person who writes a book."
+        }
+      ],
+      "sentences": [
+        {
+          "text": "A shelf is a long flat board.",
+          "speaker": "jenny",
+          "audio": "audio/shelf/01.mp3"
+        },
+        {
+          "text": "Books stand in a line on it.",
+          "speaker": "jenny",
+          "audio": "audio/shelf/02.mp3"
+        },
+        {
+          "text": "The library has shelf after shelf.",
+          "speaker": "jenny",
+          "audio": "audio/shelf/03.mp3"
+        },
+        {
+          "text": "Each shelf is in one section.",
+          "speaker": "jenny",
+          "audio": "audio/shelf/04.mp3"
+        },
+        {
+          "text": "Look on the shelf for your book.",
+          "speaker": "jenny",
+          "audio": "audio/shelf/05.mp3"
+        },
+        {
+          "text": "Books by one author stay together.",
+          "speaker": "jenny",
+          "audio": "audio/shelf/06.mp3"
+        },
+        {
+          "text": "You find them in one section.",
+          "speaker": "jenny",
+          "audio": "audio/shelf/07.mp3"
+        },
+        {
+          "text": "A label shows the author name.",
+          "speaker": "jenny",
+          "audio": "audio/shelf/08.mp3"
+        },
+        {
+          "text": "That label is on the shelf.",
+          "speaker": "jenny",
+          "audio": "audio/shelf/09.mp3"
+        },
+        {
+          "text": "A section is a part of the library.",
+          "speaker": "jenny",
+          "audio": "audio/shelf/10.mp3"
+        },
+        {
+          "text": "The same kind of book stays there.",
+          "speaker": "jenny",
+          "audio": "audio/shelf/11.mp3"
+        },
+        {
+          "text": "I walk to the story section.",
+          "speaker": "jenny",
+          "audio": "audio/shelf/12.mp3"
+        },
+        {
+          "text": "The map section is over there.",
+          "speaker": "jenny",
+          "audio": "audio/shelf/13.mp3"
+        },
+        {
+          "text": "Every section has its own shelf.",
+          "speaker": "jenny",
+          "audio": "audio/shelf/14.mp3"
+        },
+        {
+          "text": "A label is a small paper sign.",
+          "speaker": "jenny",
+          "audio": "audio/shelf/15.mp3"
+        },
+        {
+          "text": "It has a few words on it.",
+          "speaker": "jenny",
+          "audio": "audio/shelf/16.mp3"
+        },
+        {
+          "text": "This label shows the author name.",
+          "speaker": "jenny",
+          "audio": "audio/shelf/17.mp3"
+        },
+        {
+          "text": "Read the label before you look.",
+          "speaker": "jenny",
+          "audio": "audio/shelf/18.mp3"
+        },
+        {
+          "text": "The label is on the shelf.",
+          "speaker": "jenny",
+          "audio": "audio/shelf/19.mp3"
+        },
+        {
+          "text": "An author is a person who writes.",
+          "speaker": "jenny",
+          "audio": "audio/shelf/20.mp3"
+        },
+        {
+          "text": "The author writes the whole book.",
+          "speaker": "jenny",
+          "audio": "audio/shelf/21.mp3"
+        },
+        {
+          "text": "The author name is on the book.",
+          "speaker": "jenny",
+          "audio": "audio/shelf/22.mp3"
+        },
+        {
+          "text": "I want books by this author.",
+          "speaker": "jenny",
+          "audio": "audio/shelf/23.mp3"
+        },
+        {
+          "text": "The label helps me find the author.",
+          "speaker": "jenny",
+          "audio": "audio/shelf/24.mp3"
+        },
+        {
+          "text": "I want books by one author.",
+          "speaker": "jenny",
+          "audio": "audio/shelf/25.mp3"
+        },
+        {
+          "text": "I go to the right section.",
+          "speaker": "jenny",
+          "audio": "audio/shelf/26.mp3"
+        },
+        {
+          "text": "I read the label on the shelf.",
+          "speaker": "jenny",
+          "audio": "audio/shelf/27.mp3"
+        },
+        {
+          "text": "Then I find the right book.",
+          "speaker": "jenny",
+          "audio": "audio/shelf/28.mp3"
+        },
+        {
+          "text": "Section, label, and author go together.",
+          "speaker": "jenny",
+          "audio": "audio/shelf/29.mp3"
+        }
+      ]
+    },
+    {
+      "id": "deadline",
+      "center": "deadline",
+      "parent_unit": "borrow",
+      "scene": "school",
+      "scene_label": "At school",
+      "story_link": "I have one assignment for school. The assignment is on my schedule. A delay can make me miss the deadline.",
+      "center_word": {
+        "word": "deadline",
+        "ipa": "/ˈdedlaɪn/",
+        "pos": "noun",
+        "gloss": "截止日",
+        "definition": "A deadline is the last day. You must finish before that day."
+      },
+      "words": [
+        {
+          "word": "assignment",
+          "ipa": "/əˈsaɪnmənt/",
+          "pos": "noun",
+          "gloss": "作業",
+          "definition": "An assignment is work from the teacher. You must do the work."
+        },
+        {
+          "word": "schedule",
+          "ipa": "/ˈskedʒuːl/",
+          "pos": "noun",
+          "gloss": "時間表",
+          "definition": "A schedule is a plan of times. It says when you do each thing."
+        },
+        {
+          "word": "delay",
+          "ipa": "/dɪˈleɪ/",
+          "pos": "noun",
+          "gloss": "延誤",
+          "definition": "A delay means something is late. It does not happen on time."
+        }
+      ],
+      "sentences": [
+        {
+          "text": "A deadline is the last day.",
+          "speaker": "jenny",
+          "audio": "audio/deadline/01.mp3"
+        },
+        {
+          "text": "You must finish before that day.",
+          "speaker": "jenny",
+          "audio": "audio/deadline/02.mp3"
+        },
+        {
+          "text": "School work has a deadline too.",
+          "speaker": "jenny",
+          "audio": "audio/deadline/03.mp3"
+        },
+        {
+          "text": "The teacher tells you the day.",
+          "speaker": "jenny",
+          "audio": "audio/deadline/04.mp3"
+        },
+        {
+          "text": "My deadline is on a Friday.",
+          "speaker": "jenny",
+          "audio": "audio/deadline/05.mp3"
+        },
+        {
+          "text": "I have one assignment for school.",
+          "speaker": "jenny",
+          "audio": "audio/deadline/06.mp3"
+        },
+        {
+          "text": "The assignment is on my schedule.",
+          "speaker": "jenny",
+          "audio": "audio/deadline/07.mp3"
+        },
+        {
+          "text": "A delay can make me miss the deadline.",
+          "speaker": "jenny",
+          "audio": "audio/deadline/08.mp3"
+        },
+        {
+          "text": "An assignment is work from your teacher.",
+          "speaker": "jenny",
+          "audio": "audio/deadline/09.mp3"
+        },
+        {
+          "text": "You must do the assignment yourself.",
+          "speaker": "jenny",
+          "audio": "audio/deadline/10.mp3"
+        },
+        {
+          "text": "My assignment is to write a page.",
+          "speaker": "jenny",
+          "audio": "audio/deadline/11.mp3"
+        },
+        {
+          "text": "I start the assignment very early.",
+          "speaker": "jenny",
+          "audio": "audio/deadline/12.mp3"
+        },
+        {
+          "text": "The assignment has a clear deadline.",
+          "speaker": "jenny",
+          "audio": "audio/deadline/13.mp3"
+        },
+        {
+          "text": "A schedule is a plan of time.",
+          "speaker": "jenny",
+          "audio": "audio/deadline/14.mp3"
+        },
+        {
+          "text": "It shows what you do each day.",
+          "speaker": "jenny",
+          "audio": "audio/deadline/15.mp3"
+        },
+        {
+          "text": "I put the deadline on my schedule.",
+          "speaker": "jenny",
+          "audio": "audio/deadline/16.mp3"
+        },
+        {
+          "text": "I read my schedule every morning.",
+          "speaker": "jenny",
+          "audio": "audio/deadline/17.mp3"
+        },
+        {
+          "text": "A good schedule helps you finish.",
+          "speaker": "jenny",
+          "audio": "audio/deadline/18.mp3"
+        },
+        {
+          "text": "A delay means something is late.",
+          "speaker": "jenny",
+          "audio": "audio/deadline/19.mp3"
+        },
+        {
+          "text": "It does not happen on time.",
+          "speaker": "jenny",
+          "audio": "audio/deadline/20.mp3"
+        },
+        {
+          "text": "A delay can make the assignment late.",
+          "speaker": "jenny",
+          "audio": "audio/deadline/21.mp3"
+        },
+        {
+          "text": "A long delay is a big problem.",
+          "speaker": "jenny",
+          "audio": "audio/deadline/22.mp3"
+        },
+        {
+          "text": "I do not want a delay.",
+          "speaker": "jenny",
+          "audio": "audio/deadline/23.mp3"
+        },
+        {
+          "text": "I see my assignment on the schedule.",
+          "speaker": "jenny",
+          "audio": "audio/deadline/24.mp3"
+        },
+        {
+          "text": "My schedule shows the deadline day.",
+          "speaker": "jenny",
+          "audio": "audio/deadline/25.mp3"
+        },
+        {
+          "text": "A delay can make the work late.",
+          "speaker": "jenny",
+          "audio": "audio/deadline/26.mp3"
+        },
+        {
+          "text": "So I finish before the deadline.",
+          "speaker": "jenny",
+          "audio": "audio/deadline/27.mp3"
+        },
+        {
+          "text": "Assignment, schedule, and delay go together.",
+          "speaker": "jenny",
+          "audio": "audio/deadline/28.mp3"
+        },
+        {
+          "text": "I remember the deadline each day.",
+          "speaker": "jenny",
+          "audio": "audio/deadline/29.mp3"
+        }
+      ]
+    },
+    {
+      "id": "assignment",
+      "center": "assignment",
+      "parent_unit": "deadline",
+      "scene": "school",
+      "scene_label": "At school",
+      "story_link": "First I write a short draft. Then I submit my school assignment. The teacher gives me a grade.",
+      "center_word": {
+        "word": "assignment",
+        "ipa": "/əˈsaɪnmənt/",
+        "pos": "noun",
+        "gloss": "作業",
+        "definition": "An assignment is work from the teacher. You must do the work."
+      },
+      "words": [
+        {
+          "word": "submit",
+          "ipa": "/səbˈmɪt/",
+          "pos": "verb",
+          "gloss": "繳交",
+          "definition": "You give your work to the teacher. Then the teacher has your work."
+        },
+        {
+          "word": "draft",
+          "ipa": "/dræft/",
+          "pos": "noun",
+          "gloss": "草稿",
+          "definition": "A draft is a first copy. It is not finished yet."
+        },
+        {
+          "word": "grade",
+          "ipa": "/ɡreɪd/",
+          "pos": "noun",
+          "gloss": "分數",
+          "definition": "A grade is a number from the teacher. It shows how good your work is."
+        }
+      ],
+      "sentences": [
+        {
+          "text": "An assignment is work for school.",
+          "speaker": "jenny",
+          "audio": "audio/assignment/01.mp3"
+        },
+        {
+          "text": "Your teacher gives it to you.",
+          "speaker": "jenny",
+          "audio": "audio/assignment/02.mp3"
+        },
+        {
+          "text": "You must finish the whole assignment.",
+          "speaker": "jenny",
+          "audio": "audio/assignment/03.mp3"
+        },
+        {
+          "text": "Your assignment has a clear deadline.",
+          "speaker": "jenny",
+          "audio": "audio/assignment/04.mp3"
+        },
+        {
+          "text": "Then you give it to the teacher.",
+          "speaker": "jenny",
+          "audio": "audio/assignment/05.mp3"
+        },
+        {
+          "text": "First I write a short draft.",
+          "speaker": "jenny",
+          "audio": "audio/assignment/06.mp3"
+        },
+        {
+          "text": "A draft is only my first copy.",
+          "speaker": "jenny",
+          "audio": "audio/assignment/07.mp3"
+        },
+        {
+          "text": "Then I submit my school assignment.",
+          "speaker": "jenny",
+          "audio": "audio/assignment/08.mp3"
+        },
+        {
+          "text": "The teacher gives me a grade.",
+          "speaker": "jenny",
+          "audio": "audio/assignment/09.mp3"
+        },
+        {
+          "text": "Submit means the teacher gets your work.",
+          "speaker": "jenny",
+          "audio": "audio/assignment/10.mp3"
+        },
+        {
+          "text": "You give the assignment to the teacher.",
+          "speaker": "jenny",
+          "audio": "audio/assignment/11.mp3"
+        },
+        {
+          "text": "I submit the assignment on Friday.",
+          "speaker": "jenny",
+          "audio": "audio/assignment/12.mp3"
+        },
+        {
+          "text": "Please submit it before the deadline.",
+          "speaker": "jenny",
+          "audio": "audio/assignment/13.mp3"
+        },
+        {
+          "text": "Do not submit the assignment late.",
+          "speaker": "jenny",
+          "audio": "audio/assignment/14.mp3"
+        },
+        {
+          "text": "A draft is your first copy.",
+          "speaker": "jenny",
+          "audio": "audio/assignment/15.mp3"
+        },
+        {
+          "text": "A draft is not the last copy.",
+          "speaker": "jenny",
+          "audio": "audio/assignment/16.mp3"
+        },
+        {
+          "text": "I write the draft on paper.",
+          "speaker": "jenny",
+          "audio": "audio/assignment/17.mp3"
+        },
+        {
+          "text": "I read the draft and fix words.",
+          "speaker": "jenny",
+          "audio": "audio/assignment/18.mp3"
+        },
+        {
+          "text": "Then I can submit that draft.",
+          "speaker": "jenny",
+          "audio": "audio/assignment/19.mp3"
+        },
+        {
+          "text": "A grade is a number from the teacher.",
+          "speaker": "jenny",
+          "audio": "audio/assignment/20.mp3"
+        },
+        {
+          "text": "It shows how good the work is.",
+          "speaker": "jenny",
+          "audio": "audio/assignment/21.mp3"
+        },
+        {
+          "text": "I hope for a good grade.",
+          "speaker": "jenny",
+          "audio": "audio/assignment/22.mp3"
+        },
+        {
+          "text": "The grade comes after I submit.",
+          "speaker": "jenny",
+          "audio": "audio/assignment/23.mp3"
+        },
+        {
+          "text": "A good draft can help the grade.",
+          "speaker": "jenny",
+          "audio": "audio/assignment/24.mp3"
+        },
+        {
+          "text": "I write a draft of my assignment.",
+          "speaker": "jenny",
+          "audio": "audio/assignment/25.mp3"
+        },
+        {
+          "text": "I read the draft and fix it.",
+          "speaker": "jenny",
+          "audio": "audio/assignment/26.mp3"
+        },
+        {
+          "text": "I submit the assignment on time.",
+          "speaker": "jenny",
+          "audio": "audio/assignment/27.mp3"
+        },
+        {
+          "text": "Then the teacher gives a grade.",
+          "speaker": "jenny",
+          "audio": "audio/assignment/28.mp3"
+        },
+        {
+          "text": "Draft, submit, and grade go together.",
+          "speaker": "jenny",
+          "audio": "audio/assignment/29.mp3"
+        }
+      ]
+    },
+    {
+      "id": "delay",
+      "center": "delay",
+      "parent_unit": "deadline",
+      "scene": "travel",
+      "scene_label": "On a trip",
+      "story_link": "There is heavy traffic on the road. That traffic can make me late. Then I may miss my flight. So I may cancel the flight.",
+      "center_word": {
+        "word": "delay",
+        "ipa": "/dɪˈleɪ/",
+        "pos": "noun",
+        "gloss": "延誤",
+        "definition": "A delay means something is late. It does not happen on time."
+      },
+      "words": [
+        {
+          "word": "traffic",
+          "ipa": "/ˈtræfɪk/",
+          "pos": "noun",
+          "gloss": "交通",
+          "definition": "Traffic is many cars on the road. The cars often move slowly."
+        },
+        {
+          "word": "flight",
+          "ipa": "/flaɪt/",
+          "pos": "noun",
+          "gloss": "班機",
+          "definition": "A flight is a trip on a plane."
+        },
+        {
+          "word": "cancel",
+          "ipa": "/ˈkænsəl/",
+          "pos": "verb",
+          "gloss": "取消",
+          "definition": "You stop a plan. The plan will not happen."
+        }
+      ],
+      "sentences": [
+        {
+          "text": "A delay means something is late.",
+          "speaker": "jenny",
+          "audio": "audio/delay/01.mp3"
+        },
+        {
+          "text": "It does not happen on time.",
+          "speaker": "jenny",
+          "audio": "audio/delay/02.mp3"
+        },
+        {
+          "text": "A trip can have a delay too.",
+          "speaker": "jenny",
+          "audio": "audio/delay/03.mp3"
+        },
+        {
+          "text": "You can arrive late for a plane.",
+          "speaker": "jenny",
+          "audio": "audio/delay/04.mp3"
+        },
+        {
+          "text": "This story is about one trip.",
+          "speaker": "jenny",
+          "audio": "audio/delay/05.mp3"
+        },
+        {
+          "text": "There is heavy traffic on the road.",
+          "speaker": "jenny",
+          "audio": "audio/delay/06.mp3"
+        },
+        {
+          "text": "That traffic can make me late.",
+          "speaker": "jenny",
+          "audio": "audio/delay/07.mp3"
+        },
+        {
+          "text": "Then I may miss my flight.",
+          "speaker": "jenny",
+          "audio": "audio/delay/08.mp3"
+        },
+        {
+          "text": "So I may cancel the flight.",
+          "speaker": "jenny",
+          "audio": "audio/delay/09.mp3"
+        },
+        {
+          "text": "Traffic means many cars on the road.",
+          "speaker": "jenny",
+          "audio": "audio/delay/10.mp3"
+        },
+        {
+          "text": "Those cars all move very slowly.",
+          "speaker": "jenny",
+          "audio": "audio/delay/11.mp3"
+        },
+        {
+          "text": "Heavy traffic can make a person late.",
+          "speaker": "jenny",
+          "audio": "audio/delay/12.mp3"
+        },
+        {
+          "text": "The traffic is bad this morning.",
+          "speaker": "jenny",
+          "audio": "audio/delay/13.mp3"
+        },
+        {
+          "text": "I wait in traffic before the flight.",
+          "speaker": "jenny",
+          "audio": "audio/delay/14.mp3"
+        },
+        {
+          "text": "A flight is a trip by plane.",
+          "speaker": "jenny",
+          "audio": "audio/delay/15.mp3"
+        },
+        {
+          "text": "My flight leaves at noon today.",
+          "speaker": "jenny",
+          "audio": "audio/delay/16.mp3"
+        },
+        {
+          "text": "I must arrive before the flight.",
+          "speaker": "jenny",
+          "audio": "audio/delay/17.mp3"
+        },
+        {
+          "text": "Be late, and you miss the flight.",
+          "speaker": "jenny",
+          "audio": "audio/delay/18.mp3"
+        },
+        {
+          "text": "A long delay can change the flight.",
+          "speaker": "jenny",
+          "audio": "audio/delay/19.mp3"
+        },
+        {
+          "text": "Cancel means you stop the plan.",
+          "speaker": "jenny",
+          "audio": "audio/delay/20.mp3"
+        },
+        {
+          "text": "After that, it will not happen.",
+          "speaker": "jenny",
+          "audio": "audio/delay/21.mp3"
+        },
+        {
+          "text": "I may cancel my flight today.",
+          "speaker": "jenny",
+          "audio": "audio/delay/22.mp3"
+        },
+        {
+          "text": "They may also cancel the flight.",
+          "speaker": "jenny",
+          "audio": "audio/delay/23.mp3"
+        },
+        {
+          "text": "Bad traffic can make you cancel.",
+          "speaker": "jenny",
+          "audio": "audio/delay/24.mp3"
+        },
+        {
+          "text": "Heavy traffic makes me very late.",
+          "speaker": "jenny",
+          "audio": "audio/delay/25.mp3"
+        },
+        {
+          "text": "I may miss my flight today.",
+          "speaker": "jenny",
+          "audio": "audio/delay/26.mp3"
+        },
+        {
+          "text": "Then I may cancel the flight.",
+          "speaker": "jenny",
+          "audio": "audio/delay/27.mp3"
+        },
+        {
+          "text": "Traffic, flight, and cancel go together.",
+          "speaker": "jenny",
+          "audio": "audio/delay/28.mp3"
+        },
+        {
+          "text": "A delay can change the whole trip.",
+          "speaker": "jenny",
+          "audio": "audio/delay/29.mp3"
+        }
+      ]
+    }
+  ]
+}
