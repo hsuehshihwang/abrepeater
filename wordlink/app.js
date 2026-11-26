@@ -8,7 +8,7 @@ var state = {
   speed: 1,
   hide: false,
   gloss: true,
-  autoNext: false,
+  afterUnit: "stop",
   carryPlay: "",
   index: -1,
   playing: false,
@@ -114,7 +114,8 @@ function loadSettings() {
     if (typeof saved.speed === "number") state.speed = clampSpeed(saved.speed);
     if (typeof saved.hide === "boolean") state.hide = saved.hide;
     if (typeof saved.gloss === "boolean") state.gloss = saved.gloss;
-    if (typeof saved.autoNext === "boolean") state.autoNext = saved.autoNext;
+    if (saved.afterUnit === "stop" || saved.afterUnit === "repeat" || saved.afterUnit === "next") state.afterUnit = saved.afterUnit;
+    else if (saved.autoNext === true) state.afterUnit = "next";
   } catch (e) {}
 }
 function saveSettings() {
@@ -125,7 +126,7 @@ function saveSettings() {
       speed: state.speed,
       hide: state.hide,
       gloss: state.gloss,
-      autoNext: state.autoNext
+      afterUnit: state.afterUnit
     }));
   } catch (e) {}
 }
@@ -396,7 +397,9 @@ function updateDock() {
   var playingAll = state.playing && state.mode === "all" ? "true" : "false";
   $("playAll").setAttribute("aria-pressed", playingAll);
   $("playAllDock").setAttribute("aria-pressed", playingAll);
-  $("autoNext").setAttribute("aria-pressed", state.autoNext ? "true" : "false");
+  Array.prototype.forEach.call($("afterSeg").querySelectorAll("button"), function (btn) {
+    btn.setAttribute("aria-pressed", btn.getAttribute("data-after") === state.afterUnit ? "true" : "false");
+  });
   Array.prototype.forEach.call($("repeatSeg").querySelectorAll("button"), function (btn) {
     var value = btn.getAttribute("data-repeat");
     var on = value === "inf" ? state.repeat === Infinity : Number(value) === state.repeat;
@@ -479,7 +482,8 @@ function playOnce(unit, index, doneBefore, token, mode) {
     var nxt = UNITS[unitIndex(unit) + 1];
     if (finished < state.repeat) afterGap(token, function () { playOnce(unit, index, finished, token, mode); });
     else if (mode === "all" && index + 1 < unit.sentences.length) afterGap(token, function () { playOnce(unit, index + 1, 0, token, mode); });
-    else if (mode === "all" && state.autoNext && nxt) {
+    else if (mode === "all" && state.afterUnit === "repeat") afterGap(token, function () { playOnce(unit, 0, 0, token, mode); });
+    else if (mode === "all" && state.afterUnit === "next" && nxt) {
       state.note = "Next unit…";
       state.repNow = finished;
       highlight();
@@ -588,8 +592,12 @@ function bind() {
   function playAll() { startPlayback(0, "all"); }
   $("playAll").addEventListener("click", playAll);
   $("playAllDock").addEventListener("click", playAll);
-  $("autoNext").addEventListener("click", function () {
-    state.autoNext = !state.autoNext;
+  $("afterSeg").addEventListener("click", function (event) {
+    var btn = event.target.closest("button");
+    if (!btn) return;
+    var value = btn.getAttribute("data-after");
+    if (value !== "stop" && value !== "repeat" && value !== "next") return;
+    state.afterUnit = value;
     saveSettings();
     updateDock();
   });
