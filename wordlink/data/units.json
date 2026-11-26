@@ -4,15 +4,18 @@
     "rate": "-15%",
     "word_level": "B1",
     "english_level": "A1",
-    "note": "A unit's scene may differ from its parent. The three child words share one mini-scene."
+    "course": "chain",
+    "units": 20,
+    "note": "One chain. Exactly one child, the key, is the next unit's center. Scenes may change along the chain."
   },
   "units": [
     {
       "id": "library",
+      "number": 1,
       "center": "library",
-      "parent_unit": null,
       "scene": "library",
       "scene_label": "At the library",
+      "key": "return",
       "story_link": "I want to borrow a book. The book is on the shelf. I must return it before the due date.",
       "center_word": {
         "word": "library",
@@ -41,7 +44,8 @@
           "ipa": "/rɪˈtɜːrn/",
           "pos": "verb",
           "gloss": "歸還",
-          "definition": "You give something back. It goes back to its place."
+          "definition": "You give something back. It goes back to its place.",
+          "key": true
         }
       ],
       "sentences": [
@@ -193,217 +197,21 @@
       ]
     },
     {
-      "id": "library-rules",
-      "center": "library rules",
-      "parent_unit": null,
+      "id": "return",
+      "number": 2,
+      "center": "return",
       "scene": "library",
       "scene_label": "At the library",
-      "story_link": "One rule says to be quiet. So people whisper in the library.",
+      "key": "deadline",
+      "story_link": "I can renew the book today. Or I pay a small fine. Both of these come before the deadline.",
       "center_word": {
-        "word": "library rules",
-        "ipa": "/ˈlaɪbreri ruːlz/",
-        "pos": "noun",
-        "gloss": "圖書館規則",
-        "definition": "Library rules say what you must do there. They help keep the room quiet."
-      },
-      "words": [
-        {
-          "word": "quiet",
-          "ipa": "/ˈkwaɪət/",
-          "pos": "adjective",
-          "gloss": "安靜",
-          "definition": "Quiet means little noise. A quiet place is not loud."
-        },
-        {
-          "word": "rule",
-          "ipa": "/ruːl/",
-          "pos": "noun",
-          "gloss": "規則",
-          "definition": "A rule says what you can do. It also says what you cannot do."
-        },
-        {
-          "word": "whisper",
-          "ipa": "/ˈwɪspər/",
-          "pos": "verb",
-          "gloss": "小聲說",
-          "definition": "You speak in a very soft voice. People can just hear you."
-        }
-      ],
-      "sentences": [
-        {
-          "text": "Library rules help every person there.",
-          "speaker": "jenny",
-          "audio": "audio/library-rules/01.mp3"
-        },
-        {
-          "text": "A rule tells you what to do.",
-          "speaker": "jenny",
-          "audio": "audio/library-rules/02.mp3"
-        },
-        {
-          "text": "Please follow all the library rules.",
-          "speaker": "jenny",
-          "audio": "audio/library-rules/03.mp3"
-        },
-        {
-          "text": "Learn the library rules at the door.",
-          "speaker": "jenny",
-          "audio": "audio/library-rules/04.mp3"
-        },
-        {
-          "text": "One big rule is about noise.",
-          "speaker": "jenny",
-          "audio": "audio/library-rules/05.mp3"
-        },
-        {
-          "text": "One rule says to be quiet.",
-          "speaker": "jenny",
-          "audio": "audio/library-rules/06.mp3"
-        },
-        {
-          "text": "So people whisper in the library.",
-          "speaker": "jenny",
-          "audio": "audio/library-rules/07.mp3"
-        },
-        {
-          "text": "They keep their voices very soft.",
-          "speaker": "jenny",
-          "audio": "audio/library-rules/08.mp3"
-        },
-        {
-          "text": "Quiet means there is little noise.",
-          "speaker": "jenny",
-          "audio": "audio/library-rules/09.mp3"
-        },
-        {
-          "text": "A quiet room helps you read.",
-          "speaker": "jenny",
-          "audio": "audio/library-rules/10.mp3"
-        },
-        {
-          "text": "The library is a quiet place.",
-          "speaker": "jenny",
-          "audio": "audio/library-rules/11.mp3"
-        },
-        {
-          "text": "Please be quiet near other people.",
-          "speaker": "jenny",
-          "audio": "audio/library-rules/12.mp3"
-        },
-        {
-          "text": "Quiet helps people read and think.",
-          "speaker": "jenny",
-          "audio": "audio/library-rules/13.mp3"
-        },
-        {
-          "text": "A rule says what you must do.",
-          "speaker": "jenny",
-          "audio": "audio/library-rules/14.mp3"
-        },
-        {
-          "text": "It can say what not to do.",
-          "speaker": "jenny",
-          "audio": "audio/library-rules/15.mp3"
-        },
-        {
-          "text": "One rule says to be quiet.",
-          "speaker": "jenny",
-          "audio": "audio/library-rules/16.mp3"
-        },
-        {
-          "text": "The rule is on a wall sign.",
-          "speaker": "jenny",
-          "audio": "audio/library-rules/17.mp3"
-        },
-        {
-          "text": "Every person must follow the rule.",
-          "speaker": "jenny",
-          "audio": "audio/library-rules/18.mp3"
-        },
-        {
-          "text": "Whisper means you use a soft voice.",
-          "speaker": "jenny",
-          "audio": "audio/library-rules/19.mp3"
-        },
-        {
-          "text": "Other people can just hear you.",
-          "speaker": "jenny",
-          "audio": "audio/library-rules/20.mp3"
-        },
-        {
-          "text": "I whisper a word to my friend.",
-          "speaker": "jenny",
-          "audio": "audio/library-rules/21.mp3"
-        },
-        {
-          "text": "Please whisper when you are there.",
-          "speaker": "jenny",
-          "audio": "audio/library-rules/22.mp3"
-        },
-        {
-          "text": "Please do not shout, just whisper.",
-          "speaker": "jenny",
-          "audio": "audio/library-rules/23.mp3"
-        },
-        {
-          "text": "The library has one clear rule.",
-          "speaker": "jenny",
-          "audio": "audio/library-rules/24.mp3"
-        },
-        {
-          "text": "That rule says to stay quiet.",
-          "speaker": "jenny",
-          "audio": "audio/library-rules/25.mp3"
-        },
-        {
-          "text": "So we whisper and do not shout.",
-          "speaker": "jenny",
-          "audio": "audio/library-rules/26.mp3"
-        },
-        {
-          "text": "Quiet, rule, and whisper go together.",
-          "speaker": "jenny",
-          "audio": "audio/library-rules/27.mp3"
-        },
-        {
-          "text": "These three words are library rules.",
-          "speaker": "jenny",
-          "audio": "audio/library-rules/28.mp3"
-        },
-        {
-          "text": "Follow the rule and stay quiet.",
-          "speaker": "jenny",
-          "audio": "audio/library-rules/29.mp3"
-        },
-        {
-          "text": "A soft whisper keeps the room quiet.",
-          "speaker": "jenny",
-          "audio": "audio/library-rules/30.mp3"
-        }
-      ]
-    },
-    {
-      "id": "borrow",
-      "center": "borrow",
-      "parent_unit": "library",
-      "scene": "library",
-      "scene_label": "At the library",
-      "story_link": "I borrow one book from the library. I can return the book soon. Or I can renew the book. I must do this before the deadline.",
-      "center_word": {
-        "word": "borrow",
-        "ipa": "/ˈbɑːroʊ/",
+        "word": "return",
+        "ipa": "/rɪˈtɜːrn/",
         "pos": "verb",
-        "gloss": "借入",
-        "definition": "You take something for a short time. You will give it back."
+        "gloss": "歸還",
+        "definition": "You give something back. It goes back to its place."
       },
       "words": [
-        {
-          "word": "return",
-          "ipa": "/rɪˈtɜːrn/",
-          "pos": "verb",
-          "gloss": "歸還",
-          "definition": "You give something back. It goes back to its place."
-        },
         {
           "word": "renew",
           "ipa": "/rɪˈnuː/",
@@ -412,352 +220,166 @@
           "definition": "You ask for more time. You can keep the book longer."
         },
         {
+          "word": "fine",
+          "ipa": "/faɪn/",
+          "pos": "noun",
+          "gloss": "罰款",
+          "definition": "A fine is money you must pay. You pay it when you are late."
+        },
+        {
           "word": "deadline",
           "ipa": "/ˈdedlaɪn/",
           "pos": "noun",
           "gloss": "截止日",
-          "definition": "A deadline is the last day. You must finish before that day."
+          "definition": "A deadline is the last day. You must finish before that day.",
+          "key": true
         }
       ],
       "sentences": [
         {
-          "text": "Borrow means you take a book.",
+          "text": "Return means you give a book back.",
           "speaker": "jenny",
-          "audio": "audio/borrow/01.mp3"
+          "audio": "audio/return/01.mp3"
         },
         {
-          "text": "The book is not your book.",
+          "text": "The book goes to the library.",
           "speaker": "jenny",
-          "audio": "audio/borrow/02.mp3"
+          "audio": "audio/return/02.mp3"
         },
         {
-          "text": "You may keep it for some time.",
+          "text": "You do not keep it forever.",
           "speaker": "jenny",
-          "audio": "audio/borrow/03.mp3"
+          "audio": "audio/return/03.mp3"
         },
         {
-          "text": "Then you must give the book back.",
+          "text": "You bring the book back on time.",
           "speaker": "jenny",
-          "audio": "audio/borrow/04.mp3"
+          "audio": "audio/return/04.mp3"
         },
         {
-          "text": "People borrow books at the library.",
+          "text": "A late return can cost money.",
           "speaker": "jenny",
-          "audio": "audio/borrow/05.mp3"
+          "audio": "audio/return/05.mp3"
         },
         {
-          "text": "I borrow one book from the library.",
+          "text": "I can renew the book today.",
           "speaker": "jenny",
-          "audio": "audio/borrow/06.mp3"
+          "audio": "audio/return/06.mp3"
         },
         {
-          "text": "I can return the book soon.",
+          "text": "Or I pay a small fine.",
           "speaker": "jenny",
-          "audio": "audio/borrow/07.mp3"
+          "audio": "audio/return/07.mp3"
         },
         {
-          "text": "Or I can renew the book.",
+          "text": "Both of these come before the deadline.",
           "speaker": "jenny",
-          "audio": "audio/borrow/08.mp3"
-        },
-        {
-          "text": "I must do this before the deadline.",
-          "speaker": "jenny",
-          "audio": "audio/borrow/09.mp3"
-        },
-        {
-          "text": "Return means you give the book back.",
-          "speaker": "jenny",
-          "audio": "audio/borrow/10.mp3"
-        },
-        {
-          "text": "The library gets that book again.",
-          "speaker": "jenny",
-          "audio": "audio/borrow/11.mp3"
-        },
-        {
-          "text": "I return the book on Friday.",
-          "speaker": "jenny",
-          "audio": "audio/borrow/12.mp3"
-        },
-        {
-          "text": "Please return it before the deadline.",
-          "speaker": "jenny",
-          "audio": "audio/borrow/13.mp3"
-        },
-        {
-          "text": "Do not return the book late.",
-          "speaker": "jenny",
-          "audio": "audio/borrow/14.mp3"
+          "audio": "audio/return/08.mp3"
         },
         {
           "text": "Renew means you ask for more time.",
           "speaker": "jenny",
-          "audio": "audio/borrow/15.mp3"
+          "audio": "audio/return/09.mp3"
         },
         {
-          "text": "Then you can keep the book longer.",
+          "text": "You may keep the book longer.",
           "speaker": "jenny",
-          "audio": "audio/borrow/16.mp3"
+          "audio": "audio/return/10.mp3"
         },
         {
           "text": "I renew the book at the desk.",
           "speaker": "jenny",
-          "audio": "audio/borrow/17.mp3"
+          "audio": "audio/return/11.mp3"
         },
         {
-          "text": "You can renew a book one time.",
+          "text": "You can renew it one time.",
           "speaker": "jenny",
-          "audio": "audio/borrow/18.mp3"
+          "audio": "audio/return/12.mp3"
         },
         {
           "text": "Please renew it before the deadline.",
           "speaker": "jenny",
-          "audio": "audio/borrow/19.mp3"
+          "audio": "audio/return/13.mp3"
+        },
+        {
+          "text": "A fine is money you must pay.",
+          "speaker": "jenny",
+          "audio": "audio/return/14.mp3"
+        },
+        {
+          "text": "You pay it when you are late.",
+          "speaker": "jenny",
+          "audio": "audio/return/15.mp3"
+        },
+        {
+          "text": "The fine is small but real.",
+          "speaker": "jenny",
+          "audio": "audio/return/16.mp3"
+        },
+        {
+          "text": "I do not want to pay a fine.",
+          "speaker": "jenny",
+          "audio": "audio/return/17.mp3"
+        },
+        {
+          "text": "Return the book and pay no fine.",
+          "speaker": "jenny",
+          "audio": "audio/return/18.mp3"
         },
         {
           "text": "A deadline is the last day.",
           "speaker": "jenny",
-          "audio": "audio/borrow/20.mp3"
+          "audio": "audio/return/19.mp3"
         },
         {
-          "text": "You must finish before that day.",
+          "text": "You must choose before that day.",
           "speaker": "jenny",
-          "audio": "audio/borrow/21.mp3"
+          "audio": "audio/return/20.mp3"
         },
         {
-          "text": "My book deadline is next Monday.",
+          "text": "The book deadline is next Monday.",
           "speaker": "jenny",
-          "audio": "audio/borrow/22.mp3"
+          "audio": "audio/return/21.mp3"
         },
         {
-          "text": "I check the deadline on my card.",
+          "text": "I check the deadline on the paper.",
           "speaker": "jenny",
-          "audio": "audio/borrow/23.mp3"
+          "audio": "audio/return/22.mp3"
         },
         {
           "text": "Please do not miss the deadline.",
           "speaker": "jenny",
-          "audio": "audio/borrow/24.mp3"
+          "audio": "audio/return/23.mp3"
         },
         {
-          "text": "I borrow a book from the library.",
+          "text": "I can renew the book for more time.",
           "speaker": "jenny",
-          "audio": "audio/borrow/25.mp3"
+          "audio": "audio/return/24.mp3"
         },
         {
-          "text": "I can return the book on time.",
+          "text": "I return the book before the deadline.",
           "speaker": "jenny",
-          "audio": "audio/borrow/26.mp3"
+          "audio": "audio/return/25.mp3"
         },
         {
-          "text": "Or I renew it and keep it.",
+          "text": "Renew, fine, and deadline go together.",
           "speaker": "jenny",
-          "audio": "audio/borrow/27.mp3"
+          "audio": "audio/return/26.mp3"
         },
         {
-          "text": "I must choose before the deadline.",
+          "text": "That is the story of one return.",
           "speaker": "jenny",
-          "audio": "audio/borrow/28.mp3"
-        },
-        {
-          "text": "Return, renew, and deadline go together.",
-          "speaker": "jenny",
-          "audio": "audio/borrow/29.mp3"
-        }
-      ]
-    },
-    {
-      "id": "shelf",
-      "center": "shelf",
-      "parent_unit": "library",
-      "scene": "library",
-      "scene_label": "At the library",
-      "story_link": "Books by one author stay together. You find them in one section. A label shows the author name. That label is on the shelf.",
-      "center_word": {
-        "word": "shelf",
-        "ipa": "/ʃelf/",
-        "pos": "noun",
-        "gloss": "書架",
-        "definition": "A shelf is a long flat board. You put books on it."
-      },
-      "words": [
-        {
-          "word": "section",
-          "ipa": "/ˈsekʃən/",
-          "pos": "noun",
-          "gloss": "書區",
-          "definition": "A section is one part of a place. One kind of book stays there."
-        },
-        {
-          "word": "label",
-          "ipa": "/ˈleɪbəl/",
-          "pos": "noun",
-          "gloss": "標籤",
-          "definition": "A label is a small sign with words. It tells you a name."
-        },
-        {
-          "word": "author",
-          "ipa": "/ˈɔːθər/",
-          "pos": "noun",
-          "gloss": "作者",
-          "definition": "An author is a person who writes a book."
-        }
-      ],
-      "sentences": [
-        {
-          "text": "A shelf is a long flat board.",
-          "speaker": "jenny",
-          "audio": "audio/shelf/01.mp3"
-        },
-        {
-          "text": "Books stand in a line on it.",
-          "speaker": "jenny",
-          "audio": "audio/shelf/02.mp3"
-        },
-        {
-          "text": "The library has shelf after shelf.",
-          "speaker": "jenny",
-          "audio": "audio/shelf/03.mp3"
-        },
-        {
-          "text": "Each shelf is in one section.",
-          "speaker": "jenny",
-          "audio": "audio/shelf/04.mp3"
-        },
-        {
-          "text": "Look on the shelf for your book.",
-          "speaker": "jenny",
-          "audio": "audio/shelf/05.mp3"
-        },
-        {
-          "text": "Books by one author stay together.",
-          "speaker": "jenny",
-          "audio": "audio/shelf/06.mp3"
-        },
-        {
-          "text": "You find them in one section.",
-          "speaker": "jenny",
-          "audio": "audio/shelf/07.mp3"
-        },
-        {
-          "text": "A label shows the author name.",
-          "speaker": "jenny",
-          "audio": "audio/shelf/08.mp3"
-        },
-        {
-          "text": "That label is on the shelf.",
-          "speaker": "jenny",
-          "audio": "audio/shelf/09.mp3"
-        },
-        {
-          "text": "A section is a part of the library.",
-          "speaker": "jenny",
-          "audio": "audio/shelf/10.mp3"
-        },
-        {
-          "text": "The same kind of book stays there.",
-          "speaker": "jenny",
-          "audio": "audio/shelf/11.mp3"
-        },
-        {
-          "text": "I walk to the story section.",
-          "speaker": "jenny",
-          "audio": "audio/shelf/12.mp3"
-        },
-        {
-          "text": "The map section is over there.",
-          "speaker": "jenny",
-          "audio": "audio/shelf/13.mp3"
-        },
-        {
-          "text": "Every section has its own shelf.",
-          "speaker": "jenny",
-          "audio": "audio/shelf/14.mp3"
-        },
-        {
-          "text": "A label is a small paper sign.",
-          "speaker": "jenny",
-          "audio": "audio/shelf/15.mp3"
-        },
-        {
-          "text": "It has a few words on it.",
-          "speaker": "jenny",
-          "audio": "audio/shelf/16.mp3"
-        },
-        {
-          "text": "This label shows the author name.",
-          "speaker": "jenny",
-          "audio": "audio/shelf/17.mp3"
-        },
-        {
-          "text": "Read the label before you look.",
-          "speaker": "jenny",
-          "audio": "audio/shelf/18.mp3"
-        },
-        {
-          "text": "The label is on the shelf.",
-          "speaker": "jenny",
-          "audio": "audio/shelf/19.mp3"
-        },
-        {
-          "text": "An author is a person who writes.",
-          "speaker": "jenny",
-          "audio": "audio/shelf/20.mp3"
-        },
-        {
-          "text": "The author writes the whole book.",
-          "speaker": "jenny",
-          "audio": "audio/shelf/21.mp3"
-        },
-        {
-          "text": "The author name is on the book.",
-          "speaker": "jenny",
-          "audio": "audio/shelf/22.mp3"
-        },
-        {
-          "text": "I want books by this author.",
-          "speaker": "jenny",
-          "audio": "audio/shelf/23.mp3"
-        },
-        {
-          "text": "The label helps me find the author.",
-          "speaker": "jenny",
-          "audio": "audio/shelf/24.mp3"
-        },
-        {
-          "text": "I want books by one author.",
-          "speaker": "jenny",
-          "audio": "audio/shelf/25.mp3"
-        },
-        {
-          "text": "I go to the right section.",
-          "speaker": "jenny",
-          "audio": "audio/shelf/26.mp3"
-        },
-        {
-          "text": "I read the label on the shelf.",
-          "speaker": "jenny",
-          "audio": "audio/shelf/27.mp3"
-        },
-        {
-          "text": "Then I find the right book.",
-          "speaker": "jenny",
-          "audio": "audio/shelf/28.mp3"
-        },
-        {
-          "text": "Section, label, and author go together.",
-          "speaker": "jenny",
-          "audio": "audio/shelf/29.mp3"
+          "audio": "audio/return/27.mp3"
         }
       ]
     },
     {
       "id": "deadline",
+      "number": 3,
       "center": "deadline",
-      "parent_unit": "borrow",
       "scene": "school",
       "scene_label": "At school",
+      "key": "delay",
       "story_link": "I have one assignment for school. The assignment is on my schedule. A delay can make me miss the deadline.",
       "center_word": {
         "word": "deadline",
@@ -786,7 +408,8 @@
           "ipa": "/dɪˈleɪ/",
           "pos": "noun",
           "gloss": "延誤",
-          "definition": "A delay means something is late. It does not happen on time."
+          "definition": "A delay means something is late. It does not happen on time.",
+          "key": true
         }
       ],
       "sentences": [
@@ -938,196 +561,12 @@
       ]
     },
     {
-      "id": "assignment",
-      "center": "assignment",
-      "parent_unit": "deadline",
-      "scene": "school",
-      "scene_label": "At school",
-      "story_link": "First I write a short draft. Then I submit my school assignment. The teacher gives me a grade.",
-      "center_word": {
-        "word": "assignment",
-        "ipa": "/əˈsaɪnmənt/",
-        "pos": "noun",
-        "gloss": "作業",
-        "definition": "An assignment is work from the teacher. You must do the work."
-      },
-      "words": [
-        {
-          "word": "submit",
-          "ipa": "/səbˈmɪt/",
-          "pos": "verb",
-          "gloss": "繳交",
-          "definition": "You give your work to the teacher. Then the teacher has your work."
-        },
-        {
-          "word": "draft",
-          "ipa": "/dræft/",
-          "pos": "noun",
-          "gloss": "草稿",
-          "definition": "A draft is a first copy. It is not finished yet."
-        },
-        {
-          "word": "grade",
-          "ipa": "/ɡreɪd/",
-          "pos": "noun",
-          "gloss": "分數",
-          "definition": "A grade is a number from the teacher. It shows how good your work is."
-        }
-      ],
-      "sentences": [
-        {
-          "text": "An assignment is work for school.",
-          "speaker": "jenny",
-          "audio": "audio/assignment/01.mp3"
-        },
-        {
-          "text": "Your teacher gives it to you.",
-          "speaker": "jenny",
-          "audio": "audio/assignment/02.mp3"
-        },
-        {
-          "text": "You must finish the whole assignment.",
-          "speaker": "jenny",
-          "audio": "audio/assignment/03.mp3"
-        },
-        {
-          "text": "Your assignment has a clear deadline.",
-          "speaker": "jenny",
-          "audio": "audio/assignment/04.mp3"
-        },
-        {
-          "text": "Then you give it to the teacher.",
-          "speaker": "jenny",
-          "audio": "audio/assignment/05.mp3"
-        },
-        {
-          "text": "First I write a short draft.",
-          "speaker": "jenny",
-          "audio": "audio/assignment/06.mp3"
-        },
-        {
-          "text": "A draft is only my first copy.",
-          "speaker": "jenny",
-          "audio": "audio/assignment/07.mp3"
-        },
-        {
-          "text": "Then I submit my school assignment.",
-          "speaker": "jenny",
-          "audio": "audio/assignment/08.mp3"
-        },
-        {
-          "text": "The teacher gives me a grade.",
-          "speaker": "jenny",
-          "audio": "audio/assignment/09.mp3"
-        },
-        {
-          "text": "Submit means the teacher gets your work.",
-          "speaker": "jenny",
-          "audio": "audio/assignment/10.mp3"
-        },
-        {
-          "text": "You give the assignment to the teacher.",
-          "speaker": "jenny",
-          "audio": "audio/assignment/11.mp3"
-        },
-        {
-          "text": "I submit the assignment on Friday.",
-          "speaker": "jenny",
-          "audio": "audio/assignment/12.mp3"
-        },
-        {
-          "text": "Please submit it before the deadline.",
-          "speaker": "jenny",
-          "audio": "audio/assignment/13.mp3"
-        },
-        {
-          "text": "Do not submit the assignment late.",
-          "speaker": "jenny",
-          "audio": "audio/assignment/14.mp3"
-        },
-        {
-          "text": "A draft is your first copy.",
-          "speaker": "jenny",
-          "audio": "audio/assignment/15.mp3"
-        },
-        {
-          "text": "A draft is not the last copy.",
-          "speaker": "jenny",
-          "audio": "audio/assignment/16.mp3"
-        },
-        {
-          "text": "I write the draft on paper.",
-          "speaker": "jenny",
-          "audio": "audio/assignment/17.mp3"
-        },
-        {
-          "text": "I read the draft and fix words.",
-          "speaker": "jenny",
-          "audio": "audio/assignment/18.mp3"
-        },
-        {
-          "text": "Then I can submit that draft.",
-          "speaker": "jenny",
-          "audio": "audio/assignment/19.mp3"
-        },
-        {
-          "text": "A grade is a number from the teacher.",
-          "speaker": "jenny",
-          "audio": "audio/assignment/20.mp3"
-        },
-        {
-          "text": "It shows how good the work is.",
-          "speaker": "jenny",
-          "audio": "audio/assignment/21.mp3"
-        },
-        {
-          "text": "I hope for a good grade.",
-          "speaker": "jenny",
-          "audio": "audio/assignment/22.mp3"
-        },
-        {
-          "text": "The grade comes after I submit.",
-          "speaker": "jenny",
-          "audio": "audio/assignment/23.mp3"
-        },
-        {
-          "text": "A good draft can help the grade.",
-          "speaker": "jenny",
-          "audio": "audio/assignment/24.mp3"
-        },
-        {
-          "text": "I write a draft of my assignment.",
-          "speaker": "jenny",
-          "audio": "audio/assignment/25.mp3"
-        },
-        {
-          "text": "I read the draft and fix it.",
-          "speaker": "jenny",
-          "audio": "audio/assignment/26.mp3"
-        },
-        {
-          "text": "I submit the assignment on time.",
-          "speaker": "jenny",
-          "audio": "audio/assignment/27.mp3"
-        },
-        {
-          "text": "Then the teacher gives a grade.",
-          "speaker": "jenny",
-          "audio": "audio/assignment/28.mp3"
-        },
-        {
-          "text": "Draft, submit, and grade go together.",
-          "speaker": "jenny",
-          "audio": "audio/assignment/29.mp3"
-        }
-      ]
-    },
-    {
       "id": "delay",
+      "number": 4,
       "center": "delay",
-      "parent_unit": "deadline",
       "scene": "travel",
       "scene_label": "On a trip",
+      "key": "flight",
       "story_link": "There is heavy traffic on the road. That traffic can make me late. Then I may miss my flight. So I may cancel the flight.",
       "center_word": {
         "word": "delay",
@@ -1149,7 +588,8 @@
           "ipa": "/flaɪt/",
           "pos": "noun",
           "gloss": "班機",
-          "definition": "A flight is a trip on a plane."
+          "definition": "A flight is a trip on a plane.",
+          "key": true
         },
         {
           "word": "cancel",
@@ -1304,6 +744,2837 @@
           "text": "A delay can change the whole trip.",
           "speaker": "jenny",
           "audio": "audio/delay/29.mp3"
+        }
+      ]
+    },
+    {
+      "id": "flight",
+      "number": 5,
+      "center": "flight",
+      "scene": "airport",
+      "scene_label": "At the airport",
+      "key": "arrival",
+      "story_link": "I show my passport at the gate. My luggage goes onto the plane. Then I follow the signs to arrival.",
+      "center_word": {
+        "word": "flight",
+        "ipa": "/flaɪt/",
+        "pos": "noun",
+        "gloss": "班機",
+        "definition": "A flight is a trip on a plane."
+      },
+      "words": [
+        {
+          "word": "passport",
+          "ipa": "/ˈpæspɔːrt/",
+          "pos": "noun",
+          "gloss": "護照",
+          "definition": "A passport shows who you are. It has your name and your photo."
+        },
+        {
+          "word": "luggage",
+          "ipa": "/ˈlʌɡɪdʒ/",
+          "pos": "noun",
+          "gloss": "行李",
+          "definition": "Luggage means the bags you take on a trip."
+        },
+        {
+          "word": "arrival",
+          "ipa": "/əˈraɪvəl/",
+          "pos": "noun",
+          "gloss": "抵達",
+          "definition": "Arrival is the place you come into at the end of a trip.",
+          "key": true
+        }
+      ],
+      "sentences": [
+        {
+          "text": "A flight is a trip by plane.",
+          "speaker": "jenny",
+          "audio": "audio/flight/01.mp3"
+        },
+        {
+          "text": "The plane leaves at a set time.",
+          "speaker": "jenny",
+          "audio": "audio/flight/02.mp3"
+        },
+        {
+          "text": "You sit in a seat on the plane.",
+          "speaker": "jenny",
+          "audio": "audio/flight/03.mp3"
+        },
+        {
+          "text": "The flight can be short or long.",
+          "speaker": "jenny",
+          "audio": "audio/flight/04.mp3"
+        },
+        {
+          "text": "This flight goes to a new city.",
+          "speaker": "jenny",
+          "audio": "audio/flight/05.mp3"
+        },
+        {
+          "text": "I show my passport at the gate.",
+          "speaker": "jenny",
+          "audio": "audio/flight/06.mp3"
+        },
+        {
+          "text": "My luggage goes onto the plane.",
+          "speaker": "jenny",
+          "audio": "audio/flight/07.mp3"
+        },
+        {
+          "text": "Then I follow the signs to arrival.",
+          "speaker": "jenny",
+          "audio": "audio/flight/08.mp3"
+        },
+        {
+          "text": "A passport shows who you are.",
+          "speaker": "jenny",
+          "audio": "audio/flight/09.mp3"
+        },
+        {
+          "text": "It has your name and your photo.",
+          "speaker": "jenny",
+          "audio": "audio/flight/10.mp3"
+        },
+        {
+          "text": "I keep my passport in my bag.",
+          "speaker": "jenny",
+          "audio": "audio/flight/11.mp3"
+        },
+        {
+          "text": "I show my passport at the gate.",
+          "speaker": "jenny",
+          "audio": "audio/flight/12.mp3"
+        },
+        {
+          "text": "Please do not lose your passport.",
+          "speaker": "jenny",
+          "audio": "audio/flight/13.mp3"
+        },
+        {
+          "text": "Luggage means the bags you travel with.",
+          "speaker": "jenny",
+          "audio": "audio/flight/14.mp3"
+        },
+        {
+          "text": "The bags you take are your luggage.",
+          "speaker": "jenny",
+          "audio": "audio/flight/15.mp3"
+        },
+        {
+          "text": "My luggage is one large bag.",
+          "speaker": "jenny",
+          "audio": "audio/flight/16.mp3"
+        },
+        {
+          "text": "They put the luggage on the plane.",
+          "speaker": "jenny",
+          "audio": "audio/flight/17.mp3"
+        },
+        {
+          "text": "I pick up my luggage at the end.",
+          "speaker": "jenny",
+          "audio": "audio/flight/18.mp3"
+        },
+        {
+          "text": "Arrival is where you come in.",
+          "speaker": "jenny",
+          "audio": "audio/flight/19.mp3"
+        },
+        {
+          "text": "You reach it when the trip ends.",
+          "speaker": "jenny",
+          "audio": "audio/flight/20.mp3"
+        },
+        {
+          "text": "The signs say arrival in big letters.",
+          "speaker": "jenny",
+          "audio": "audio/flight/21.mp3"
+        },
+        {
+          "text": "I follow the signs to arrival.",
+          "speaker": "jenny",
+          "audio": "audio/flight/22.mp3"
+        },
+        {
+          "text": "My family waits for me at arrival.",
+          "speaker": "jenny",
+          "audio": "audio/flight/23.mp3"
+        },
+        {
+          "text": "I show my passport and I board.",
+          "speaker": "jenny",
+          "audio": "audio/flight/24.mp3"
+        },
+        {
+          "text": "My luggage rides on the plane.",
+          "speaker": "jenny",
+          "audio": "audio/flight/25.mp3"
+        },
+        {
+          "text": "Then I walk out through arrival.",
+          "speaker": "jenny",
+          "audio": "audio/flight/26.mp3"
+        },
+        {
+          "text": "Passport, luggage, and arrival go together.",
+          "speaker": "jenny",
+          "audio": "audio/flight/27.mp3"
+        }
+      ]
+    },
+    {
+      "id": "arrival",
+      "number": 6,
+      "center": "arrival",
+      "scene": "city",
+      "scene_label": "In the city",
+      "key": "hotel",
+      "story_link": "I take a taxi from the airport. I have a reservation for tonight. The taxi takes me to the hotel.",
+      "center_word": {
+        "word": "arrival",
+        "ipa": "/əˈraɪvəl/",
+        "pos": "noun",
+        "gloss": "抵達",
+        "definition": "Arrival is the place you come into at the end of a trip."
+      },
+      "words": [
+        {
+          "word": "taxi",
+          "ipa": "/ˈtæksi/",
+          "pos": "noun",
+          "gloss": "計程車",
+          "definition": "A taxi is a car you pay to ride in. It takes you where you need to go."
+        },
+        {
+          "word": "reservation",
+          "ipa": "/ˌrezərˈveɪʃən/",
+          "pos": "noun",
+          "gloss": "預訂",
+          "definition": "A reservation means a place is kept for you."
+        },
+        {
+          "word": "hotel",
+          "ipa": "/hoʊˈtel/",
+          "pos": "noun",
+          "gloss": "飯店",
+          "definition": "A hotel is a place you stay. You can sleep there.",
+          "key": true
+        }
+      ],
+      "sentences": [
+        {
+          "text": "Arrival is the place you come into.",
+          "speaker": "jenny",
+          "audio": "audio/arrival/01.mp3"
+        },
+        {
+          "text": "You reach arrival when a trip ends.",
+          "speaker": "jenny",
+          "audio": "audio/arrival/02.mp3"
+        },
+        {
+          "text": "You walk out with your bags.",
+          "speaker": "jenny",
+          "audio": "audio/arrival/03.mp3"
+        },
+        {
+          "text": "A new city waits outside the doors.",
+          "speaker": "jenny",
+          "audio": "audio/arrival/04.mp3"
+        },
+        {
+          "text": "From arrival you still need a ride.",
+          "speaker": "jenny",
+          "audio": "audio/arrival/05.mp3"
+        },
+        {
+          "text": "I take a taxi from the airport.",
+          "speaker": "jenny",
+          "audio": "audio/arrival/06.mp3"
+        },
+        {
+          "text": "I have a reservation for tonight.",
+          "speaker": "jenny",
+          "audio": "audio/arrival/07.mp3"
+        },
+        {
+          "text": "The taxi takes me to the hotel.",
+          "speaker": "jenny",
+          "audio": "audio/arrival/08.mp3"
+        },
+        {
+          "text": "A taxi is a car you pay for.",
+          "speaker": "jenny",
+          "audio": "audio/arrival/09.mp3"
+        },
+        {
+          "text": "The driver takes you where you need.",
+          "speaker": "jenny",
+          "audio": "audio/arrival/10.mp3"
+        },
+        {
+          "text": "I wave and a taxi stops for me.",
+          "speaker": "jenny",
+          "audio": "audio/arrival/11.mp3"
+        },
+        {
+          "text": "I tell the driver the place name.",
+          "speaker": "jenny",
+          "audio": "audio/arrival/12.mp3"
+        },
+        {
+          "text": "The taxi ride takes twenty minutes.",
+          "speaker": "jenny",
+          "audio": "audio/arrival/13.mp3"
+        },
+        {
+          "text": "A reservation keeps a place for you.",
+          "speaker": "jenny",
+          "audio": "audio/arrival/14.mp3"
+        },
+        {
+          "text": "The hotel holds a room in your name.",
+          "speaker": "jenny",
+          "audio": "audio/arrival/15.mp3"
+        },
+        {
+          "text": "I made the reservation last week.",
+          "speaker": "jenny",
+          "audio": "audio/arrival/16.mp3"
+        },
+        {
+          "text": "I give my name for the reservation.",
+          "speaker": "jenny",
+          "audio": "audio/arrival/17.mp3"
+        },
+        {
+          "text": "I keep the reservation on my phone.",
+          "speaker": "jenny",
+          "audio": "audio/arrival/18.mp3"
+        },
+        {
+          "text": "A hotel is where you stay overnight.",
+          "speaker": "jenny",
+          "audio": "audio/arrival/19.mp3"
+        },
+        {
+          "text": "You can sleep there and you can eat.",
+          "speaker": "jenny",
+          "audio": "audio/arrival/20.mp3"
+        },
+        {
+          "text": "This hotel is near the city center.",
+          "speaker": "jenny",
+          "audio": "audio/arrival/21.mp3"
+        },
+        {
+          "text": "I stay at the hotel for three nights.",
+          "speaker": "jenny",
+          "audio": "audio/arrival/22.mp3"
+        },
+        {
+          "text": "The taxi stops at the hotel door.",
+          "speaker": "jenny",
+          "audio": "audio/arrival/23.mp3"
+        },
+        {
+          "text": "I arrive and I need a taxi.",
+          "speaker": "jenny",
+          "audio": "audio/arrival/24.mp3"
+        },
+        {
+          "text": "My reservation is for a hotel room.",
+          "speaker": "jenny",
+          "audio": "audio/arrival/25.mp3"
+        },
+        {
+          "text": "The taxi takes me to the door.",
+          "speaker": "jenny",
+          "audio": "audio/arrival/26.mp3"
+        },
+        {
+          "text": "Taxi, reservation, and hotel go together.",
+          "speaker": "jenny",
+          "audio": "audio/arrival/27.mp3"
+        }
+      ]
+    },
+    {
+      "id": "hotel",
+      "number": 7,
+      "center": "hotel",
+      "scene": "hotel",
+      "scene_label": "At the hotel",
+      "key": "room",
+      "story_link": "I stand in the hotel lobby. The receptionist asks for my name. Then she gives me a room.",
+      "center_word": {
+        "word": "hotel",
+        "ipa": "/hoʊˈtel/",
+        "pos": "noun",
+        "gloss": "飯店",
+        "definition": "A hotel is a place you stay. You can sleep there."
+      },
+      "words": [
+        {
+          "word": "lobby",
+          "ipa": "/ˈlɑːbi/",
+          "pos": "noun",
+          "gloss": "大廳",
+          "definition": "A lobby is the big room at the front of a hotel."
+        },
+        {
+          "word": "receptionist",
+          "ipa": "/rɪˈsepʃənɪst/",
+          "pos": "noun",
+          "gloss": "櫃檯人員",
+          "definition": "A receptionist works at the front desk and helps guests."
+        },
+        {
+          "word": "room",
+          "ipa": "/ruːm/",
+          "pos": "noun",
+          "gloss": "房間",
+          "definition": "A room is the place you sleep in a hotel.",
+          "key": true
+        }
+      ],
+      "sentences": [
+        {
+          "text": "A hotel is a place where you stay.",
+          "speaker": "jenny",
+          "audio": "audio/hotel/01.mp3"
+        },
+        {
+          "text": "You sleep there for one night or more.",
+          "speaker": "jenny",
+          "audio": "audio/hotel/02.mp3"
+        },
+        {
+          "text": "People welcome you at the front door.",
+          "speaker": "jenny",
+          "audio": "audio/hotel/03.mp3"
+        },
+        {
+          "text": "You get a room with a bed.",
+          "speaker": "jenny",
+          "audio": "audio/hotel/04.mp3"
+        },
+        {
+          "text": "This hotel is quiet and clean.",
+          "speaker": "jenny",
+          "audio": "audio/hotel/05.mp3"
+        },
+        {
+          "text": "I stand in the hotel lobby.",
+          "speaker": "jenny",
+          "audio": "audio/hotel/06.mp3"
+        },
+        {
+          "text": "The receptionist asks for my name.",
+          "speaker": "jenny",
+          "audio": "audio/hotel/07.mp3"
+        },
+        {
+          "text": "Then she gives me a room.",
+          "speaker": "jenny",
+          "audio": "audio/hotel/08.mp3"
+        },
+        {
+          "text": "A lobby is the room at the front.",
+          "speaker": "jenny",
+          "audio": "audio/hotel/09.mp3"
+        },
+        {
+          "text": "You walk in and you can wait there.",
+          "speaker": "jenny",
+          "audio": "audio/hotel/10.mp3"
+        },
+        {
+          "text": "The lobby has chairs and soft light.",
+          "speaker": "jenny",
+          "audio": "audio/hotel/11.mp3"
+        },
+        {
+          "text": "I sit in the lobby for a minute.",
+          "speaker": "jenny",
+          "audio": "audio/hotel/12.mp3"
+        },
+        {
+          "text": "The lobby is just inside the door.",
+          "speaker": "jenny",
+          "audio": "audio/hotel/13.mp3"
+        },
+        {
+          "text": "A receptionist works at the front desk.",
+          "speaker": "jenny",
+          "audio": "audio/hotel/14.mp3"
+        },
+        {
+          "text": "This person helps the people who stay.",
+          "speaker": "jenny",
+          "audio": "audio/hotel/15.mp3"
+        },
+        {
+          "text": "The receptionist looks up my name.",
+          "speaker": "jenny",
+          "audio": "audio/hotel/16.mp3"
+        },
+        {
+          "text": "She smiles and says hello to me.",
+          "speaker": "jenny",
+          "audio": "audio/hotel/17.mp3"
+        },
+        {
+          "text": "I thank the receptionist for the help.",
+          "speaker": "jenny",
+          "audio": "audio/hotel/18.mp3"
+        },
+        {
+          "text": "A room is the place where you sleep.",
+          "speaker": "jenny",
+          "audio": "audio/hotel/19.mp3"
+        },
+        {
+          "text": "It has a bed and a small light.",
+          "speaker": "jenny",
+          "audio": "audio/hotel/20.mp3"
+        },
+        {
+          "text": "My room is on the third floor.",
+          "speaker": "jenny",
+          "audio": "audio/hotel/21.mp3"
+        },
+        {
+          "text": "The room is clean and calm.",
+          "speaker": "jenny",
+          "audio": "audio/hotel/22.mp3"
+        },
+        {
+          "text": "I take the key and find my room.",
+          "speaker": "jenny",
+          "audio": "audio/hotel/23.mp3"
+        },
+        {
+          "text": "I walk into the lobby with my bag.",
+          "speaker": "jenny",
+          "audio": "audio/hotel/24.mp3"
+        },
+        {
+          "text": "The receptionist gives me a key.",
+          "speaker": "jenny",
+          "audio": "audio/hotel/25.mp3"
+        },
+        {
+          "text": "Then I go up to my room.",
+          "speaker": "jenny",
+          "audio": "audio/hotel/26.mp3"
+        },
+        {
+          "text": "Lobby, receptionist, and room go together.",
+          "speaker": "jenny",
+          "audio": "audio/hotel/27.mp3"
+        }
+      ]
+    },
+    {
+      "id": "room",
+      "number": 8,
+      "center": "room",
+      "scene": "hotel",
+      "scene_label": "At the hotel",
+      "key": "breakfast",
+      "story_link": "The alarm rings at seven o'clock. I take a short hot shower. Then I go down to breakfast.",
+      "center_word": {
+        "word": "room",
+        "ipa": "/ruːm/",
+        "pos": "noun",
+        "gloss": "房間",
+        "definition": "A room is the place you sleep in a hotel."
+      },
+      "words": [
+        {
+          "word": "alarm",
+          "ipa": "/əˈlɑːrm/",
+          "pos": "noun",
+          "gloss": "鬧鐘",
+          "definition": "An alarm is a loud sound that tells you to wake up."
+        },
+        {
+          "word": "shower",
+          "ipa": "/ˈʃaʊər/",
+          "pos": "noun",
+          "gloss": "淋浴",
+          "definition": "A shower is a way to wash. Water falls on you."
+        },
+        {
+          "word": "breakfast",
+          "ipa": "/ˈbrekfəst/",
+          "pos": "noun",
+          "gloss": "早餐",
+          "definition": "Breakfast is the first meal of the day.",
+          "key": true
+        }
+      ],
+      "sentences": [
+        {
+          "text": "A room is where you sleep at night.",
+          "speaker": "jenny",
+          "audio": "audio/room/01.mp3"
+        },
+        {
+          "text": "You close the door and you rest.",
+          "speaker": "jenny",
+          "audio": "audio/room/02.mp3"
+        },
+        {
+          "text": "Your bag sits beside the bed.",
+          "speaker": "jenny",
+          "audio": "audio/room/03.mp3"
+        },
+        {
+          "text": "In the morning you get ready.",
+          "speaker": "jenny",
+          "audio": "audio/room/04.mp3"
+        },
+        {
+          "text": "Then you leave the room to eat.",
+          "speaker": "jenny",
+          "audio": "audio/room/05.mp3"
+        },
+        {
+          "text": "The alarm rings at seven o'clock.",
+          "speaker": "jenny",
+          "audio": "audio/room/06.mp3"
+        },
+        {
+          "text": "I take a short hot shower.",
+          "speaker": "jenny",
+          "audio": "audio/room/07.mp3"
+        },
+        {
+          "text": "Then I go down to breakfast.",
+          "speaker": "jenny",
+          "audio": "audio/room/08.mp3"
+        },
+        {
+          "text": "An alarm is a loud morning sound.",
+          "speaker": "jenny",
+          "audio": "audio/room/09.mp3"
+        },
+        {
+          "text": "It tells you to get up now.",
+          "speaker": "jenny",
+          "audio": "audio/room/10.mp3"
+        },
+        {
+          "text": "I set the alarm before I sleep.",
+          "speaker": "jenny",
+          "audio": "audio/room/11.mp3"
+        },
+        {
+          "text": "The alarm rings and I sit up.",
+          "speaker": "jenny",
+          "audio": "audio/room/12.mp3"
+        },
+        {
+          "text": "I turn the alarm off at once.",
+          "speaker": "jenny",
+          "audio": "audio/room/13.mp3"
+        },
+        {
+          "text": "A shower is a way to get clean.",
+          "speaker": "jenny",
+          "audio": "audio/room/14.mp3"
+        },
+        {
+          "text": "Water falls on you from above.",
+          "speaker": "jenny",
+          "audio": "audio/room/15.mp3"
+        },
+        {
+          "text": "I take a shower every morning.",
+          "speaker": "jenny",
+          "audio": "audio/room/16.mp3"
+        },
+        {
+          "text": "The shower is next to my room.",
+          "speaker": "jenny",
+          "audio": "audio/room/17.mp3"
+        },
+        {
+          "text": "A warm shower helps me wake up.",
+          "speaker": "jenny",
+          "audio": "audio/room/18.mp3"
+        },
+        {
+          "text": "Breakfast is the first meal of the day.",
+          "speaker": "jenny",
+          "audio": "audio/room/19.mp3"
+        },
+        {
+          "text": "You eat it early in the morning.",
+          "speaker": "jenny",
+          "audio": "audio/room/20.mp3"
+        },
+        {
+          "text": "Breakfast is ready on the ground floor.",
+          "speaker": "jenny",
+          "audio": "audio/room/21.mp3"
+        },
+        {
+          "text": "I eat eggs and bread at the table.",
+          "speaker": "jenny",
+          "audio": "audio/room/22.mp3"
+        },
+        {
+          "text": "A good breakfast starts the day well.",
+          "speaker": "jenny",
+          "audio": "audio/room/23.mp3"
+        },
+        {
+          "text": "The alarm tells me to get up.",
+          "speaker": "jenny",
+          "audio": "audio/room/24.mp3"
+        },
+        {
+          "text": "I take a shower and get dressed.",
+          "speaker": "jenny",
+          "audio": "audio/room/25.mp3"
+        },
+        {
+          "text": "Then I walk down to breakfast.",
+          "speaker": "jenny",
+          "audio": "audio/room/26.mp3"
+        },
+        {
+          "text": "Alarm, shower, and breakfast go together.",
+          "speaker": "jenny",
+          "audio": "audio/room/27.mp3"
+        }
+      ]
+    },
+    {
+      "id": "breakfast",
+      "number": 9,
+      "center": "breakfast",
+      "scene": "hotel",
+      "scene_label": "At the hotel",
+      "key": "bill",
+      "story_link": "I read the menu from the top. I order eggs and hot tea. Then the server brings the bill.",
+      "center_word": {
+        "word": "breakfast",
+        "ipa": "/ˈbrekfəst/",
+        "pos": "noun",
+        "gloss": "早餐",
+        "definition": "Breakfast is the first meal of the day."
+      },
+      "words": [
+        {
+          "word": "menu",
+          "ipa": "/ˈmenjuː/",
+          "pos": "noun",
+          "gloss": "菜單",
+          "definition": "A menu is a list of food. It shows what you can eat."
+        },
+        {
+          "word": "order",
+          "ipa": "/ˈɔːrdər/",
+          "pos": "verb",
+          "gloss": "點餐",
+          "definition": "You tell them what food you want. Then they bring it."
+        },
+        {
+          "word": "bill",
+          "ipa": "/bɪl/",
+          "pos": "noun",
+          "gloss": "帳單",
+          "definition": "A bill shows how much money you must pay.",
+          "key": true
+        }
+      ],
+      "sentences": [
+        {
+          "text": "Breakfast is the first meal of the day.",
+          "speaker": "jenny",
+          "audio": "audio/breakfast/01.mp3"
+        },
+        {
+          "text": "You eat it early in the morning.",
+          "speaker": "jenny",
+          "audio": "audio/breakfast/02.mp3"
+        },
+        {
+          "text": "The hotel has a bright breakfast room.",
+          "speaker": "jenny",
+          "audio": "audio/breakfast/03.mp3"
+        },
+        {
+          "text": "You can sit there and eat slowly.",
+          "speaker": "jenny",
+          "audio": "audio/breakfast/04.mp3"
+        },
+        {
+          "text": "When you finish, you pay for the food.",
+          "speaker": "jenny",
+          "audio": "audio/breakfast/05.mp3"
+        },
+        {
+          "text": "I read the menu from the top.",
+          "speaker": "jenny",
+          "audio": "audio/breakfast/06.mp3"
+        },
+        {
+          "text": "I order eggs and hot tea.",
+          "speaker": "jenny",
+          "audio": "audio/breakfast/07.mp3"
+        },
+        {
+          "text": "Then the server brings the bill.",
+          "speaker": "jenny",
+          "audio": "audio/breakfast/08.mp3"
+        },
+        {
+          "text": "A menu lists the food and the drinks.",
+          "speaker": "jenny",
+          "audio": "audio/breakfast/09.mp3"
+        },
+        {
+          "text": "It shows what you can choose today.",
+          "speaker": "jenny",
+          "audio": "audio/breakfast/10.mp3"
+        },
+        {
+          "text": "I read every line of the menu.",
+          "speaker": "jenny",
+          "audio": "audio/breakfast/11.mp3"
+        },
+        {
+          "text": "The menu has eggs, bread, and fruit.",
+          "speaker": "jenny",
+          "audio": "audio/breakfast/12.mp3"
+        },
+        {
+          "text": "I pick one dish from the menu.",
+          "speaker": "jenny",
+          "audio": "audio/breakfast/13.mp3"
+        },
+        {
+          "text": "Order means you say what you want.",
+          "speaker": "jenny",
+          "audio": "audio/breakfast/14.mp3"
+        },
+        {
+          "text": "Then the kitchen makes that food.",
+          "speaker": "jenny",
+          "audio": "audio/breakfast/15.mp3"
+        },
+        {
+          "text": "I order eggs and a cup of tea.",
+          "speaker": "jenny",
+          "audio": "audio/breakfast/16.mp3"
+        },
+        {
+          "text": "She writes my order on a small pad.",
+          "speaker": "jenny",
+          "audio": "audio/breakfast/17.mp3"
+        },
+        {
+          "text": "I wait for the food I just ordered.",
+          "speaker": "jenny",
+          "audio": "audio/breakfast/18.mp3"
+        },
+        {
+          "text": "A bill shows the money you must pay.",
+          "speaker": "jenny",
+          "audio": "audio/breakfast/19.mp3"
+        },
+        {
+          "text": "It comes when the meal is over.",
+          "speaker": "jenny",
+          "audio": "audio/breakfast/20.mp3"
+        },
+        {
+          "text": "I read each line of the bill.",
+          "speaker": "jenny",
+          "audio": "audio/breakfast/21.mp3"
+        },
+        {
+          "text": "The bill today is not very high.",
+          "speaker": "jenny",
+          "audio": "audio/breakfast/22.mp3"
+        },
+        {
+          "text": "I pay the bill before I stand up.",
+          "speaker": "jenny",
+          "audio": "audio/breakfast/23.mp3"
+        },
+        {
+          "text": "I read the menu and I choose.",
+          "speaker": "jenny",
+          "audio": "audio/breakfast/24.mp3"
+        },
+        {
+          "text": "I order a simple hot breakfast.",
+          "speaker": "jenny",
+          "audio": "audio/breakfast/25.mp3"
+        },
+        {
+          "text": "Then I am ready for the bill.",
+          "speaker": "jenny",
+          "audio": "audio/breakfast/26.mp3"
+        },
+        {
+          "text": "Menu, order, and bill go together.",
+          "speaker": "jenny",
+          "audio": "audio/breakfast/27.mp3"
+        }
+      ]
+    },
+    {
+      "id": "bill",
+      "number": 10,
+      "center": "bill",
+      "scene": "money",
+      "scene_label": "Paying",
+      "key": "wallet",
+      "story_link": "I leave a small tip on the table. I ask the server for a receipt. I take the money from my wallet.",
+      "center_word": {
+        "word": "bill",
+        "ipa": "/bɪl/",
+        "pos": "noun",
+        "gloss": "帳單",
+        "definition": "A bill shows how much money you must pay."
+      },
+      "words": [
+        {
+          "word": "tip",
+          "ipa": "/tɪp/",
+          "pos": "noun",
+          "gloss": "小費",
+          "definition": "A tip is extra money you give for good service."
+        },
+        {
+          "word": "receipt",
+          "ipa": "/rɪˈsiːt/",
+          "pos": "noun",
+          "gloss": "收據",
+          "definition": "A receipt is paper that shows what you paid."
+        },
+        {
+          "word": "wallet",
+          "ipa": "/ˈwɑːlɪt/",
+          "pos": "noun",
+          "gloss": "皮夾",
+          "definition": "A wallet is a small case for money and cards.",
+          "key": true
+        }
+      ],
+      "sentences": [
+        {
+          "text": "A bill is a paper that lists prices.",
+          "speaker": "jenny",
+          "audio": "audio/bill/01.mp3"
+        },
+        {
+          "text": "It says how much money you owe.",
+          "speaker": "jenny",
+          "audio": "audio/bill/02.mp3"
+        },
+        {
+          "text": "You get the bill after you eat.",
+          "speaker": "jenny",
+          "audio": "audio/bill/03.mp3"
+        },
+        {
+          "text": "You look at it and then you pay.",
+          "speaker": "jenny",
+          "audio": "audio/bill/04.mp3"
+        },
+        {
+          "text": "The money you use is close at hand.",
+          "speaker": "jenny",
+          "audio": "audio/bill/05.mp3"
+        },
+        {
+          "text": "I leave a small tip on the table.",
+          "speaker": "jenny",
+          "audio": "audio/bill/06.mp3"
+        },
+        {
+          "text": "I ask the server for a receipt.",
+          "speaker": "jenny",
+          "audio": "audio/bill/07.mp3"
+        },
+        {
+          "text": "I take the money from my wallet.",
+          "speaker": "jenny",
+          "audio": "audio/bill/08.mp3"
+        },
+        {
+          "text": "A tip is extra money for kind service.",
+          "speaker": "jenny",
+          "audio": "audio/bill/09.mp3"
+        },
+        {
+          "text": "You give it to the person who helped.",
+          "speaker": "jenny",
+          "audio": "audio/bill/10.mp3"
+        },
+        {
+          "text": "I leave the tip beside my plate.",
+          "speaker": "jenny",
+          "audio": "audio/bill/11.mp3"
+        },
+        {
+          "text": "A small tip is enough for today.",
+          "speaker": "jenny",
+          "audio": "audio/bill/12.mp3"
+        },
+        {
+          "text": "The tip is my way to say thanks.",
+          "speaker": "jenny",
+          "audio": "audio/bill/13.mp3"
+        },
+        {
+          "text": "A receipt shows that you have paid.",
+          "speaker": "jenny",
+          "audio": "audio/bill/14.mp3"
+        },
+        {
+          "text": "It lists the things you paid for.",
+          "speaker": "jenny",
+          "audio": "audio/bill/15.mp3"
+        },
+        {
+          "text": "I ask for a receipt every time.",
+          "speaker": "jenny",
+          "audio": "audio/bill/16.mp3"
+        },
+        {
+          "text": "I put the receipt in my bag.",
+          "speaker": "jenny",
+          "audio": "audio/bill/17.mp3"
+        },
+        {
+          "text": "The receipt helps me remember the cost.",
+          "speaker": "jenny",
+          "audio": "audio/bill/18.mp3"
+        },
+        {
+          "text": "A wallet is a small case for money.",
+          "speaker": "jenny",
+          "audio": "audio/bill/19.mp3"
+        },
+        {
+          "text": "You can also keep cards inside it.",
+          "speaker": "jenny",
+          "audio": "audio/bill/20.mp3"
+        },
+        {
+          "text": "My wallet is in my front pocket.",
+          "speaker": "jenny",
+          "audio": "audio/bill/21.mp3"
+        },
+        {
+          "text": "I open the wallet and I pay.",
+          "speaker": "jenny",
+          "audio": "audio/bill/22.mp3"
+        },
+        {
+          "text": "Then I close the wallet and I leave.",
+          "speaker": "jenny",
+          "audio": "audio/bill/23.mp3"
+        },
+        {
+          "text": "I pay the bill and leave a tip.",
+          "speaker": "jenny",
+          "audio": "audio/bill/24.mp3"
+        },
+        {
+          "text": "I keep the receipt in my bag.",
+          "speaker": "jenny",
+          "audio": "audio/bill/25.mp3"
+        },
+        {
+          "text": "The cash comes out of my wallet.",
+          "speaker": "jenny",
+          "audio": "audio/bill/26.mp3"
+        },
+        {
+          "text": "Tip, receipt, and wallet go together.",
+          "speaker": "jenny",
+          "audio": "audio/bill/27.mp3"
+        }
+      ]
+    },
+    {
+      "id": "wallet",
+      "number": 11,
+      "center": "wallet",
+      "scene": "money",
+      "scene_label": "Paying",
+      "key": "bank",
+      "story_link": "My license sits in my wallet. My credit card is in it too. I take both of them to the bank.",
+      "center_word": {
+        "word": "wallet",
+        "ipa": "/ˈwɑːlɪt/",
+        "pos": "noun",
+        "gloss": "皮夾",
+        "definition": "A wallet is a small case for money and cards."
+      },
+      "words": [
+        {
+          "word": "license",
+          "ipa": "/ˈlaɪsəns/",
+          "pos": "noun",
+          "gloss": "駕照",
+          "definition": "A license shows you may drive. It has your name and your photo."
+        },
+        {
+          "word": "credit",
+          "ipa": "/ˈkredɪt/",
+          "pos": "noun",
+          "gloss": "信用卡",
+          "definition": "Credit here means a credit card. You can pay with it."
+        },
+        {
+          "word": "bank",
+          "ipa": "/bæŋk/",
+          "pos": "noun",
+          "gloss": "銀行",
+          "definition": "A bank is a place that keeps money safe.",
+          "key": true
+        }
+      ],
+      "sentences": [
+        {
+          "text": "A wallet is a small case for money.",
+          "speaker": "jenny",
+          "audio": "audio/wallet/01.mp3"
+        },
+        {
+          "text": "You carry it when you leave home.",
+          "speaker": "jenny",
+          "audio": "audio/wallet/02.mp3"
+        },
+        {
+          "text": "It keeps important papers safe.",
+          "speaker": "jenny",
+          "audio": "audio/wallet/03.mp3"
+        },
+        {
+          "text": "I check my wallet before I go out.",
+          "speaker": "jenny",
+          "audio": "audio/wallet/04.mp3"
+        },
+        {
+          "text": "Today I need it for the bank.",
+          "speaker": "jenny",
+          "audio": "audio/wallet/05.mp3"
+        },
+        {
+          "text": "My license sits in my wallet.",
+          "speaker": "jenny",
+          "audio": "audio/wallet/06.mp3"
+        },
+        {
+          "text": "My credit card is in it too.",
+          "speaker": "jenny",
+          "audio": "audio/wallet/07.mp3"
+        },
+        {
+          "text": "I take both of them to the bank.",
+          "speaker": "jenny",
+          "audio": "audio/wallet/08.mp3"
+        },
+        {
+          "text": "A license shows that you may drive.",
+          "speaker": "jenny",
+          "audio": "audio/wallet/09.mp3"
+        },
+        {
+          "text": "It has your name and a photo.",
+          "speaker": "jenny",
+          "audio": "audio/wallet/10.mp3"
+        },
+        {
+          "text": "I keep my license behind a card.",
+          "speaker": "jenny",
+          "audio": "audio/wallet/11.mp3"
+        },
+        {
+          "text": "I show my license when someone asks.",
+          "speaker": "jenny",
+          "audio": "audio/wallet/12.mp3"
+        },
+        {
+          "text": "Please do not leave your license at home.",
+          "speaker": "jenny",
+          "audio": "audio/wallet/13.mp3"
+        },
+        {
+          "text": "Credit here means a credit card.",
+          "speaker": "jenny",
+          "audio": "audio/wallet/14.mp3"
+        },
+        {
+          "text": "You can pay with it in many shops.",
+          "speaker": "jenny",
+          "audio": "audio/wallet/15.mp3"
+        },
+        {
+          "text": "My credit card stays in the wallet.",
+          "speaker": "jenny",
+          "audio": "audio/wallet/16.mp3"
+        },
+        {
+          "text": "I use my credit card at the store.",
+          "speaker": "jenny",
+          "audio": "audio/wallet/17.mp3"
+        },
+        {
+          "text": "I never tell my credit card number.",
+          "speaker": "jenny",
+          "audio": "audio/wallet/18.mp3"
+        },
+        {
+          "text": "A bank is a place that holds money.",
+          "speaker": "jenny",
+          "audio": "audio/wallet/19.mp3"
+        },
+        {
+          "text": "People save money at the bank.",
+          "speaker": "jenny",
+          "audio": "audio/wallet/20.mp3"
+        },
+        {
+          "text": "The bank near me opens at nine.",
+          "speaker": "jenny",
+          "audio": "audio/wallet/21.mp3"
+        },
+        {
+          "text": "I walk to the bank with my wallet.",
+          "speaker": "jenny",
+          "audio": "audio/wallet/22.mp3"
+        },
+        {
+          "text": "I show my license inside the bank.",
+          "speaker": "jenny",
+          "audio": "audio/wallet/23.mp3"
+        },
+        {
+          "text": "My license and my credit card are ready.",
+          "speaker": "jenny",
+          "audio": "audio/wallet/24.mp3"
+        },
+        {
+          "text": "Both of them live in my wallet.",
+          "speaker": "jenny",
+          "audio": "audio/wallet/25.mp3"
+        },
+        {
+          "text": "I carry that wallet to the bank.",
+          "speaker": "jenny",
+          "audio": "audio/wallet/26.mp3"
+        },
+        {
+          "text": "License, credit, and bank go together.",
+          "speaker": "jenny",
+          "audio": "audio/wallet/27.mp3"
+        }
+      ]
+    },
+    {
+      "id": "bank",
+      "number": 12,
+      "center": "bank",
+      "scene": "money",
+      "scene_label": "At the bank",
+      "key": "salary",
+      "story_link": "I check my balance on the screen. I transfer some money to my family. My salary comes in every month.",
+      "center_word": {
+        "word": "bank",
+        "ipa": "/bæŋk/",
+        "pos": "noun",
+        "gloss": "銀行",
+        "definition": "A bank is a place that keeps money safe."
+      },
+      "words": [
+        {
+          "word": "balance",
+          "ipa": "/ˈbæləns/",
+          "pos": "noun",
+          "gloss": "餘額",
+          "definition": "A balance is how much money you have."
+        },
+        {
+          "word": "transfer",
+          "ipa": "/ˈtrænsfɜːr/",
+          "pos": "verb",
+          "gloss": "轉帳",
+          "definition": "You send money from your account to another person."
+        },
+        {
+          "word": "salary",
+          "ipa": "/ˈsæləri/",
+          "pos": "noun",
+          "gloss": "薪水",
+          "definition": "A salary is the pay you get from your job.",
+          "key": true
+        }
+      ],
+      "sentences": [
+        {
+          "text": "A bank is a safe place for money.",
+          "speaker": "jenny",
+          "audio": "audio/bank/01.mp3"
+        },
+        {
+          "text": "You can keep your savings there.",
+          "speaker": "jenny",
+          "audio": "audio/bank/02.mp3"
+        },
+        {
+          "text": "You can also send money to someone.",
+          "speaker": "jenny",
+          "audio": "audio/bank/03.mp3"
+        },
+        {
+          "text": "Many people visit the bank each month.",
+          "speaker": "jenny",
+          "audio": "audio/bank/04.mp3"
+        },
+        {
+          "text": "The money from work goes there too.",
+          "speaker": "jenny",
+          "audio": "audio/bank/05.mp3"
+        },
+        {
+          "text": "I check my balance on the screen.",
+          "speaker": "jenny",
+          "audio": "audio/bank/06.mp3"
+        },
+        {
+          "text": "I transfer some money to my family.",
+          "speaker": "jenny",
+          "audio": "audio/bank/07.mp3"
+        },
+        {
+          "text": "My salary comes in every month.",
+          "speaker": "jenny",
+          "audio": "audio/bank/08.mp3"
+        },
+        {
+          "text": "A balance is the money you still have.",
+          "speaker": "jenny",
+          "audio": "audio/bank/09.mp3"
+        },
+        {
+          "text": "The bank screen shows that balance.",
+          "speaker": "jenny",
+          "audio": "audio/bank/10.mp3"
+        },
+        {
+          "text": "I look at my balance every Friday.",
+          "speaker": "jenny",
+          "audio": "audio/bank/11.mp3"
+        },
+        {
+          "text": "A low balance means I should wait.",
+          "speaker": "jenny",
+          "audio": "audio/bank/12.mp3"
+        },
+        {
+          "text": "I like to keep a safe balance.",
+          "speaker": "jenny",
+          "audio": "audio/bank/13.mp3"
+        },
+        {
+          "text": "Transfer means you move money to someone.",
+          "speaker": "jenny",
+          "audio": "audio/bank/14.mp3"
+        },
+        {
+          "text": "It leaves you and it reaches them.",
+          "speaker": "jenny",
+          "audio": "audio/bank/15.mp3"
+        },
+        {
+          "text": "I transfer money to my sister.",
+          "speaker": "jenny",
+          "audio": "audio/bank/16.mp3"
+        },
+        {
+          "text": "The transfer takes about one day.",
+          "speaker": "jenny",
+          "audio": "audio/bank/17.mp3"
+        },
+        {
+          "text": "I write down every transfer I make.",
+          "speaker": "jenny",
+          "audio": "audio/bank/18.mp3"
+        },
+        {
+          "text": "A salary is pay from your job.",
+          "speaker": "jenny",
+          "audio": "audio/bank/19.mp3"
+        },
+        {
+          "text": "It comes to you month after month.",
+          "speaker": "jenny",
+          "audio": "audio/bank/20.mp3"
+        },
+        {
+          "text": "My salary lands in the bank.",
+          "speaker": "jenny",
+          "audio": "audio/bank/21.mp3"
+        },
+        {
+          "text": "I use my salary to pay the rent.",
+          "speaker": "jenny",
+          "audio": "audio/bank/22.mp3"
+        },
+        {
+          "text": "A fair salary helps you live well.",
+          "speaker": "jenny",
+          "audio": "audio/bank/23.mp3"
+        },
+        {
+          "text": "First I look at my balance.",
+          "speaker": "jenny",
+          "audio": "audio/bank/24.mp3"
+        },
+        {
+          "text": "Then I transfer a gift to my family.",
+          "speaker": "jenny",
+          "audio": "audio/bank/25.mp3"
+        },
+        {
+          "text": "My salary keeps that balance healthy.",
+          "speaker": "jenny",
+          "audio": "audio/bank/26.mp3"
+        },
+        {
+          "text": "Balance, transfer, and salary go together.",
+          "speaker": "jenny",
+          "audio": "audio/bank/27.mp3"
+        }
+      ]
+    },
+    {
+      "id": "salary",
+      "number": 13,
+      "center": "salary",
+      "scene": "work",
+      "scene_label": "At work",
+      "key": "workplace",
+      "story_link": "My employer pays the salary each month. My contract says how much I earn. I do the work at my workplace.",
+      "center_word": {
+        "word": "salary",
+        "ipa": "/ˈsæləri/",
+        "pos": "noun",
+        "gloss": "薪水",
+        "definition": "A salary is the pay you get from your job."
+      },
+      "words": [
+        {
+          "word": "employer",
+          "ipa": "/ɪmˈplɔɪər/",
+          "pos": "noun",
+          "gloss": "雇主",
+          "definition": "An employer is the person or group you work for."
+        },
+        {
+          "word": "contract",
+          "ipa": "/ˈkɑːntrækt/",
+          "pos": "noun",
+          "gloss": "合約",
+          "definition": "A contract is a paper that says what you and they must do."
+        },
+        {
+          "word": "workplace",
+          "ipa": "/ˈwɜːrkpleɪs/",
+          "pos": "noun",
+          "gloss": "職場",
+          "definition": "A workplace is the place where you do your job.",
+          "key": true
+        }
+      ],
+      "sentences": [
+        {
+          "text": "A salary is the money from your job.",
+          "speaker": "jenny",
+          "audio": "audio/salary/01.mp3"
+        },
+        {
+          "text": "You earn it by doing the work.",
+          "speaker": "jenny",
+          "audio": "audio/salary/02.mp3"
+        },
+        {
+          "text": "It arrives again each month.",
+          "speaker": "jenny",
+          "audio": "audio/salary/03.mp3"
+        },
+        {
+          "text": "The amount is written on paper.",
+          "speaker": "jenny",
+          "audio": "audio/salary/04.mp3"
+        },
+        {
+          "text": "You do the job at one workplace.",
+          "speaker": "jenny",
+          "audio": "audio/salary/05.mp3"
+        },
+        {
+          "text": "My employer pays the salary each month.",
+          "speaker": "jenny",
+          "audio": "audio/salary/06.mp3"
+        },
+        {
+          "text": "My contract says how much I earn.",
+          "speaker": "jenny",
+          "audio": "audio/salary/07.mp3"
+        },
+        {
+          "text": "I do the work at my workplace.",
+          "speaker": "jenny",
+          "audio": "audio/salary/08.mp3"
+        },
+        {
+          "text": "An employer is the one you work for.",
+          "speaker": "jenny",
+          "audio": "audio/salary/09.mp3"
+        },
+        {
+          "text": "They give you pay for your time.",
+          "speaker": "jenny",
+          "audio": "audio/salary/10.mp3"
+        },
+        {
+          "text": "My employer is a small company.",
+          "speaker": "jenny",
+          "audio": "audio/salary/11.mp3"
+        },
+        {
+          "text": "I can talk with my employer about pay.",
+          "speaker": "jenny",
+          "audio": "audio/salary/12.mp3"
+        },
+        {
+          "text": "A fair employer pays on the right day.",
+          "speaker": "jenny",
+          "audio": "audio/salary/13.mp3"
+        },
+        {
+          "text": "A contract is a written agreement.",
+          "speaker": "jenny",
+          "audio": "audio/salary/14.mp3"
+        },
+        {
+          "text": "It says what work you must do.",
+          "speaker": "jenny",
+          "audio": "audio/salary/15.mp3"
+        },
+        {
+          "text": "It also says what you will earn.",
+          "speaker": "jenny",
+          "audio": "audio/salary/16.mp3"
+        },
+        {
+          "text": "I read the whole contract with care.",
+          "speaker": "jenny",
+          "audio": "audio/salary/17.mp3"
+        },
+        {
+          "text": "I sign the contract before day one.",
+          "speaker": "jenny",
+          "audio": "audio/salary/18.mp3"
+        },
+        {
+          "text": "A workplace is where you do the job.",
+          "speaker": "jenny",
+          "audio": "audio/salary/19.mp3"
+        },
+        {
+          "text": "It may be an office or a shop.",
+          "speaker": "jenny",
+          "audio": "audio/salary/20.mp3"
+        },
+        {
+          "text": "My workplace is downtown in the city.",
+          "speaker": "jenny",
+          "audio": "audio/salary/21.mp3"
+        },
+        {
+          "text": "I go to my workplace on weekdays.",
+          "speaker": "jenny",
+          "audio": "audio/salary/22.mp3"
+        },
+        {
+          "text": "Work starts when I reach the workplace.",
+          "speaker": "jenny",
+          "audio": "audio/salary/23.mp3"
+        },
+        {
+          "text": "My employer sends the salary each month.",
+          "speaker": "jenny",
+          "audio": "audio/salary/24.mp3"
+        },
+        {
+          "text": "The contract shows that salary clearly.",
+          "speaker": "jenny",
+          "audio": "audio/salary/25.mp3"
+        },
+        {
+          "text": "I earn it at my workplace.",
+          "speaker": "jenny",
+          "audio": "audio/salary/26.mp3"
+        },
+        {
+          "text": "Employer, contract, and workplace go together.",
+          "speaker": "jenny",
+          "audio": "audio/salary/27.mp3"
+        }
+      ]
+    },
+    {
+      "id": "workplace",
+      "number": 14,
+      "center": "workplace",
+      "scene": "work",
+      "scene_label": "At work",
+      "key": "report",
+      "story_link": "I greet one colleague in the morning. We sit down for a short meeting. After that we write a report.",
+      "center_word": {
+        "word": "workplace",
+        "ipa": "/ˈwɜːrkpleɪs/",
+        "pos": "noun",
+        "gloss": "職場",
+        "definition": "A workplace is the place where you do your job."
+      },
+      "words": [
+        {
+          "word": "colleague",
+          "ipa": "/ˈkɑːliːɡ/",
+          "pos": "noun",
+          "gloss": "同事",
+          "definition": "A colleague is a person who works with you."
+        },
+        {
+          "word": "meeting",
+          "ipa": "/ˈmiːtɪŋ/",
+          "pos": "noun",
+          "gloss": "會議",
+          "definition": "A meeting is a time when people talk about work."
+        },
+        {
+          "word": "report",
+          "ipa": "/rɪˈpɔːrt/",
+          "pos": "noun",
+          "gloss": "報告",
+          "definition": "A report is a paper that tells what you did or learned.",
+          "key": true
+        }
+      ],
+      "sentences": [
+        {
+          "text": "A workplace is where your job happens.",
+          "speaker": "jenny",
+          "audio": "audio/workplace/01.mp3"
+        },
+        {
+          "text": "You go to the workplace on weekdays.",
+          "speaker": "jenny",
+          "audio": "audio/workplace/02.mp3"
+        },
+        {
+          "text": "Other people work there beside you.",
+          "speaker": "jenny",
+          "audio": "audio/workplace/03.mp3"
+        },
+        {
+          "text": "You talk, you plan, and you write.",
+          "speaker": "jenny",
+          "audio": "audio/workplace/04.mp3"
+        },
+        {
+          "text": "Some days you share what you finished.",
+          "speaker": "jenny",
+          "audio": "audio/workplace/05.mp3"
+        },
+        {
+          "text": "I greet one colleague in the morning.",
+          "speaker": "jenny",
+          "audio": "audio/workplace/06.mp3"
+        },
+        {
+          "text": "We sit down for a short meeting.",
+          "speaker": "jenny",
+          "audio": "audio/workplace/07.mp3"
+        },
+        {
+          "text": "After that we write a report.",
+          "speaker": "jenny",
+          "audio": "audio/workplace/08.mp3"
+        },
+        {
+          "text": "A colleague is someone you work with.",
+          "speaker": "jenny",
+          "audio": "audio/workplace/09.mp3"
+        },
+        {
+          "text": "You are on the same team.",
+          "speaker": "jenny",
+          "audio": "audio/workplace/10.mp3"
+        },
+        {
+          "text": "My colleague sits near my desk.",
+          "speaker": "jenny",
+          "audio": "audio/workplace/11.mp3"
+        },
+        {
+          "text": "I ask my colleague when I am stuck.",
+          "speaker": "jenny",
+          "audio": "audio/workplace/12.mp3"
+        },
+        {
+          "text": "We share tasks and we both learn.",
+          "speaker": "jenny",
+          "audio": "audio/workplace/13.mp3"
+        },
+        {
+          "text": "A meeting is time set aside to talk.",
+          "speaker": "jenny",
+          "audio": "audio/workplace/14.mp3"
+        },
+        {
+          "text": "People meet so they can plan.",
+          "speaker": "jenny",
+          "audio": "audio/workplace/15.mp3"
+        },
+        {
+          "text": "Our meeting starts at ten o'clock.",
+          "speaker": "jenny",
+          "audio": "audio/workplace/16.mp3"
+        },
+        {
+          "text": "I listen and I write a few notes.",
+          "speaker": "jenny",
+          "audio": "audio/workplace/17.mp3"
+        },
+        {
+          "text": "A short meeting can save the day.",
+          "speaker": "jenny",
+          "audio": "audio/workplace/18.mp3"
+        },
+        {
+          "text": "A report is writing about the work.",
+          "speaker": "jenny",
+          "audio": "audio/workplace/19.mp3"
+        },
+        {
+          "text": "It says what you did and learned.",
+          "speaker": "jenny",
+          "audio": "audio/workplace/20.mp3"
+        },
+        {
+          "text": "I type the report after we talk.",
+          "speaker": "jenny",
+          "audio": "audio/workplace/21.mp3"
+        },
+        {
+          "text": "The report is clear and not too long.",
+          "speaker": "jenny",
+          "audio": "audio/workplace/22.mp3"
+        },
+        {
+          "text": "My colleague reads the report with me.",
+          "speaker": "jenny",
+          "audio": "audio/workplace/23.mp3"
+        },
+        {
+          "text": "I see my colleague at the workplace.",
+          "speaker": "jenny",
+          "audio": "audio/workplace/24.mp3"
+        },
+        {
+          "text": "We talk through the work in our meeting.",
+          "speaker": "jenny",
+          "audio": "audio/workplace/25.mp3"
+        },
+        {
+          "text": "Then we finish the report together.",
+          "speaker": "jenny",
+          "audio": "audio/workplace/26.mp3"
+        },
+        {
+          "text": "Colleague, meeting, and report go together.",
+          "speaker": "jenny",
+          "audio": "audio/workplace/27.mp3"
+        }
+      ]
+    },
+    {
+      "id": "report",
+      "number": 15,
+      "center": "report",
+      "scene": "work",
+      "scene_label": "At work",
+      "key": "presentation",
+      "story_link": "This report is full of data. A chart makes the numbers easy. I use both in my presentation.",
+      "center_word": {
+        "word": "report",
+        "ipa": "/rɪˈpɔːrt/",
+        "pos": "noun",
+        "gloss": "報告",
+        "definition": "A report is a paper that tells what you did or learned."
+      },
+      "words": [
+        {
+          "word": "data",
+          "ipa": "/ˈdeɪtə/",
+          "pos": "noun",
+          "gloss": "資料",
+          "definition": "Data means facts and numbers."
+        },
+        {
+          "word": "chart",
+          "ipa": "/tʃɑːrt/",
+          "pos": "noun",
+          "gloss": "圖表",
+          "definition": "A chart is a picture of numbers. It helps people see them."
+        },
+        {
+          "word": "presentation",
+          "ipa": "/ˌprezənˈteɪʃən/",
+          "pos": "noun",
+          "gloss": "簡報",
+          "definition": "A presentation is a talk. You explain your work and show pictures.",
+          "key": true
+        }
+      ],
+      "sentences": [
+        {
+          "text": "A report tells other people about work.",
+          "speaker": "jenny",
+          "audio": "audio/report/01.mp3"
+        },
+        {
+          "text": "They read it so they understand.",
+          "speaker": "jenny",
+          "audio": "audio/report/02.mp3"
+        },
+        {
+          "text": "It should stay clear and true.",
+          "speaker": "jenny",
+          "audio": "audio/report/03.mp3"
+        },
+        {
+          "text": "Numbers often help the reader.",
+          "speaker": "jenny",
+          "audio": "audio/report/04.mp3"
+        },
+        {
+          "text": "Later you may speak about the report.",
+          "speaker": "jenny",
+          "audio": "audio/report/05.mp3"
+        },
+        {
+          "text": "This report is full of data.",
+          "speaker": "jenny",
+          "audio": "audio/report/06.mp3"
+        },
+        {
+          "text": "A chart makes the numbers easy.",
+          "speaker": "jenny",
+          "audio": "audio/report/07.mp3"
+        },
+        {
+          "text": "I use both in my presentation.",
+          "speaker": "jenny",
+          "audio": "audio/report/08.mp3"
+        },
+        {
+          "text": "Data means the facts and the numbers.",
+          "speaker": "jenny",
+          "audio": "audio/report/09.mp3"
+        },
+        {
+          "text": "You gather data before you write.",
+          "speaker": "jenny",
+          "audio": "audio/report/10.mp3"
+        },
+        {
+          "text": "My data comes from last month.",
+          "speaker": "jenny",
+          "audio": "audio/report/11.mp3"
+        },
+        {
+          "text": "I check the data two times.",
+          "speaker": "jenny",
+          "audio": "audio/report/12.mp3"
+        },
+        {
+          "text": "Strong data makes a better report.",
+          "speaker": "jenny",
+          "audio": "audio/report/13.mp3"
+        },
+        {
+          "text": "A chart is a picture made of numbers.",
+          "speaker": "jenny",
+          "audio": "audio/report/14.mp3"
+        },
+        {
+          "text": "People can see the pattern fast.",
+          "speaker": "jenny",
+          "audio": "audio/report/15.mp3"
+        },
+        {
+          "text": "This chart shows the count each month.",
+          "speaker": "jenny",
+          "audio": "audio/report/16.mp3"
+        },
+        {
+          "text": "A simple chart is the best kind.",
+          "speaker": "jenny",
+          "audio": "audio/report/17.mp3"
+        },
+        {
+          "text": "I place the chart inside the report.",
+          "speaker": "jenny",
+          "audio": "audio/report/18.mp3"
+        },
+        {
+          "text": "A presentation is a talk with pictures.",
+          "speaker": "jenny",
+          "audio": "audio/report/19.mp3"
+        },
+        {
+          "text": "You stand up and explain the work.",
+          "speaker": "jenny",
+          "audio": "audio/report/20.mp3"
+        },
+        {
+          "text": "My presentation lasts ten minutes.",
+          "speaker": "jenny",
+          "audio": "audio/report/21.mp3"
+        },
+        {
+          "text": "I practice the talk the night before.",
+          "speaker": "jenny",
+          "audio": "audio/report/22.mp3"
+        },
+        {
+          "text": "The presentation shows my best chart.",
+          "speaker": "jenny",
+          "audio": "audio/report/23.mp3"
+        },
+        {
+          "text": "I place the data in the report.",
+          "speaker": "jenny",
+          "audio": "audio/report/24.mp3"
+        },
+        {
+          "text": "The chart carries the main idea.",
+          "speaker": "jenny",
+          "audio": "audio/report/25.mp3"
+        },
+        {
+          "text": "Then I give a short presentation.",
+          "speaker": "jenny",
+          "audio": "audio/report/26.mp3"
+        },
+        {
+          "text": "Data, chart, and presentation go together.",
+          "speaker": "jenny",
+          "audio": "audio/report/27.mp3"
+        }
+      ]
+    },
+    {
+      "id": "presentation",
+      "number": 16,
+      "center": "presentation",
+      "scene": "work",
+      "scene_label": "At work",
+      "key": "feedback",
+      "story_link": "Each slide has only a few words. The audience listens with real care. At the end they give me feedback.",
+      "center_word": {
+        "word": "presentation",
+        "ipa": "/ˌprezənˈteɪʃən/",
+        "pos": "noun",
+        "gloss": "簡報",
+        "definition": "A presentation is a talk. You explain your work and show pictures."
+      },
+      "words": [
+        {
+          "word": "slide",
+          "ipa": "/slaɪd/",
+          "pos": "noun",
+          "gloss": "投影片",
+          "definition": "A slide is one picture in a presentation."
+        },
+        {
+          "word": "audience",
+          "ipa": "/ˈɔːdiəns/",
+          "pos": "noun",
+          "gloss": "聽眾",
+          "definition": "The audience is the group of people who listen."
+        },
+        {
+          "word": "feedback",
+          "ipa": "/ˈfiːdbæk/",
+          "pos": "noun",
+          "gloss": "回饋",
+          "definition": "Feedback is what people tell you after they see your work.",
+          "key": true
+        }
+      ],
+      "sentences": [
+        {
+          "text": "A presentation is a talk you give.",
+          "speaker": "jenny",
+          "audio": "audio/presentation/01.mp3"
+        },
+        {
+          "text": "People come to hear the presentation.",
+          "speaker": "jenny",
+          "audio": "audio/presentation/02.mp3"
+        },
+        {
+          "text": "You show pictures during the presentation.",
+          "speaker": "jenny",
+          "audio": "audio/presentation/03.mp3"
+        },
+        {
+          "text": "You want every person to follow.",
+          "speaker": "jenny",
+          "audio": "audio/presentation/04.mp3"
+        },
+        {
+          "text": "When you finish, they can respond.",
+          "speaker": "jenny",
+          "audio": "audio/presentation/05.mp3"
+        },
+        {
+          "text": "Each slide has only a few words.",
+          "speaker": "jenny",
+          "audio": "audio/presentation/06.mp3"
+        },
+        {
+          "text": "The audience listens with real care.",
+          "speaker": "jenny",
+          "audio": "audio/presentation/07.mp3"
+        },
+        {
+          "text": "At the end they give me feedback.",
+          "speaker": "jenny",
+          "audio": "audio/presentation/08.mp3"
+        },
+        {
+          "text": "A slide is one picture in the talk.",
+          "speaker": "jenny",
+          "audio": "audio/presentation/09.mp3"
+        },
+        {
+          "text": "It can show words or one chart.",
+          "speaker": "jenny",
+          "audio": "audio/presentation/10.mp3"
+        },
+        {
+          "text": "I prepare ten slides for this talk.",
+          "speaker": "jenny",
+          "audio": "audio/presentation/11.mp3"
+        },
+        {
+          "text": "Every slide is easy to read.",
+          "speaker": "jenny",
+          "audio": "audio/presentation/12.mp3"
+        },
+        {
+          "text": "I keep each slide short and clear.",
+          "speaker": "jenny",
+          "audio": "audio/presentation/13.mp3"
+        },
+        {
+          "text": "The audience is the group that listens.",
+          "speaker": "jenny",
+          "audio": "audio/presentation/14.mp3"
+        },
+        {
+          "text": "They watch you and they watch the slides.",
+          "speaker": "jenny",
+          "audio": "audio/presentation/15.mp3"
+        },
+        {
+          "text": "I look at the audience and I smile.",
+          "speaker": "jenny",
+          "audio": "audio/presentation/16.mp3"
+        },
+        {
+          "text": "A kind audience helps me feel calm.",
+          "speaker": "jenny",
+          "audio": "audio/presentation/17.mp3"
+        },
+        {
+          "text": "I speak slowly for the whole audience.",
+          "speaker": "jenny",
+          "audio": "audio/presentation/18.mp3"
+        },
+        {
+          "text": "Feedback is what people say afterward.",
+          "speaker": "jenny",
+          "audio": "audio/presentation/19.mp3"
+        },
+        {
+          "text": "It says what worked and what failed.",
+          "speaker": "jenny",
+          "audio": "audio/presentation/20.mp3"
+        },
+        {
+          "text": "I ask the audience for honest feedback.",
+          "speaker": "jenny",
+          "audio": "audio/presentation/21.mp3"
+        },
+        {
+          "text": "I write their feedback in my notes.",
+          "speaker": "jenny",
+          "audio": "audio/presentation/22.mp3"
+        },
+        {
+          "text": "Good feedback shows the next step.",
+          "speaker": "jenny",
+          "audio": "audio/presentation/23.mp3"
+        },
+        {
+          "text": "My slides stay short and clear.",
+          "speaker": "jenny",
+          "audio": "audio/presentation/24.mp3"
+        },
+        {
+          "text": "The audience can follow every point.",
+          "speaker": "jenny",
+          "audio": "audio/presentation/25.mp3"
+        },
+        {
+          "text": "Their feedback tells me what to change.",
+          "speaker": "jenny",
+          "audio": "audio/presentation/26.mp3"
+        },
+        {
+          "text": "Slide, audience, and feedback go together.",
+          "speaker": "jenny",
+          "audio": "audio/presentation/27.mp3"
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "number": 17,
+      "center": "feedback",
+      "scene": "study",
+      "scene_label": "Getting better",
+      "key": "improve",
+      "story_link": "Their note has some real praise. It also gives me clear advice. I will use both so I improve.",
+      "center_word": {
+        "word": "feedback",
+        "ipa": "/ˈfiːdbæk/",
+        "pos": "noun",
+        "gloss": "回饋",
+        "definition": "Feedback is what people tell you after they see your work."
+      },
+      "words": [
+        {
+          "word": "praise",
+          "ipa": "/preɪz/",
+          "pos": "noun",
+          "gloss": "稱讚",
+          "definition": "Praise means kind words about good work."
+        },
+        {
+          "word": "advice",
+          "ipa": "/ədˈvaɪs/",
+          "pos": "noun",
+          "gloss": "建議",
+          "definition": "Advice is an idea that can help you."
+        },
+        {
+          "word": "improve",
+          "ipa": "/ɪmˈpruːv/",
+          "pos": "verb",
+          "gloss": "改進",
+          "definition": "Improve means you get better than before.",
+          "key": true
+        }
+      ],
+      "sentences": [
+        {
+          "text": "Feedback is what people tell you later.",
+          "speaker": "jenny",
+          "audio": "audio/feedback/01.mp3"
+        },
+        {
+          "text": "Feedback shows what worked and what failed.",
+          "speaker": "jenny",
+          "audio": "audio/feedback/02.mp3"
+        },
+        {
+          "text": "Some words are kind and some are direct.",
+          "speaker": "jenny",
+          "audio": "audio/feedback/03.mp3"
+        },
+        {
+          "text": "You can use that feedback to grow.",
+          "speaker": "jenny",
+          "audio": "audio/feedback/04.mp3"
+        },
+        {
+          "text": "An honest note is useful, not unkind.",
+          "speaker": "jenny",
+          "audio": "audio/feedback/05.mp3"
+        },
+        {
+          "text": "Their note has some real praise.",
+          "speaker": "jenny",
+          "audio": "audio/feedback/06.mp3"
+        },
+        {
+          "text": "It also gives me clear advice.",
+          "speaker": "jenny",
+          "audio": "audio/feedback/07.mp3"
+        },
+        {
+          "text": "I will use both so I improve.",
+          "speaker": "jenny",
+          "audio": "audio/feedback/08.mp3"
+        },
+        {
+          "text": "Praise means kind words for good work.",
+          "speaker": "jenny",
+          "audio": "audio/feedback/09.mp3"
+        },
+        {
+          "text": "It shows you what you should keep.",
+          "speaker": "jenny",
+          "audio": "audio/feedback/10.mp3"
+        },
+        {
+          "text": "I smile when the praise is specific.",
+          "speaker": "jenny",
+          "audio": "audio/feedback/11.mp3"
+        },
+        {
+          "text": "Praise gives me heart to continue.",
+          "speaker": "jenny",
+          "audio": "audio/feedback/12.mp3"
+        },
+        {
+          "text": "I thank them for the praise.",
+          "speaker": "jenny",
+          "audio": "audio/feedback/13.mp3"
+        },
+        {
+          "text": "Advice is an idea that can help.",
+          "speaker": "jenny",
+          "audio": "audio/feedback/14.mp3"
+        },
+        {
+          "text": "It points to what you might try next.",
+          "speaker": "jenny",
+          "audio": "audio/feedback/15.mp3"
+        },
+        {
+          "text": "The advice is to speak more slowly.",
+          "speaker": "jenny",
+          "audio": "audio/feedback/16.mp3"
+        },
+        {
+          "text": "I copy the advice into my notebook.",
+          "speaker": "jenny",
+          "audio": "audio/feedback/17.mp3"
+        },
+        {
+          "text": "Clear advice is a real gift.",
+          "speaker": "jenny",
+          "audio": "audio/feedback/18.mp3"
+        },
+        {
+          "text": "Improve means you become better.",
+          "speaker": "jenny",
+          "audio": "audio/feedback/19.mp3"
+        },
+        {
+          "text": "You change one small thing and try again.",
+          "speaker": "jenny",
+          "audio": "audio/feedback/20.mp3"
+        },
+        {
+          "text": "I improve a little every week.",
+          "speaker": "jenny",
+          "audio": "audio/feedback/21.mp3"
+        },
+        {
+          "text": "I want to improve the way I speak.",
+          "speaker": "jenny",
+          "audio": "audio/feedback/22.mp3"
+        },
+        {
+          "text": "Small steps help a person improve.",
+          "speaker": "jenny",
+          "audio": "audio/feedback/23.mp3"
+        },
+        {
+          "text": "I keep the praise and I smile.",
+          "speaker": "jenny",
+          "audio": "audio/feedback/24.mp3"
+        },
+        {
+          "text": "I follow the advice they gave me.",
+          "speaker": "jenny",
+          "audio": "audio/feedback/25.mp3"
+        },
+        {
+          "text": "Then I work to improve the talk.",
+          "speaker": "jenny",
+          "audio": "audio/feedback/26.mp3"
+        },
+        {
+          "text": "Praise, advice, and improve go together.",
+          "speaker": "jenny",
+          "audio": "audio/feedback/27.mp3"
+        }
+      ]
+    },
+    {
+      "id": "improve",
+      "number": 18,
+      "center": "improve",
+      "scene": "study",
+      "scene_label": "Getting better",
+      "key": "practice",
+      "story_link": "I set one clear goal for this month. I turn that goal into a habit. My practice stays short and steady.",
+      "center_word": {
+        "word": "improve",
+        "ipa": "/ɪmˈpruːv/",
+        "pos": "verb",
+        "gloss": "改進",
+        "definition": "Improve means you get better than before."
+      },
+      "words": [
+        {
+          "word": "goal",
+          "ipa": "/ɡoʊl/",
+          "pos": "noun",
+          "gloss": "目標",
+          "definition": "A goal is something you want to reach."
+        },
+        {
+          "word": "habit",
+          "ipa": "/ˈhæbɪt/",
+          "pos": "noun",
+          "gloss": "習慣",
+          "definition": "A habit is something you do again and again."
+        },
+        {
+          "word": "practice",
+          "ipa": "/ˈpræktɪs/",
+          "pos": "noun",
+          "gloss": "練習",
+          "definition": "Practice is time you spend getting better.",
+          "key": true
+        }
+      ],
+      "sentences": [
+        {
+          "text": "To improve means to get better.",
+          "speaker": "jenny",
+          "audio": "audio/improve/01.mp3"
+        },
+        {
+          "text": "You do not have to change everything.",
+          "speaker": "jenny",
+          "audio": "audio/improve/02.mp3"
+        },
+        {
+          "text": "You choose one thing and repeat it.",
+          "speaker": "jenny",
+          "audio": "audio/improve/03.mp3"
+        },
+        {
+          "text": "Time and care make the change real.",
+          "speaker": "jenny",
+          "audio": "audio/improve/04.mp3"
+        },
+        {
+          "text": "That is one clear way to improve.",
+          "speaker": "jenny",
+          "audio": "audio/improve/05.mp3"
+        },
+        {
+          "text": "I set one clear goal for this month.",
+          "speaker": "jenny",
+          "audio": "audio/improve/06.mp3"
+        },
+        {
+          "text": "I turn that goal into a habit.",
+          "speaker": "jenny",
+          "audio": "audio/improve/07.mp3"
+        },
+        {
+          "text": "My practice stays short and steady.",
+          "speaker": "jenny",
+          "audio": "audio/improve/08.mp3"
+        },
+        {
+          "text": "A goal is what you hope to reach.",
+          "speaker": "jenny",
+          "audio": "audio/improve/09.mp3"
+        },
+        {
+          "text": "It gives your days a direction.",
+          "speaker": "jenny",
+          "audio": "audio/improve/10.mp3"
+        },
+        {
+          "text": "My goal is to speak more clearly.",
+          "speaker": "jenny",
+          "audio": "audio/improve/11.mp3"
+        },
+        {
+          "text": "I write the goal on a small card.",
+          "speaker": "jenny",
+          "audio": "audio/improve/12.mp3"
+        },
+        {
+          "text": "A clear goal is easier to follow.",
+          "speaker": "jenny",
+          "audio": "audio/improve/13.mp3"
+        },
+        {
+          "text": "A habit is what you do very often.",
+          "speaker": "jenny",
+          "audio": "audio/improve/14.mp3"
+        },
+        {
+          "text": "After a while it feels normal.",
+          "speaker": "jenny",
+          "audio": "audio/improve/15.mp3"
+        },
+        {
+          "text": "I start the habit in the morning.",
+          "speaker": "jenny",
+          "audio": "audio/improve/16.mp3"
+        },
+        {
+          "text": "A new habit feels hard at first.",
+          "speaker": "jenny",
+          "audio": "audio/improve/17.mp3"
+        },
+        {
+          "text": "Soon the habit carries me along.",
+          "speaker": "jenny",
+          "audio": "audio/improve/18.mp3"
+        },
+        {
+          "text": "Practice is time spent getting better.",
+          "speaker": "jenny",
+          "audio": "audio/improve/19.mp3"
+        },
+        {
+          "text": "You repeat the work on purpose.",
+          "speaker": "jenny",
+          "audio": "audio/improve/20.mp3"
+        },
+        {
+          "text": "My practice lasts fifteen minutes.",
+          "speaker": "jenny",
+          "audio": "audio/improve/21.mp3"
+        },
+        {
+          "text": "I keep that practice every morning.",
+          "speaker": "jenny",
+          "audio": "audio/improve/22.mp3"
+        },
+        {
+          "text": "Daily practice is how I improve.",
+          "speaker": "jenny",
+          "audio": "audio/improve/23.mp3"
+        },
+        {
+          "text": "The goal on my card is small.",
+          "speaker": "jenny",
+          "audio": "audio/improve/24.mp3"
+        },
+        {
+          "text": "The habit brings me back each day.",
+          "speaker": "jenny",
+          "audio": "audio/improve/25.mp3"
+        },
+        {
+          "text": "Short practice moves the goal forward.",
+          "speaker": "jenny",
+          "audio": "audio/improve/26.mp3"
+        },
+        {
+          "text": "Goal, habit, and practice go together.",
+          "speaker": "jenny",
+          "audio": "audio/improve/27.mp3"
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "number": 19,
+      "center": "practice",
+      "scene": "study",
+      "scene_label": "Getting better",
+      "key": "progress",
+      "story_link": "I notice a mistake and I fix it. The next try takes more effort. That is how real progress starts.",
+      "center_word": {
+        "word": "practice",
+        "ipa": "/ˈpræktɪs/",
+        "pos": "noun",
+        "gloss": "練習",
+        "definition": "Practice is time you spend getting better."
+      },
+      "words": [
+        {
+          "word": "mistake",
+          "ipa": "/mɪˈsteɪk/",
+          "pos": "noun",
+          "gloss": "錯誤",
+          "definition": "A mistake is something that is not right."
+        },
+        {
+          "word": "effort",
+          "ipa": "/ˈefərt/",
+          "pos": "noun",
+          "gloss": "努力",
+          "definition": "Effort means you try hard and you give it time."
+        },
+        {
+          "word": "progress",
+          "ipa": "/ˈprɑːɡres/",
+          "pos": "noun",
+          "gloss": "進步",
+          "definition": "Progress means you have moved forward.",
+          "key": true
+        }
+      ],
+      "sentences": [
+        {
+          "text": "Practice means you do the work again.",
+          "speaker": "jenny",
+          "audio": "audio/practice/01.mp3"
+        },
+        {
+          "text": "You return to practice day after day.",
+          "speaker": "jenny",
+          "audio": "audio/practice/02.mp3"
+        },
+        {
+          "text": "Some days feel light and some feel heavy.",
+          "speaker": "jenny",
+          "audio": "audio/practice/03.mp3"
+        },
+        {
+          "text": "You learn during the practice itself.",
+          "speaker": "jenny",
+          "audio": "audio/practice/04.mp3"
+        },
+        {
+          "text": "After a while a change appears.",
+          "speaker": "jenny",
+          "audio": "audio/practice/05.mp3"
+        },
+        {
+          "text": "I notice a mistake and I fix it.",
+          "speaker": "jenny",
+          "audio": "audio/practice/06.mp3"
+        },
+        {
+          "text": "The next try takes more effort.",
+          "speaker": "jenny",
+          "audio": "audio/practice/07.mp3"
+        },
+        {
+          "text": "That is how real progress starts.",
+          "speaker": "jenny",
+          "audio": "audio/practice/08.mp3"
+        },
+        {
+          "text": "A mistake is something not quite right.",
+          "speaker": "jenny",
+          "audio": "audio/practice/09.mp3"
+        },
+        {
+          "text": "Every learner makes a mistake sometimes.",
+          "speaker": "jenny",
+          "audio": "audio/practice/10.mp3"
+        },
+        {
+          "text": "I stop when I see the mistake.",
+          "speaker": "jenny",
+          "audio": "audio/practice/11.mp3"
+        },
+        {
+          "text": "I correct the mistake and try once more.",
+          "speaker": "jenny",
+          "audio": "audio/practice/12.mp3"
+        },
+        {
+          "text": "A mistake can teach a useful lesson.",
+          "speaker": "jenny",
+          "audio": "audio/practice/13.mp3"
+        },
+        {
+          "text": "Effort means you try with real care.",
+          "speaker": "jenny",
+          "audio": "audio/practice/14.mp3"
+        },
+        {
+          "text": "You give the work your time.",
+          "speaker": "jenny",
+          "audio": "audio/practice/15.mp3"
+        },
+        {
+          "text": "My effort is strong this week.",
+          "speaker": "jenny",
+          "audio": "audio/practice/16.mp3"
+        },
+        {
+          "text": "Honest effort matters more than speed.",
+          "speaker": "jenny",
+          "audio": "audio/practice/17.mp3"
+        },
+        {
+          "text": "I am glad I gave the effort.",
+          "speaker": "jenny",
+          "audio": "audio/practice/18.mp3"
+        },
+        {
+          "text": "Progress means you have moved ahead.",
+          "speaker": "jenny",
+          "audio": "audio/practice/19.mp3"
+        },
+        {
+          "text": "You can do more than you could before.",
+          "speaker": "jenny",
+          "audio": "audio/practice/20.mp3"
+        },
+        {
+          "text": "I notice my progress in small ways.",
+          "speaker": "jenny",
+          "audio": "audio/practice/21.mp3"
+        },
+        {
+          "text": "Slow progress is still real progress.",
+          "speaker": "jenny",
+          "audio": "audio/practice/22.mp3"
+        },
+        {
+          "text": "I write a line about my progress.",
+          "speaker": "jenny",
+          "audio": "audio/practice/23.mp3"
+        },
+        {
+          "text": "A mistake shows the part to fix.",
+          "speaker": "jenny",
+          "audio": "audio/practice/24.mp3"
+        },
+        {
+          "text": "Effort keeps me inside the work.",
+          "speaker": "jenny",
+          "audio": "audio/practice/25.mp3"
+        },
+        {
+          "text": "Bit by bit that becomes progress.",
+          "speaker": "jenny",
+          "audio": "audio/practice/26.mp3"
+        },
+        {
+          "text": "Mistake, effort, and progress go together.",
+          "speaker": "jenny",
+          "audio": "audio/practice/27.mp3"
+        }
+      ]
+    },
+    {
+      "id": "progress",
+      "number": 20,
+      "center": "progress",
+      "scene": "study",
+      "scene_label": "Getting better",
+      "key": null,
+      "story_link": "My confidence is much stronger now. My skill is better than before. I can call that a real success.",
+      "center_word": {
+        "word": "progress",
+        "ipa": "/ˈprɑːɡres/",
+        "pos": "noun",
+        "gloss": "進步",
+        "definition": "Progress means you have moved forward."
+      },
+      "words": [
+        {
+          "word": "confidence",
+          "ipa": "/ˈkɑːnfɪdəns/",
+          "pos": "noun",
+          "gloss": "信心",
+          "definition": "Confidence means you trust yourself."
+        },
+        {
+          "word": "skill",
+          "ipa": "/skɪl/",
+          "pos": "noun",
+          "gloss": "技能",
+          "definition": "A skill is something you can do well."
+        },
+        {
+          "word": "success",
+          "ipa": "/səkˈses/",
+          "pos": "noun",
+          "gloss": "成功",
+          "definition": "Success means you reach what you hoped for."
+        }
+      ],
+      "sentences": [
+        {
+          "text": "Progress means you have moved forward.",
+          "speaker": "jenny",
+          "audio": "audio/progress/01.mp3"
+        },
+        {
+          "text": "You can look back and see your progress.",
+          "speaker": "jenny",
+          "audio": "audio/progress/02.mp3"
+        },
+        {
+          "text": "The change may be quite small.",
+          "speaker": "jenny",
+          "audio": "audio/progress/03.mp3"
+        },
+        {
+          "text": "The change is real and it is yours.",
+          "speaker": "jenny",
+          "audio": "audio/progress/04.mp3"
+        },
+        {
+          "text": "This last unit looks at your progress.",
+          "speaker": "jenny",
+          "audio": "audio/progress/05.mp3"
+        },
+        {
+          "text": "My confidence is much stronger now.",
+          "speaker": "jenny",
+          "audio": "audio/progress/06.mp3"
+        },
+        {
+          "text": "My skill is better than before.",
+          "speaker": "jenny",
+          "audio": "audio/progress/07.mp3"
+        },
+        {
+          "text": "I can call that a real success.",
+          "speaker": "jenny",
+          "audio": "audio/progress/08.mp3"
+        },
+        {
+          "text": "Confidence means you trust yourself.",
+          "speaker": "jenny",
+          "audio": "audio/progress/09.mp3"
+        },
+        {
+          "text": "You feel able to try the next thing.",
+          "speaker": "jenny",
+          "audio": "audio/progress/10.mp3"
+        },
+        {
+          "text": "My confidence grows when I keep going.",
+          "speaker": "jenny",
+          "audio": "audio/progress/11.mp3"
+        },
+        {
+          "text": "I speak with more confidence these days.",
+          "speaker": "jenny",
+          "audio": "audio/progress/12.mp3"
+        },
+        {
+          "text": "Confidence helps you take the first step.",
+          "speaker": "jenny",
+          "audio": "audio/progress/13.mp3"
+        },
+        {
+          "text": "A skill is something you can do well.",
+          "speaker": "jenny",
+          "audio": "audio/progress/14.mp3"
+        },
+        {
+          "text": "You build it with time and repetition.",
+          "speaker": "jenny",
+          "audio": "audio/progress/15.mp3"
+        },
+        {
+          "text": "My speaking skill is clearer now.",
+          "speaker": "jenny",
+          "audio": "audio/progress/16.mp3"
+        },
+        {
+          "text": "I use this skill every single day.",
+          "speaker": "jenny",
+          "audio": "audio/progress/17.mp3"
+        },
+        {
+          "text": "A skill stays if you keep using it.",
+          "speaker": "jenny",
+          "audio": "audio/progress/18.mp3"
+        },
+        {
+          "text": "Success means you reach a hope.",
+          "speaker": "jenny",
+          "audio": "audio/progress/19.mp3"
+        },
+        {
+          "text": "The hope can be large or very small.",
+          "speaker": "jenny",
+          "audio": "audio/progress/20.mp3"
+        },
+        {
+          "text": "Even a small success still counts.",
+          "speaker": "jenny",
+          "audio": "audio/progress/21.mp3"
+        },
+        {
+          "text": "Walking this whole chain is a success.",
+          "speaker": "jenny",
+          "audio": "audio/progress/22.mp3"
+        },
+        {
+          "text": "I feel proud of that success.",
+          "speaker": "jenny",
+          "audio": "audio/progress/23.mp3"
+        },
+        {
+          "text": "I trust myself, and that is confidence.",
+          "speaker": "jenny",
+          "audio": "audio/progress/24.mp3"
+        },
+        {
+          "text": "The skill is stronger than last month.",
+          "speaker": "jenny",
+          "audio": "audio/progress/25.mp3"
+        },
+        {
+          "text": "I see both of these as success.",
+          "speaker": "jenny",
+          "audio": "audio/progress/26.mp3"
+        },
+        {
+          "text": "Confidence, skill, and success go together.",
+          "speaker": "jenny",
+          "audio": "audio/progress/27.mp3"
         }
       ]
     }

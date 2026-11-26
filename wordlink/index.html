@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Wordlink: a B1 vocabulary listening tree. Each center word opens three words that share one small story.">
+<meta name="description" content="Wordlink: a 20-unit B1 vocabulary chain. Each unit links to the next by one key word.">
 <title>Wordlink</title>
 <link rel="stylesheet" href="style.css">
 </head>
@@ -12,27 +12,31 @@
   <div class="top-row">
     <div>
       <h1>Wordlink</h1>
-      <p class="tag">Words in a tree. Listen, then say them.</p>
-      <p class="tag zh" lang="zh-Hant">單字樹。先聽，再跟著說。</p>
+      <p class="tag">Twenty units in a line. Listen, then say them.</p>
+      <p class="tag zh" lang="zh-Hant">二十個單元，一路聽下去。</p>
     </div>
     <a class="site-link" href="../">AB 複讀</a>
   </div>
-  <nav class="roots" id="roots" aria-label="Start here"></nav>
+  <div class="course-row">
+    <p id="unitLabel" class="unit-label">Unit 1/20</p>
+    <div class="unit-nav">
+      <button type="button" id="prevUnit">Prev unit</button>
+      <button type="button" id="nextUnit" class="pri">Next unit</button>
+      <button type="button" id="reviewBtn">Words</button>
+    </div>
+  </div>
+  <p id="continueNote" class="continue-note" hidden>Continuing where you left off.</p>
+  <nav id="strip" class="strip" aria-label="Course chain"></nav>
 </header>
 
 <main>
   <p id="boot">Loading lessons…</p>
   <div id="stage" class="stage" hidden>
-    <section class="tree-col">
-      <div class="crumb-row">
-        <button type="button" id="back" hidden>Back</button>
-        <nav id="crumb" class="crumb" aria-label="Path"></nav>
-      </div>
+    <section class="lesson-col">
       <p id="scene" class="scene"></p>
-      <div class="tree" id="tree" aria-label="Word tree">
-        <svg id="lines" aria-hidden="true"></svg>
-      </div>
-      <p class="link-note">These three words share one story. Tap <b>i</b> for the card.</p>
+      <h2 id="centerName" class="center-name"></h2>
+      <div id="words" class="word-row"></div>
+      <p class="link-note">These three words share one story. The marked word opens the next unit.</p>
       <blockquote id="story" class="story"></blockquote>
     </section>
     <section class="list-col">
@@ -93,6 +97,18 @@
     <p id="cardDef" class="card-def"></p>
     <p id="cardGloss" class="card-gloss" lang="zh-Hant"></p>
     <button type="button" id="cardGo" class="pri card-go" hidden>Open</button>
+  </div>
+</div>
+
+<div id="review" class="sheet" hidden>
+  <div id="reviewBack" class="sheet-back"></div>
+  <div class="sheet-card" role="dialog" aria-modal="true" aria-labelledby="reviewTitle">
+    <div class="sheet-top">
+      <h2 id="reviewTitle" class="review-title">Words so far</h2>
+      <button type="button" id="reviewClose">Close</button>
+    </div>
+    <p id="reviewCount" class="review-count"></p>
+    <div id="reviewList" class="review-list"></div>
   </div>
 </div>
 

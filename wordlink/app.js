@@ -14,12 +14,15 @@ var state = {
   repNow: 0,
   note: "",
   scrolled: -2,
-  card: null
+  card: null,
+  furthest: 0,
+  resumed: false
 };
 var playToken = 0;
 var gapTimer = 0;
 var audio = new Audio();
 audio.preload = "none";
+var COURSE_KEY = "wordlink:course";
 
 var $ = function (id) { return document.getElementById(id); };
 
@@ -27,38 +30,10 @@ function hashId() {
   return decodeURIComponent((location.hash || "").replace(/^#/, ""));
 }
 function currentUnit() {
-  return byId[hashId()] || byId.library || null;
+  return byId[hashId()] || UNITS[0] || null;
 }
-function parentOf(unit) {
-  return unit && unit.parent_unit ? byId[unit.parent_unit] || null : null;
-}
-function chainOf(unit) {
-  var out = [];
-  var guard = 0;
-  var seen = {};
-  while (unit && !seen[unit.id] && guard < 20) {
-    seen[unit.id] = true;
-    out.unshift(unit);
-    unit = parentOf(unit);
-    guard += 1;
-  }
-  return out;
-}
-function rootOf(unit) {
-  var path = chainOf(unit);
-  return path.length ? path[0] : unit;
-}
-function childUnit(parentId, word) {
-  var want = String(word || "").toLowerCase();
-  for (var i = 0; i < UNITS.length; i++) {
-    if (UNITS[i].parent_unit === parentId && String(UNITS[i].center).toLowerCase() === want) return UNITS[i];
-  }
-  return null;
-}
-function wordEntries(unit) {
-  return [{ data: unit.center_word, kind: "center" }].concat(unit.words.map(function (word) {
-    return { data: word, kind: "child" };
-  }));
+function unitIndex(unit) {
+  return UNITS.indexOf(unit);
 }
 function isBoundary(text, start, end) {
   var word = /[A-Za-z0-9]/;
@@ -103,8 +78,8 @@ function linkParts(text, entries) {
   return out;
 }
 function containsTerm(text, term) {
-  var lower = text.toLowerCase();
-  var want = term.toLowerCase();
+  var lower = String(text || "").toLowerCase();
+  var want = String(term || "").toLowerCase();
   var from = 0;
   while (from <= lower.length) {
     var at = lower.indexOf(want, from);
@@ -113,6 +88,11 @@ function containsTerm(text, term) {
     from = at + 1;
   }
   return false;
+}
+function wordEntries(unit) {
+  return [{ data: unit.center_word, kind: "center" }].concat(unit.words.map(function (word) {
+    return { data: word, kind: word.key ? "key" : "child" };
+  }));
 }
 function clampSpeed(value) {
   var n = Math.round(Number(value) * 10) / 10;
@@ -145,13 +125,29 @@ function saveSettings() {
     }));
   } catch (e) {}
 }
-function reducedMotion() {
-  return window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+function loadCourse() {
+  state.saved = "";
+  state.furthest = 0;
+  try {
+    var saved = JSON.parse(localStorage.getItem(COURSE_KEY) || "null");
+    if (saved && byId[saved.current]) state.saved = saved.current;
+    if (saved && typeof saved.furthest === "number") state.furthest = saved.furthest;
+  } catch (e) {}
 }
-
+function saveCourse() {
+  var unit = currentUnit();
+  if (!unit) return;
+  var reached = unitIndex(unit) + 1;
+  if (reached > state.furthest) state.furthest = reached;
+  try {
+    localStorage.setItem(COURSE_KEY, JSON.stringify({ current: unit.id, furthest: state.furthest }));
+  } catch (e) {}
+}
+function goUnit(id) {
+  if (byId[id]) location.hash = id;
+}
 function fillWords(node, text, unit) {
-  var parts = linkParts(text, wordEntries(unit));
-  parts.forEach(function (part) {
+  linkParts(text, wordEntries(unit)).forEach(function (part) {
     if (part.type === "text") {
       node.appendChild(document.createTextNode(part.text));
       return;
@@ -163,127 +159,99 @@ function fillWords(node, text, unit) {
     btn.setAttribute("aria-label", "Word card: " + part.entry.data.word);
     btn.addEventListener("click", function (event) {
       event.stopPropagation();
-      var child = part.entry.kind === "child" ? childUnit(unit.id, part.entry.data.word) : null;
-      openCard(part.entry.data, child ? child.id : null);
+      openCard(part.entry.data, nextUnitId(unit, part.entry.data));
     });
     node.appendChild(btn);
   });
 }
-
-function makeBubble(word, kind, unit) {
-  var child = kind === "child" ? childUnit(unit.id, word.word) : null;
-  var bubble = document.createElement("div");
-  bubble.className = "bubble " + (kind === "center" ? "center" : "child");
-  bubble.dataset.word = word.word;
-  if (kind === "child") bubble.classList.add("c" + unit.words.indexOf(word));
-  if (child) bubble.classList.add("has-child");
-
-  var main = document.createElement("button");
-  main.type = "button";
-  main.className = "bmain";
-  var label = document.createElement("span");
-  label.className = "bw";
-  label.textContent = word.word;
-  main.appendChild(label);
-  if (state.gloss && word.gloss) {
-    var gloss = document.createElement("span");
-    gloss.className = "bg";
-    gloss.lang = "zh-Hant";
-    gloss.textContent = word.gloss;
-    main.appendChild(gloss);
-  }
-  if (child) {
-    var next = document.createElement("span");
-    next.className = "bnext";
-    next.textContent = "open ›";
-    main.appendChild(next);
-    main.setAttribute("aria-label", "Open " + word.word);
-  } else {
-    main.setAttribute("aria-label", "Word card: " + word.word);
-  }
-  main.addEventListener("click", function () {
-    if (child) location.hash = child.id;
-    else openCard(word, null);
-  });
-  bubble.appendChild(main);
-
-  var info = document.createElement("button");
-  info.type = "button";
-  info.className = "binfo";
-  info.textContent = "i";
-  info.setAttribute("aria-label", "Word card: " + word.word);
-  info.addEventListener("click", function (event) {
-    event.stopPropagation();
-    openCard(word, child ? child.id : null);
-  });
-  bubble.appendChild(info);
-  return bubble;
+function nextUnitId(unit, word) {
+  if (!word || !word.key) return null;
+  var nxt = UNITS[unitIndex(unit) + 1];
+  return nxt ? nxt.id : null;
 }
-
 function renderUnit() {
   var unit = currentUnit();
   if (!unit) return;
-  document.title = "Wordlink · " + unit.center;
-  var path = chainOf(unit);
-  var parent = parentOf(unit);
-  var root = rootOf(unit);
+  var index = unitIndex(unit);
+  document.title = "Wordlink · " + (index + 1) + " " + unit.center;
+  $("unitLabel").textContent = "Unit " + (index + 1) + "/" + UNITS.length;
+  $("prevUnit").disabled = index <= 0;
+  $("nextUnit").disabled = index >= UNITS.length - 1;
+  $("continueNote").hidden = !state.resumed;
 
-  var roots = $("roots");
-  roots.innerHTML = "";
-  UNITS.filter(function (item) { return !item.parent_unit; }).forEach(function (item) {
-    var btn = document.createElement("button");
-    btn.type = "button";
-    btn.textContent = item.center;
-    if (root && item.id === root.id) btn.className = "on";
-    btn.setAttribute("aria-current", root && item.id === root.id ? "true" : "false");
-    btn.addEventListener("click", function () { location.hash = item.id; });
-    roots.appendChild(btn);
-  });
-
-  var back = $("back");
-  if (parent) {
-    back.hidden = false;
-    back.onclick = function () { location.hash = parent.id; };
-    back.setAttribute("aria-label", "Back to " + parent.center);
-  } else {
-    back.hidden = true;
-    back.onclick = null;
-  }
-
-  var crumb = $("crumb");
-  crumb.innerHTML = "";
-  path.forEach(function (item, index) {
-    if (index > 0) {
+  var strip = $("strip");
+  strip.innerHTML = "";
+  UNITS.forEach(function (item, itemIndex) {
+    if (itemIndex > 0) {
       var sep = document.createElement("span");
       sep.className = "sep";
       sep.textContent = "›";
       sep.setAttribute("aria-hidden", "true");
-      crumb.appendChild(sep);
+      strip.appendChild(sep);
     }
-    if (item.id === unit.id) {
-      var here = document.createElement("span");
-      here.className = "here";
-      here.textContent = item.center;
-      here.setAttribute("aria-current", "page");
-      crumb.appendChild(here);
-    } else {
-      var jump = document.createElement("button");
-      jump.type = "button";
-      jump.textContent = item.center;
-      jump.addEventListener("click", function () { location.hash = item.id; });
-      crumb.appendChild(jump);
-    }
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.textContent = item.center;
+    if (item.id === unit.id) btn.className = "now";
+    else if (itemIndex < state.furthest) btn.className = "reached";
+    btn.setAttribute("aria-current", item.id === unit.id ? "true" : "false");
+    btn.addEventListener("click", function () { goUnit(item.id); });
+    strip.appendChild(btn);
   });
+  var currentStep = strip.querySelector(".now");
+  if (currentStep) {
+    var left = currentStep.offsetLeft - (strip.clientWidth - currentStep.offsetWidth) / 2;
+    strip.scrollLeft = Math.max(0, left);
+  }
 
+  var parent = index > 0 ? UNITS[index - 1] : null;
   var scene = $("scene");
   var changed = !!(parent && parent.scene !== unit.scene);
   scene.textContent = (changed ? "New scene · " : "Scene · ") + (unit.scene_label || unit.scene);
   scene.classList.toggle("is-new", changed);
 
-  var tree = $("tree");
-  tree.querySelectorAll(".bubble").forEach(function (node) { node.remove(); });
-  tree.appendChild(makeBubble(unit.center_word, "center", unit));
-  unit.words.forEach(function (word) { tree.appendChild(makeBubble(word, "child", unit)); });
+  var heading = $("centerName");
+  heading.innerHTML = "";
+  var centerBtn = document.createElement("button");
+  centerBtn.type = "button";
+  centerBtn.textContent = unit.center;
+  centerBtn.setAttribute("aria-label", "Word card: " + unit.center);
+  centerBtn.addEventListener("click", function () { openCard(unit.center_word, null); });
+  heading.appendChild(centerBtn);
+
+  var row = $("words");
+  row.innerHTML = "";
+  unit.words.forEach(function (word) {
+    var chip = document.createElement("div");
+    chip.className = "chip" + (word.key ? " is-key" : "");
+    chip.dataset.word = word.word;
+    var main = document.createElement("button");
+    main.type = "button";
+    main.className = "chip-main";
+    var label = document.createElement("span");
+    label.className = "chip-word";
+    label.textContent = word.word;
+    main.appendChild(label);
+    if (state.gloss && word.gloss) {
+      var gloss = document.createElement("span");
+      gloss.className = "bg";
+      gloss.lang = "zh-Hant";
+      gloss.textContent = word.gloss;
+      main.appendChild(gloss);
+    }
+    main.setAttribute("aria-label", "Word card: " + word.word);
+    main.addEventListener("click", function () { openCard(word, nextUnitId(unit, word)); });
+    chip.appendChild(main);
+    if (word.key && index < UNITS.length - 1) {
+      var next = document.createElement("button");
+      next.type = "button";
+      next.className = "chip-next";
+      next.textContent = "Next: " + word.word + " ›";
+      next.addEventListener("click", function () { goUnit(UNITS[index + 1].id); });
+      chip.appendChild(next);
+    }
+    row.appendChild(chip);
+  });
 
   var story = $("story");
   story.innerHTML = "";
@@ -297,16 +265,16 @@ function renderUnit() {
 
   var list = $("list");
   list.innerHTML = "";
-  unit.sentences.forEach(function (sentence, index) {
-    var row = document.createElement("div");
-    row.className = "sent";
-    row.dataset.index = String(index);
+  unit.sentences.forEach(function (sentence, sentenceIndex) {
+    var rowItem = document.createElement("div");
+    rowItem.className = "sent";
+    rowItem.dataset.index = String(sentenceIndex);
     var num = document.createElement("button");
     num.type = "button";
     num.className = "num";
-    num.textContent = String(index + 1);
-    num.setAttribute("aria-label", "Play sentence " + (index + 1));
-    num.addEventListener("click", function () { startPlayback(index, "one"); });
+    num.textContent = String(sentenceIndex + 1);
+    num.setAttribute("aria-label", "Play sentence " + (sentenceIndex + 1));
+    num.addEventListener("click", function () { startPlayback(sentenceIndex, "one"); });
     var body = document.createElement("div");
     body.className = "body";
     if (state.hide) {
@@ -319,79 +287,79 @@ function renderUnit() {
     }
     body.addEventListener("click", function (event) {
       if (event.target.closest(".wmark")) return;
-      startPlayback(index, "one");
+      startPlayback(sentenceIndex, "one");
     });
-    row.appendChild(num);
-    row.appendChild(body);
-    list.appendChild(row);
+    rowItem.appendChild(num);
+    rowItem.appendChild(body);
+    list.appendChild(rowItem);
   });
 
+  var learned = learnedWords();
+  $("reviewBtn").textContent = "Words " + learned.length;
   state.scrolled = -2;
+  saveCourse();
   highlight();
-  requestAnimationFrame(drawLines);
 }
-
-function drawLines() {
-  var tree = $("tree");
-  var svg = $("lines");
-  var box = tree.getBoundingClientRect();
-  if (box.width < 20 || box.height < 20) return;
-  svg.setAttribute("viewBox", "0 0 " + box.width + " " + box.height);
-  svg.setAttribute("width", String(box.width));
-  svg.setAttribute("height", String(box.height));
-  while (svg.firstChild) svg.removeChild(svg.firstChild);
-  var ns = "http://www.w3.org/2000/svg";
-  function mid(el) {
-    var rect = el.getBoundingClientRect();
-    return {
-      x: rect.left - box.left + rect.width / 2,
-      y: rect.top - box.top + rect.height / 2
-    };
+function learnedWords() {
+  var out = [];
+  var seen = {};
+  var limit = Math.max(state.furthest, unitIndex(currentUnit()) + 1);
+  for (var i = 0; i < limit && i < UNITS.length; i++) {
+    var unit = UNITS[i];
+    [unit.center_word].concat(unit.words).forEach(function (word) {
+      var key = word.word.toLowerCase();
+      if (seen[key]) return;
+      seen[key] = true;
+      var centerId = null;
+      for (var j = 0; j < limit && j < UNITS.length; j++) {
+        if (UNITS[j].center.toLowerCase() === key) centerId = UNITS[j].id;
+      }
+      out.push({ word: word, unitId: centerId });
+    });
   }
-  function edgePoint(el, toward) {
-    var rect = el.getBoundingClientRect();
-    var cx = rect.left - box.left + rect.width / 2;
-    var cy = rect.top - box.top + rect.height / 2;
-    var dx = toward.x - cx;
-    var dy = toward.y - cy;
-    var rx = Math.max(rect.width / 2, 1);
-    var ry = Math.max(rect.height / 2, 1);
-    var denom = Math.sqrt((dx * dx) / (rx * rx) + (dy * dy) / (ry * ry)) || 1;
-    var pad = 6;
-    var t = Math.max(0, (1 / denom) - (pad / (Math.hypot(dx, dy) || 1)));
-    return { x: cx + dx * t, y: cy + dy * t };
-  }
-  function addLine(a, b, className) {
-    var line = document.createElementNS(ns, "line");
-    line.setAttribute("x1", a.x.toFixed(1));
-    line.setAttribute("y1", a.y.toFixed(1));
-    line.setAttribute("x2", b.x.toFixed(1));
-    line.setAttribute("y2", b.y.toFixed(1));
-    line.setAttribute("class", className);
-    svg.appendChild(line);
-  }
-  var center = tree.querySelector(".bubble.center");
-  var kids = Array.prototype.slice.call(tree.querySelectorAll(".bubble.child"));
-  if (!center || kids.length !== 3) return;
-  var c = mid(center);
-  var pts = kids.map(mid);
-  for (var s = 0; s < 3; s++) {
-    var a = kids[s];
-    var b = kids[(s + 1) % 3];
-    addLine(edgePoint(a, pts[(s + 1) % 3]), edgePoint(b, pts[s]), "sib");
-  }
-  kids.forEach(function (kid, index) {
-    addLine(edgePoint(center, pts[index]), edgePoint(kid, c), "spoke" + (kid.classList.contains("has-child") ? " next" : ""));
+  return out;
+}
+function renderReview() {
+  var words = learnedWords();
+  $("reviewCount").textContent = words.length + " words through unit " + Math.max(state.furthest, unitIndex(currentUnit()) + 1) + ".";
+  var list = $("reviewList");
+  list.innerHTML = "";
+  words.forEach(function (item) {
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "review-item";
+    var name = document.createElement("b");
+    name.textContent = item.word.word;
+    var meta = document.createElement("span");
+    meta.textContent = (item.word.pos || "") + (state.gloss && item.word.gloss ? " · " + item.word.gloss : "");
+    btn.appendChild(name);
+    btn.appendChild(meta);
+    btn.addEventListener("click", function () {
+      closeReview();
+      openCard(item.word, item.unitId && item.unitId !== currentUnit().id ? item.unitId : null);
+    });
+    list.appendChild(btn);
   });
+}
+function openReview() {
+  state.reviewReturn = document.activeElement;
+  $("review").hidden = false;
+  renderReview();
+  $("reviewClose").focus();
+}
+function closeReview() {
+  $("review").hidden = true;
+  if (state.reviewReturn && state.reviewReturn.focus) {
+    try { state.reviewReturn.focus(); } catch (e) {}
+  }
 }
 
 function highlight() {
   var unit = currentUnit();
   if (!unit) return;
   var sentence = state.index >= 0 ? unit.sentences[state.index] : null;
-  Array.prototype.forEach.call(document.querySelectorAll(".bubble"), function (bubble) {
-    var hot = !!(sentence && containsTerm(sentence.text, bubble.dataset.word || ""));
-    bubble.classList.toggle("hot", hot);
+  Array.prototype.forEach.call(document.querySelectorAll(".chip"), function (chip) {
+    chip.classList.toggle("hot", !!(sentence && containsTerm(sentence.text, chip.dataset.word || "")));
   });
   var rows = document.querySelectorAll(".sent");
   Array.prototype.forEach.call(rows, function (row) {
@@ -402,16 +370,15 @@ function highlight() {
   });
   if (state.index >= 0 && state.index !== state.scrolled && rows[state.index]) {
     state.scrolled = state.index;
-    try {
-      rows[state.index].scrollIntoView({ block: "nearest", behavior: reducedMotion() ? "auto" : "smooth" });
-    } catch (e) {
-      rows[state.index].scrollIntoView(false);
-    }
+    var scroller = document.querySelector("main");
+    var box = scroller.getBoundingClientRect();
+    var rowBox = rows[state.index].getBoundingClientRect();
+    if (rowBox.bottom > box.bottom + 20) scroller.scrollTop += rowBox.bottom - box.bottom + 12;
+    else if (rowBox.top < box.top - 8) scroller.scrollTop -= box.top - rowBox.top + 8;
   }
   updateDock();
   if (state.card) renderCard();
 }
-
 function updateDock() {
   var unit = currentUnit();
   var len = unit ? unit.sentences.length : 0;
@@ -437,7 +404,6 @@ function updateDock() {
   $("status").textContent = statusText(len);
   document.body.classList.toggle("is-playing", state.playing);
 }
-
 function statusText(len) {
   if (state.note) return state.note;
   if (!len || state.index < 0) return "Tap a sentence to listen.";
@@ -446,7 +412,6 @@ function statusText(len) {
   if (state.repeat === Infinity) return place + " · repeating";
   return place + " · play " + state.repNow + " of " + state.repeat;
 }
-
 function stopPlayback() {
   playToken += 1;
   clearTimeout(gapTimer);
@@ -457,7 +422,6 @@ function stopPlayback() {
   state.playing = false;
   state.mode = "";
 }
-
 function afterGap(token, fn) {
   var ms = state.gap * 1000;
   if (ms <= 0) fn();
@@ -466,7 +430,6 @@ function afterGap(token, fn) {
     fn();
   }, ms);
 }
-
 function startPlayback(index, mode) {
   var unit = currentUnit();
   if (!unit || !unit.sentences.length) return;
@@ -481,7 +444,6 @@ function startPlayback(index, mode) {
   highlight();
   playOnce(unit, index, 0, token, mode);
 }
-
 function playOnce(unit, index, doneBefore, token, mode) {
   if (token !== playToken) return;
   if (currentUnit() !== unit) return;
@@ -531,7 +493,6 @@ function playOnce(unit, index, doneBefore, token, mode) {
     });
   }
 }
-
 function step(dir) {
   var unit = currentUnit();
   if (!unit) return;
@@ -539,9 +500,8 @@ function step(dir) {
   if (index < 0 || index >= unit.sentences.length) return;
   startPlayback(index, state.playing && state.mode === "all" ? "all" : "one");
 }
-
-function openCard(word, childId) {
-  state.card = { word: word, childId: childId || null };
+function openCard(word, unitId) {
+  state.card = { word: word, unitId: unitId || null };
   state.cardReturn = document.activeElement;
   $("sheet").hidden = false;
   renderCard();
@@ -571,25 +531,36 @@ function renderCard() {
     gloss.textContent = "";
   }
   var go = $("cardGo");
-  if (card.childId && byId[card.childId]) {
+  if (card.unitId && byId[card.unitId] && card.unitId !== currentUnit().id) {
     go.hidden = false;
-    go.textContent = "Open " + word.word + " ›";
+    go.textContent = "Open " + byId[card.unitId].center + " ›";
   } else {
     go.hidden = true;
   }
 }
-
 function onHash() {
   stopPlayback();
   state.index = -1;
   state.repNow = 0;
   state.note = "";
   state.scrolled = -2;
+  state.resumed = false;
   closeCard();
+  closeReview();
   renderUnit();
 }
-
 function bind() {
+  $("prevUnit").addEventListener("click", function () {
+    var index = unitIndex(currentUnit());
+    if (index > 0) goUnit(UNITS[index - 1].id);
+  });
+  $("nextUnit").addEventListener("click", function () {
+    var index = unitIndex(currentUnit());
+    if (index >= 0 && index < UNITS.length - 1) goUnit(UNITS[index + 1].id);
+  });
+  $("reviewBtn").addEventListener("click", openReview);
+  $("reviewClose").addEventListener("click", closeReview);
+  $("reviewBack").addEventListener("click", closeReview);
   $("playAll").addEventListener("click", function () { startPlayback(0, "all"); });
   $("stop").addEventListener("click", function () {
     stopPlayback();
@@ -633,31 +604,35 @@ function bind() {
   $("cardClose").addEventListener("click", closeCard);
   $("sheetBack").addEventListener("click", closeCard);
   $("cardGo").addEventListener("click", function () {
-    if (state.card && state.card.childId) location.hash = state.card.childId;
+    if (state.card && state.card.unitId) goUnit(state.card.unitId);
   });
-  $("sheet").addEventListener("keydown", function (event) {
-    if ($("sheet").hidden) return;
-    if (event.key === "Escape") {
-      event.preventDefault();
-      closeCard();
-      return;
-    }
-    if (event.key !== "Tab") return;
-    var items = Array.prototype.filter.call($("sheet").querySelectorAll("button"), function (btn) { return !btn.hidden; });
-    if (!items.length) return;
-    var first = items[0];
-    var last = items[items.length - 1];
-    if (event.shiftKey && document.activeElement === first) {
-      event.preventDefault();
-      last.focus();
-    } else if (!event.shiftKey && document.activeElement === last) {
-      event.preventDefault();
-      first.focus();
-    }
-  });
+  function trap(sheet, close) {
+    sheet.addEventListener("keydown", function (event) {
+      if (sheet.hidden) return;
+      if (event.key === "Escape") {
+        event.preventDefault();
+        close();
+        return;
+      }
+      if (event.key !== "Tab") return;
+      var items = Array.prototype.filter.call(sheet.querySelectorAll("button"), function (btn) { return !btn.hidden; });
+      if (!items.length) return;
+      var first = items[0];
+      var last = items[items.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    });
+  }
+  trap($("sheet"), closeCard);
+  trap($("review"), closeReview);
   document.addEventListener("keydown", function (event) {
     if (event.altKey || event.ctrlKey || event.metaKey) return;
-    if (!$("sheet").hidden) return;
+    if (!$("sheet").hidden || !$("review").hidden) return;
     var tag = event.target && event.target.tagName;
     if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT" || tag === "BUTTON" || tag === "A") return;
     if (event.key === "ArrowLeft") { event.preventDefault(); step(-1); }
@@ -672,17 +647,11 @@ function bind() {
     }
   });
   window.addEventListener("hashchange", onHash);
-  var tree = $("tree");
-  if (window.ResizeObserver) new ResizeObserver(drawLines).observe(tree);
-  else window.addEventListener("resize", drawLines);
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(drawLines);
 }
-
 function showError(message) {
   $("boot").hidden = false;
   $("boot").textContent = message;
 }
-
 async function init() {
   loadSettings();
   var response;
@@ -700,12 +669,17 @@ async function init() {
   UNITS = data.units || [];
   byId = {};
   UNITS.forEach(function (unit) { byId[unit.id] = unit; });
-  if (!byId.library) {
-    showError("The lesson file has no library unit.");
+  if (!UNITS.length) {
+    showError("The lesson file has no units.");
     return;
   }
+  loadCourse();
   bind();
-  if (!byId[hashId()]) history.replaceState(null, "", "#library");
+  if (byId[hashId()]) state.resumed = false;
+  else if (state.saved && byId[state.saved]) {
+    state.resumed = state.saved !== UNITS[0].id;
+    history.replaceState(null, "", "#" + state.saved);
+  } else history.replaceState(null, "", "#" + UNITS[0].id);
   $("boot").hidden = true;
   $("stage").hidden = false;
   $("dock").hidden = false;
