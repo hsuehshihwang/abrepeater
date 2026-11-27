@@ -695,7 +695,7 @@ async function init() {
   loadSettings();
   var response;
   try {
-    response = await fetch("data/units.json");
+    response = await fetch("data/units.json?v=4");
   } catch (e) {
     showError("Could not load data/units.json.");
     return;

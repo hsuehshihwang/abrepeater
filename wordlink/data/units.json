@@ -5,8 +5,8 @@
     "word_level": "B1",
     "english_level": "A1",
     "course": "chain",
-    "units": 20,
-    "note": "One chain. Exactly one child, the key, is the next unit's center. Scenes may change along the chain."
+    "units": 40,
+    "note": "One chain of 40 units. Exactly one child, the key, is the next unit's center. The last unit has no key."
   },
   "units": [
     {
@@ -3408,7 +3408,7 @@
       "center": "progress",
       "scene": "study",
       "scene_label": "Getting better",
-      "key": null,
+      "key": "success",
       "story_link": "My confidence is much stronger now. My skill is better than before. I can call that a real success.",
       "center_word": {
         "word": "progress",
@@ -3423,21 +3423,24 @@
           "ipa": "/ˈkɑːnfɪdəns/",
           "pos": "noun",
           "gloss": "信心",
-          "definition": "Confidence means you trust yourself."
+          "definition": "Confidence means you trust yourself.",
+          "key": false
         },
         {
           "word": "skill",
           "ipa": "/skɪl/",
           "pos": "noun",
           "gloss": "技能",
-          "definition": "A skill is something you can do well."
+          "definition": "A skill is something you can do well.",
+          "key": false
         },
         {
           "word": "success",
           "ipa": "/səkˈses/",
           "pos": "noun",
           "gloss": "成功",
-          "definition": "Success means you reach what you hoped for."
+          "definition": "Success means you reach what you hoped for.",
+          "key": true
         }
       ],
       "sentences": [
@@ -3462,7 +3465,7 @@
           "audio": "audio/progress/04.mp3"
         },
         {
-          "text": "This last unit looks at your progress.",
+          "text": "This unit looks at your progress.",
           "speaker": "jenny",
           "audio": "audio/progress/05.mp3"
         },
@@ -3575,6 +3578,3545 @@
           "text": "Confidence, skill, and success go together.",
           "speaker": "jenny",
           "audio": "audio/progress/27.mp3"
+        }
+      ]
+    },
+    {
+      "id": "success",
+      "number": 21,
+      "center": "success",
+      "scene": "celebrate",
+      "scene_label": "A celebration",
+      "key": "promotion",
+      "story_link": "I receive a bonus at the ceremony. The ceremony is warm and full of joy. They announce my promotion on that day.",
+      "center_word": {
+        "word": "success",
+        "ipa": "/səkˈses/",
+        "pos": "noun",
+        "gloss": "成功",
+        "definition": "Success means you reach what you hoped for."
+      },
+      "words": [
+        {
+          "word": "bonus",
+          "ipa": "/ˈboʊnəs/",
+          "pos": "noun",
+          "gloss": "獎金",
+          "definition": "A bonus is extra money for good work."
+        },
+        {
+          "word": "ceremony",
+          "ipa": "/ˈserəmoʊni/",
+          "pos": "noun",
+          "gloss": "典禮",
+          "definition": "A ceremony is a special event where people gather."
+        },
+        {
+          "word": "promotion",
+          "ipa": "/prəˈmoʊʃən/",
+          "pos": "noun",
+          "gloss": "升遷",
+          "definition": "A promotion moves you to a higher job.",
+          "key": true
+        }
+      ],
+      "sentences": [
+        {
+          "text": "Success means you reach a real hope.",
+          "speaker": "jenny",
+          "audio": "audio/success/01.mp3"
+        },
+        {
+          "text": "A small success can still matter a lot.",
+          "speaker": "jenny",
+          "audio": "audio/success/02.mp3"
+        },
+        {
+          "text": "People see it and they feel glad.",
+          "speaker": "jenny",
+          "audio": "audio/success/03.mp3"
+        },
+        {
+          "text": "Sometimes they gather to mark the day.",
+          "speaker": "jenny",
+          "audio": "audio/success/04.mp3"
+        },
+        {
+          "text": "This story is about that happy moment.",
+          "speaker": "jenny",
+          "audio": "audio/success/05.mp3"
+        },
+        {
+          "text": "I receive a bonus at the ceremony.",
+          "speaker": "jenny",
+          "audio": "audio/success/06.mp3"
+        },
+        {
+          "text": "The ceremony is warm and full of joy.",
+          "speaker": "jenny",
+          "audio": "audio/success/07.mp3"
+        },
+        {
+          "text": "They announce my promotion on that day.",
+          "speaker": "jenny",
+          "audio": "audio/success/08.mp3"
+        },
+        {
+          "text": "A bonus is extra money for good work.",
+          "speaker": "jenny",
+          "audio": "audio/success/09.mp3"
+        },
+        {
+          "text": "It comes on top of your usual pay.",
+          "speaker": "jenny",
+          "audio": "audio/success/10.mp3"
+        },
+        {
+          "text": "I earn a bonus for my hard work.",
+          "speaker": "jenny",
+          "audio": "audio/success/11.mp3"
+        },
+        {
+          "text": "The bonus is given at the ceremony.",
+          "speaker": "jenny",
+          "audio": "audio/success/12.mp3"
+        },
+        {
+          "text": "A small bonus can still feel great.",
+          "speaker": "jenny",
+          "audio": "audio/success/13.mp3"
+        },
+        {
+          "text": "A ceremony is a special public event.",
+          "speaker": "jenny",
+          "audio": "audio/success/14.mp3"
+        },
+        {
+          "text": "People dress well and they sit together.",
+          "speaker": "jenny",
+          "audio": "audio/success/15.mp3"
+        },
+        {
+          "text": "Our ceremony starts at noon today.",
+          "speaker": "jenny",
+          "audio": "audio/success/16.mp3"
+        },
+        {
+          "text": "I stand and smile at the ceremony.",
+          "speaker": "jenny",
+          "audio": "audio/success/17.mp3"
+        },
+        {
+          "text": "Friends take photos at the ceremony.",
+          "speaker": "jenny",
+          "audio": "audio/success/18.mp3"
+        },
+        {
+          "text": "A promotion moves you to a higher job.",
+          "speaker": "jenny",
+          "audio": "audio/success/19.mp3"
+        },
+        {
+          "text": "You receive more trust and more work.",
+          "speaker": "jenny",
+          "audio": "audio/success/20.mp3"
+        },
+        {
+          "text": "My promotion begins on Monday morning.",
+          "speaker": "jenny",
+          "audio": "audio/success/21.mp3"
+        },
+        {
+          "text": "I feel ready for this new promotion.",
+          "speaker": "jenny",
+          "audio": "audio/success/22.mp3"
+        },
+        {
+          "text": "The bonus comes with the promotion.",
+          "speaker": "jenny",
+          "audio": "audio/success/23.mp3"
+        },
+        {
+          "text": "The ceremony announces my new promotion.",
+          "speaker": "jenny",
+          "audio": "audio/success/24.mp3"
+        },
+        {
+          "text": "I smile when they name the bonus.",
+          "speaker": "jenny",
+          "audio": "audio/success/25.mp3"
+        },
+        {
+          "text": "Bonus, ceremony, and promotion go together.",
+          "speaker": "jenny",
+          "audio": "audio/success/26.mp3"
+        },
+        {
+          "text": "That is how people mark a success.",
+          "speaker": "jenny",
+          "audio": "audio/success/27.mp3"
+        }
+      ]
+    },
+    {
+      "id": "promotion",
+      "number": 22,
+      "center": "promotion",
+      "scene": "role",
+      "scene_label": "A new role",
+      "key": "mentor",
+      "story_link": "My new title begins this Monday. The duty is larger than it was. A mentor will guide me this month.",
+      "center_word": {
+        "word": "promotion",
+        "ipa": "/prəˈmoʊʃən/",
+        "pos": "noun",
+        "gloss": "升遷",
+        "definition": "A promotion moves you to a higher job."
+      },
+      "words": [
+        {
+          "word": "title",
+          "ipa": "/ˈtaɪtəl/",
+          "pos": "noun",
+          "gloss": "職稱",
+          "definition": "A title is the name of your job."
+        },
+        {
+          "word": "duty",
+          "ipa": "/ˈduːti/",
+          "pos": "noun",
+          "gloss": "職責",
+          "definition": "A duty is work you must do."
+        },
+        {
+          "word": "mentor",
+          "ipa": "/ˈmentɔːr/",
+          "pos": "noun",
+          "gloss": "導師",
+          "definition": "A mentor is a person with experience who guides you.",
+          "key": true
+        }
+      ],
+      "sentences": [
+        {
+          "text": "A promotion moves you to a higher job.",
+          "speaker": "jenny",
+          "audio": "audio/promotion/01.mp3"
+        },
+        {
+          "text": "A promotion changes your work day now.",
+          "speaker": "jenny",
+          "audio": "audio/promotion/02.mp3"
+        },
+        {
+          "text": "You learn a new name for the job.",
+          "speaker": "jenny",
+          "audio": "audio/promotion/03.mp3"
+        },
+        {
+          "text": "The tasks grow and you get more help.",
+          "speaker": "jenny",
+          "audio": "audio/promotion/04.mp3"
+        },
+        {
+          "text": "Someone stays near you at the start.",
+          "speaker": "jenny",
+          "audio": "audio/promotion/05.mp3"
+        },
+        {
+          "text": "My new title begins this Monday.",
+          "speaker": "jenny",
+          "audio": "audio/promotion/06.mp3"
+        },
+        {
+          "text": "The duty is larger than it was.",
+          "speaker": "jenny",
+          "audio": "audio/promotion/07.mp3"
+        },
+        {
+          "text": "A mentor will guide me this month.",
+          "speaker": "jenny",
+          "audio": "audio/promotion/08.mp3"
+        },
+        {
+          "text": "A title is the name of your job.",
+          "speaker": "jenny",
+          "audio": "audio/promotion/09.mp3"
+        },
+        {
+          "text": "It tells other people what you do.",
+          "speaker": "jenny",
+          "audio": "audio/promotion/10.mp3"
+        },
+        {
+          "text": "My new title is written on the door.",
+          "speaker": "jenny",
+          "audio": "audio/promotion/11.mp3"
+        },
+        {
+          "text": "I say my title when I meet someone.",
+          "speaker": "jenny",
+          "audio": "audio/promotion/12.mp3"
+        },
+        {
+          "text": "The title matches the duty I have.",
+          "speaker": "jenny",
+          "audio": "audio/promotion/13.mp3"
+        },
+        {
+          "text": "A duty is the work you must do.",
+          "speaker": "jenny",
+          "audio": "audio/promotion/14.mp3"
+        },
+        {
+          "text": "You do this work on a normal day.",
+          "speaker": "jenny",
+          "audio": "audio/promotion/15.mp3"
+        },
+        {
+          "text": "My main duty is to lead a group.",
+          "speaker": "jenny",
+          "audio": "audio/promotion/16.mp3"
+        },
+        {
+          "text": "I read each duty on the first morning.",
+          "speaker": "jenny",
+          "audio": "audio/promotion/17.mp3"
+        },
+        {
+          "text": "I ask about every new duty I see.",
+          "speaker": "jenny",
+          "audio": "audio/promotion/18.mp3"
+        },
+        {
+          "text": "A mentor is a guide with experience.",
+          "speaker": "jenny",
+          "audio": "audio/promotion/19.mp3"
+        },
+        {
+          "text": "This person has done the job before.",
+          "speaker": "jenny",
+          "audio": "audio/promotion/20.mp3"
+        },
+        {
+          "text": "My mentor meets me every morning.",
+          "speaker": "jenny",
+          "audio": "audio/promotion/21.mp3"
+        },
+        {
+          "text": "I can ask my mentor any small question.",
+          "speaker": "jenny",
+          "audio": "audio/promotion/22.mp3"
+        },
+        {
+          "text": "The mentor explains my new title.",
+          "speaker": "jenny",
+          "audio": "audio/promotion/23.mp3"
+        },
+        {
+          "text": "My title and my duty feel new.",
+          "speaker": "jenny",
+          "audio": "audio/promotion/24.mp3"
+        },
+        {
+          "text": "My mentor stays close in the first week.",
+          "speaker": "jenny",
+          "audio": "audio/promotion/25.mp3"
+        },
+        {
+          "text": "Title, duty, and mentor go together.",
+          "speaker": "jenny",
+          "audio": "audio/promotion/26.mp3"
+        },
+        {
+          "text": "A promotion is easier with a mentor.",
+          "speaker": "jenny",
+          "audio": "audio/promotion/27.mp3"
+        }
+      ]
+    },
+    {
+      "id": "mentor",
+      "number": 23,
+      "center": "mentor",
+      "scene": "role",
+      "scene_label": "A new role",
+      "key": "courage",
+      "story_link": "My mentor gives me clear guidance. He also shows me one clear example. That example gives me real courage.",
+      "center_word": {
+        "word": "mentor",
+        "ipa": "/ˈmentɔːr/",
+        "pos": "noun",
+        "gloss": "導師",
+        "definition": "A mentor is a person with experience who guides you."
+      },
+      "words": [
+        {
+          "word": "guidance",
+          "ipa": "/ˈɡaɪdəns/",
+          "pos": "noun",
+          "gloss": "指導",
+          "definition": "Guidance is help that shows you the way."
+        },
+        {
+          "word": "example",
+          "ipa": "/ɪɡˈzæmpəl/",
+          "pos": "noun",
+          "gloss": "例子",
+          "definition": "An example is a clear model you can follow."
+        },
+        {
+          "word": "courage",
+          "ipa": "/ˈkɜːrɪdʒ/",
+          "pos": "noun",
+          "gloss": "勇氣",
+          "definition": "Courage means you act even when you feel afraid.",
+          "key": true
+        }
+      ],
+      "sentences": [
+        {
+          "text": "A mentor is a person who guides you.",
+          "speaker": "jenny",
+          "audio": "audio/mentor/01.mp3"
+        },
+        {
+          "text": "They know the work and they share it.",
+          "speaker": "jenny",
+          "audio": "audio/mentor/02.mp3"
+        },
+        {
+          "text": "You meet and you listen and you try.",
+          "speaker": "jenny",
+          "audio": "audio/mentor/03.mp3"
+        },
+        {
+          "text": "Their help can make you feel braver.",
+          "speaker": "jenny",
+          "audio": "audio/mentor/04.mp3"
+        },
+        {
+          "text": "One good talk can change your week.",
+          "speaker": "jenny",
+          "audio": "audio/mentor/05.mp3"
+        },
+        {
+          "text": "My mentor gives me clear guidance.",
+          "speaker": "jenny",
+          "audio": "audio/mentor/06.mp3"
+        },
+        {
+          "text": "He also shows me one clear example.",
+          "speaker": "jenny",
+          "audio": "audio/mentor/07.mp3"
+        },
+        {
+          "text": "That example gives me real courage.",
+          "speaker": "jenny",
+          "audio": "audio/mentor/08.mp3"
+        },
+        {
+          "text": "Guidance means help that shows the way.",
+          "speaker": "jenny",
+          "audio": "audio/mentor/09.mp3"
+        },
+        {
+          "text": "It tells you what you should do next.",
+          "speaker": "jenny",
+          "audio": "audio/mentor/10.mp3"
+        },
+        {
+          "text": "I write the guidance in my notebook.",
+          "speaker": "jenny",
+          "audio": "audio/mentor/11.mp3"
+        },
+        {
+          "text": "Good guidance is simple and also kind.",
+          "speaker": "jenny",
+          "audio": "audio/mentor/12.mp3"
+        },
+        {
+          "text": "I follow the guidance on the next day.",
+          "speaker": "jenny",
+          "audio": "audio/mentor/13.mp3"
+        },
+        {
+          "text": "An example is a clear model to copy.",
+          "speaker": "jenny",
+          "audio": "audio/mentor/14.mp3"
+        },
+        {
+          "text": "You can see how the work is done.",
+          "speaker": "jenny",
+          "audio": "audio/mentor/15.mp3"
+        },
+        {
+          "text": "My mentor gives an example on the board.",
+          "speaker": "jenny",
+          "audio": "audio/mentor/16.mp3"
+        },
+        {
+          "text": "I try that example by myself later.",
+          "speaker": "jenny",
+          "audio": "audio/mentor/17.mp3"
+        },
+        {
+          "text": "The example makes the new duty easier.",
+          "speaker": "jenny",
+          "audio": "audio/mentor/18.mp3"
+        },
+        {
+          "text": "Courage means you act even when afraid.",
+          "speaker": "jenny",
+          "audio": "audio/mentor/19.mp3"
+        },
+        {
+          "text": "You do the hard thing even so.",
+          "speaker": "jenny",
+          "audio": "audio/mentor/20.mp3"
+        },
+        {
+          "text": "I find courage after I see the example.",
+          "speaker": "jenny",
+          "audio": "audio/mentor/21.mp3"
+        },
+        {
+          "text": "My courage grows a little every week.",
+          "speaker": "jenny",
+          "audio": "audio/mentor/22.mp3"
+        },
+        {
+          "text": "I thank my mentor for that courage.",
+          "speaker": "jenny",
+          "audio": "audio/mentor/23.mp3"
+        },
+        {
+          "text": "The guidance and the example help me.",
+          "speaker": "jenny",
+          "audio": "audio/mentor/24.mp3"
+        },
+        {
+          "text": "Then my courage is strong enough to start.",
+          "speaker": "jenny",
+          "audio": "audio/mentor/25.mp3"
+        },
+        {
+          "text": "Guidance, example, and courage go together.",
+          "speaker": "jenny",
+          "audio": "audio/mentor/26.mp3"
+        },
+        {
+          "text": "A mentor can light the way for you.",
+          "speaker": "jenny",
+          "audio": "audio/mentor/27.mp3"
+        }
+      ]
+    },
+    {
+      "id": "courage",
+      "number": 24,
+      "center": "courage",
+      "scene": "challenge",
+      "scene_label": "A hard task",
+      "key": "challenge",
+      "story_link": "I feel nervous before the challenge. I still make one brave attempt. The challenge is hard, but I start.",
+      "center_word": {
+        "word": "courage",
+        "ipa": "/ˈkɜːrɪdʒ/",
+        "pos": "noun",
+        "gloss": "勇氣",
+        "definition": "Courage means you act even when you feel afraid."
+      },
+      "words": [
+        {
+          "word": "challenge",
+          "ipa": "/ˈtʃælɪndʒ/",
+          "pos": "noun",
+          "gloss": "挑戰",
+          "definition": "A challenge is a hard task you choose to face.",
+          "key": true
+        },
+        {
+          "word": "attempt",
+          "ipa": "/əˈtempt/",
+          "pos": "noun",
+          "gloss": "嘗試",
+          "definition": "An attempt is one real try."
+        },
+        {
+          "word": "nervous",
+          "ipa": "/ˈnɜːrvəs/",
+          "pos": "adjective",
+          "gloss": "緊張的",
+          "definition": "Nervous means you feel worried and a little tight."
+        }
+      ],
+      "sentences": [
+        {
+          "text": "Courage means you act even when afraid.",
+          "speaker": "jenny",
+          "audio": "audio/courage/01.mp3"
+        },
+        {
+          "text": "Your heart beats fast, but you begin.",
+          "speaker": "jenny",
+          "audio": "audio/courage/02.mp3"
+        },
+        {
+          "text": "You do not wait until the fear ends.",
+          "speaker": "jenny",
+          "audio": "audio/courage/03.mp3"
+        },
+        {
+          "text": "One small try can be enough today.",
+          "speaker": "jenny",
+          "audio": "audio/courage/04.mp3"
+        },
+        {
+          "text": "This story is about that first try.",
+          "speaker": "jenny",
+          "audio": "audio/courage/05.mp3"
+        },
+        {
+          "text": "I feel nervous before the challenge.",
+          "speaker": "jenny",
+          "audio": "audio/courage/06.mp3"
+        },
+        {
+          "text": "I still make one brave attempt.",
+          "speaker": "jenny",
+          "audio": "audio/courage/07.mp3"
+        },
+        {
+          "text": "The challenge is hard, but I start.",
+          "speaker": "jenny",
+          "audio": "audio/courage/08.mp3"
+        },
+        {
+          "text": "Nervous means you feel tight and worried.",
+          "speaker": "jenny",
+          "audio": "audio/courage/09.mp3"
+        },
+        {
+          "text": "Your hands may shake just a little.",
+          "speaker": "jenny",
+          "audio": "audio/courage/10.mp3"
+        },
+        {
+          "text": "I feel nervous before I begin to speak.",
+          "speaker": "jenny",
+          "audio": "audio/courage/11.mp3"
+        },
+        {
+          "text": "Being nervous does not mean you must stop.",
+          "speaker": "jenny",
+          "audio": "audio/courage/12.mp3"
+        },
+        {
+          "text": "I breathe slowly when I feel nervous.",
+          "speaker": "jenny",
+          "audio": "audio/courage/13.mp3"
+        },
+        {
+          "text": "An attempt is one real try you make.",
+          "speaker": "jenny",
+          "audio": "audio/courage/14.mp3"
+        },
+        {
+          "text": "You may not win on the first try.",
+          "speaker": "jenny",
+          "audio": "audio/courage/15.mp3"
+        },
+        {
+          "text": "I make an attempt even when nervous.",
+          "speaker": "jenny",
+          "audio": "audio/courage/16.mp3"
+        },
+        {
+          "text": "Each new attempt teaches me something.",
+          "speaker": "jenny",
+          "audio": "audio/courage/17.mp3"
+        },
+        {
+          "text": "I am glad about the attempt I made.",
+          "speaker": "jenny",
+          "audio": "audio/courage/18.mp3"
+        },
+        {
+          "text": "A challenge is a hard task you face.",
+          "speaker": "jenny",
+          "audio": "audio/courage/19.mp3"
+        },
+        {
+          "text": "It asks you to do more than before.",
+          "speaker": "jenny",
+          "audio": "audio/courage/20.mp3"
+        },
+        {
+          "text": "This challenge is new to me today.",
+          "speaker": "jenny",
+          "audio": "audio/courage/21.mp3"
+        },
+        {
+          "text": "I accept the challenge with real courage.",
+          "speaker": "jenny",
+          "audio": "audio/courage/22.mp3"
+        },
+        {
+          "text": "A hard challenge can help you grow.",
+          "speaker": "jenny",
+          "audio": "audio/courage/23.mp3"
+        },
+        {
+          "text": "I feel nervous and then I attempt it.",
+          "speaker": "jenny",
+          "audio": "audio/courage/24.mp3"
+        },
+        {
+          "text": "The challenge waits, and still I begin.",
+          "speaker": "jenny",
+          "audio": "audio/courage/25.mp3"
+        },
+        {
+          "text": "Nervous, attempt, and challenge go together.",
+          "speaker": "jenny",
+          "audio": "audio/courage/26.mp3"
+        },
+        {
+          "text": "Courage is the step before the try.",
+          "speaker": "jenny",
+          "audio": "audio/courage/27.mp3"
+        }
+      ]
+    },
+    {
+      "id": "challenge",
+      "number": 25,
+      "center": "challenge",
+      "scene": "challenge",
+      "scene_label": "A hard task",
+      "key": "teamwork",
+      "story_link": "We meet a large obstacle today. Teamwork helps us search for a solution. The solution comes from the whole group.",
+      "center_word": {
+        "word": "challenge",
+        "ipa": "/ˈtʃælɪndʒ/",
+        "pos": "noun",
+        "gloss": "挑戰",
+        "definition": "A challenge is a hard task you choose to face."
+      },
+      "words": [
+        {
+          "word": "obstacle",
+          "ipa": "/ˈɑːbstəkəl/",
+          "pos": "noun",
+          "gloss": "障礙",
+          "definition": "An obstacle is something that blocks your way."
+        },
+        {
+          "word": "solution",
+          "ipa": "/səˈluːʃən/",
+          "pos": "noun",
+          "gloss": "解決辦法",
+          "definition": "A solution is a way through a problem."
+        },
+        {
+          "word": "teamwork",
+          "ipa": "/ˈtiːmwɜːrk/",
+          "pos": "noun",
+          "gloss": "團隊合作",
+          "definition": "Teamwork means people work together as one group.",
+          "key": true
+        }
+      ],
+      "sentences": [
+        {
+          "text": "A challenge is a hard task you face.",
+          "speaker": "jenny",
+          "audio": "audio/challenge/01.mp3"
+        },
+        {
+          "text": "A challenge is bigger than an easy day.",
+          "speaker": "jenny",
+          "audio": "audio/challenge/02.mp3"
+        },
+        {
+          "text": "You may not see the path at first.",
+          "speaker": "jenny",
+          "audio": "audio/challenge/03.mp3"
+        },
+        {
+          "text": "Other people can help you through it.",
+          "speaker": "jenny",
+          "audio": "audio/challenge/04.mp3"
+        },
+        {
+          "text": "Together you look for a way forward.",
+          "speaker": "jenny",
+          "audio": "audio/challenge/05.mp3"
+        },
+        {
+          "text": "We meet a large obstacle today.",
+          "speaker": "jenny",
+          "audio": "audio/challenge/06.mp3"
+        },
+        {
+          "text": "Teamwork helps us search for a solution.",
+          "speaker": "jenny",
+          "audio": "audio/challenge/07.mp3"
+        },
+        {
+          "text": "The solution comes from the whole group.",
+          "speaker": "jenny",
+          "audio": "audio/challenge/08.mp3"
+        },
+        {
+          "text": "An obstacle is something in your way.",
+          "speaker": "jenny",
+          "audio": "audio/challenge/09.mp3"
+        },
+        {
+          "text": "It slows the work until you move it.",
+          "speaker": "jenny",
+          "audio": "audio/challenge/10.mp3"
+        },
+        {
+          "text": "The obstacle is a missing piece of news.",
+          "speaker": "jenny",
+          "audio": "audio/challenge/11.mp3"
+        },
+        {
+          "text": "We name the obstacle before we act.",
+          "speaker": "jenny",
+          "audio": "audio/challenge/12.mp3"
+        },
+        {
+          "text": "A big obstacle needs more than one person.",
+          "speaker": "jenny",
+          "audio": "audio/challenge/13.mp3"
+        },
+        {
+          "text": "A solution is a way through the problem.",
+          "speaker": "jenny",
+          "audio": "audio/challenge/14.mp3"
+        },
+        {
+          "text": "It makes the hard thing possible again.",
+          "speaker": "jenny",
+          "audio": "audio/challenge/15.mp3"
+        },
+        {
+          "text": "We test one solution this afternoon.",
+          "speaker": "jenny",
+          "audio": "audio/challenge/16.mp3"
+        },
+        {
+          "text": "The solution looks simple once we see it.",
+          "speaker": "jenny",
+          "audio": "audio/challenge/17.mp3"
+        },
+        {
+          "text": "I write the solution so we can remember.",
+          "speaker": "jenny",
+          "audio": "audio/challenge/18.mp3"
+        },
+        {
+          "text": "Teamwork means people work as one group.",
+          "speaker": "jenny",
+          "audio": "audio/challenge/19.mp3"
+        },
+        {
+          "text": "Each person brings a different strength.",
+          "speaker": "jenny",
+          "audio": "audio/challenge/20.mp3"
+        },
+        {
+          "text": "Teamwork turns an obstacle into a plan.",
+          "speaker": "jenny",
+          "audio": "audio/challenge/21.mp3"
+        },
+        {
+          "text": "Our teamwork stays calm and steady.",
+          "speaker": "jenny",
+          "audio": "audio/challenge/22.mp3"
+        },
+        {
+          "text": "I use teamwork when the task is hard.",
+          "speaker": "jenny",
+          "audio": "audio/challenge/23.mp3"
+        },
+        {
+          "text": "The obstacle is real, and so is teamwork.",
+          "speaker": "jenny",
+          "audio": "audio/challenge/24.mp3"
+        },
+        {
+          "text": "We reach a solution by working as one.",
+          "speaker": "jenny",
+          "audio": "audio/challenge/25.mp3"
+        },
+        {
+          "text": "Obstacle, solution, and teamwork go together.",
+          "speaker": "jenny",
+          "audio": "audio/challenge/26.mp3"
+        },
+        {
+          "text": "A challenge feels smaller with a group.",
+          "speaker": "jenny",
+          "audio": "audio/challenge/27.mp3"
+        }
+      ]
+    },
+    {
+      "id": "teamwork",
+      "number": 26,
+      "center": "teamwork",
+      "scene": "team",
+      "scene_label": "A team",
+      "key": "trust",
+      "story_link": "We cooperate on the big task. Each person has one clear role. Trust makes the teamwork feel safe.",
+      "center_word": {
+        "word": "teamwork",
+        "ipa": "/ˈtiːmwɜːrk/",
+        "pos": "noun",
+        "gloss": "團隊合作",
+        "definition": "Teamwork means people work together as one group."
+      },
+      "words": [
+        {
+          "word": "cooperate",
+          "ipa": "/koʊˈɑːpəreɪt/",
+          "pos": "verb",
+          "gloss": "合作",
+          "definition": "Cooperate means you work with other people."
+        },
+        {
+          "word": "role",
+          "ipa": "/roʊl/",
+          "pos": "noun",
+          "gloss": "角色",
+          "definition": "A role is the part you play in a group."
+        },
+        {
+          "word": "trust",
+          "ipa": "/trʌst/",
+          "pos": "noun",
+          "gloss": "信任",
+          "definition": "Trust means you believe the other people will do right.",
+          "key": true
+        }
+      ],
+      "sentences": [
+        {
+          "text": "Teamwork means people work as one group.",
+          "speaker": "jenny",
+          "audio": "audio/teamwork/01.mp3"
+        },
+        {
+          "text": "No one person carries the whole load.",
+          "speaker": "jenny",
+          "audio": "audio/teamwork/02.mp3"
+        },
+        {
+          "text": "You share the task and the weight.",
+          "speaker": "jenny",
+          "audio": "audio/teamwork/03.mp3"
+        },
+        {
+          "text": "A strong group listens to every voice.",
+          "speaker": "jenny",
+          "audio": "audio/teamwork/04.mp3"
+        },
+        {
+          "text": "This story is about how a group holds.",
+          "speaker": "jenny",
+          "audio": "audio/teamwork/05.mp3"
+        },
+        {
+          "text": "We cooperate on the big task.",
+          "speaker": "jenny",
+          "audio": "audio/teamwork/06.mp3"
+        },
+        {
+          "text": "Each person has one clear role.",
+          "speaker": "jenny",
+          "audio": "audio/teamwork/07.mp3"
+        },
+        {
+          "text": "Trust makes the teamwork feel safe.",
+          "speaker": "jenny",
+          "audio": "audio/teamwork/08.mp3"
+        },
+        {
+          "text": "Cooperate means you work with other people.",
+          "speaker": "jenny",
+          "audio": "audio/teamwork/09.mp3"
+        },
+        {
+          "text": "You move with them in one direction.",
+          "speaker": "jenny",
+          "audio": "audio/teamwork/10.mp3"
+        },
+        {
+          "text": "We cooperate instead of working all alone.",
+          "speaker": "jenny",
+          "audio": "audio/teamwork/11.mp3"
+        },
+        {
+          "text": "I cooperate when the task is too large.",
+          "speaker": "jenny",
+          "audio": "audio/teamwork/12.mp3"
+        },
+        {
+          "text": "Good groups cooperate every single day.",
+          "speaker": "jenny",
+          "audio": "audio/teamwork/13.mp3"
+        },
+        {
+          "text": "A role is the part you play here.",
+          "speaker": "jenny",
+          "audio": "audio/teamwork/14.mp3"
+        },
+        {
+          "text": "It tells you which work you own.",
+          "speaker": "jenny",
+          "audio": "audio/teamwork/15.mp3"
+        },
+        {
+          "text": "My role is to check the small details.",
+          "speaker": "jenny",
+          "audio": "audio/teamwork/16.mp3"
+        },
+        {
+          "text": "Your role is different from my role.",
+          "speaker": "jenny",
+          "audio": "audio/teamwork/17.mp3"
+        },
+        {
+          "text": "I do my role. You do yours.",
+          "speaker": "jenny",
+          "audio": "audio/teamwork/18.mp3"
+        },
+        {
+          "text": "Trust means you believe in the others.",
+          "speaker": "jenny",
+          "audio": "audio/teamwork/19.mp3"
+        },
+        {
+          "text": "You feel safe enough to share a worry.",
+          "speaker": "jenny",
+          "audio": "audio/teamwork/20.mp3"
+        },
+        {
+          "text": "Trust grows when people keep their word.",
+          "speaker": "jenny",
+          "audio": "audio/teamwork/21.mp3"
+        },
+        {
+          "text": "Our trust feels strong after this long week.",
+          "speaker": "jenny",
+          "audio": "audio/teamwork/22.mp3"
+        },
+        {
+          "text": "I offer trust and I also receive it.",
+          "speaker": "jenny",
+          "audio": "audio/teamwork/23.mp3"
+        },
+        {
+          "text": "We cooperate and we keep to our roles.",
+          "speaker": "jenny",
+          "audio": "audio/teamwork/24.mp3"
+        },
+        {
+          "text": "Trust holds the whole group together.",
+          "speaker": "jenny",
+          "audio": "audio/teamwork/25.mp3"
+        },
+        {
+          "text": "Cooperate, role, and trust go together.",
+          "speaker": "jenny",
+          "audio": "audio/teamwork/26.mp3"
+        },
+        {
+          "text": "Teamwork stands on those three strong things.",
+          "speaker": "jenny",
+          "audio": "audio/teamwork/27.mp3"
+        }
+      ]
+    },
+    {
+      "id": "trust",
+      "number": 27,
+      "center": "trust",
+      "scene": "team",
+      "scene_label": "A team",
+      "key": "promise",
+      "story_link": "I give an honest promise today. People show me real respect for it. Trust grows when a promise is honest.",
+      "center_word": {
+        "word": "trust",
+        "ipa": "/trʌst/",
+        "pos": "noun",
+        "gloss": "信任",
+        "definition": "Trust means you believe the other people will do right."
+      },
+      "words": [
+        {
+          "word": "promise",
+          "ipa": "/ˈprɑːmɪs/",
+          "pos": "noun",
+          "gloss": "承諾",
+          "definition": "A promise is a serious word you give to someone.",
+          "key": true
+        },
+        {
+          "word": "honest",
+          "ipa": "/ˈɑːnɪst/",
+          "pos": "adjective",
+          "gloss": "誠實的",
+          "definition": "Honest means you tell the truth."
+        },
+        {
+          "word": "respect",
+          "ipa": "/rɪˈspekt/",
+          "pos": "noun",
+          "gloss": "尊重",
+          "definition": "Respect means you treat someone as important."
+        }
+      ],
+      "sentences": [
+        {
+          "text": "Trust means you believe people will do right.",
+          "speaker": "jenny",
+          "audio": "audio/trust/01.mp3"
+        },
+        {
+          "text": "It takes time, and it needs truth.",
+          "speaker": "jenny",
+          "audio": "audio/trust/02.mp3"
+        },
+        {
+          "text": "You watch what people do, not only words.",
+          "speaker": "jenny",
+          "audio": "audio/trust/03.mp3"
+        },
+        {
+          "text": "A safe group can speak plainly.",
+          "speaker": "jenny",
+          "audio": "audio/trust/04.mp3"
+        },
+        {
+          "text": "This story is about a true word.",
+          "speaker": "jenny",
+          "audio": "audio/trust/05.mp3"
+        },
+        {
+          "text": "I give an honest promise today.",
+          "speaker": "jenny",
+          "audio": "audio/trust/06.mp3"
+        },
+        {
+          "text": "People show me real respect for it.",
+          "speaker": "jenny",
+          "audio": "audio/trust/07.mp3"
+        },
+        {
+          "text": "Trust grows when a promise is honest.",
+          "speaker": "jenny",
+          "audio": "audio/trust/08.mp3"
+        },
+        {
+          "text": "A promise is a serious word you give.",
+          "speaker": "jenny",
+          "audio": "audio/trust/09.mp3"
+        },
+        {
+          "text": "You mean to do the thing you say.",
+          "speaker": "jenny",
+          "audio": "audio/trust/10.mp3"
+        },
+        {
+          "text": "I make a promise and I keep it.",
+          "speaker": "jenny",
+          "audio": "audio/trust/11.mp3"
+        },
+        {
+          "text": "A broken promise can hurt the trust.",
+          "speaker": "jenny",
+          "audio": "audio/trust/12.mp3"
+        },
+        {
+          "text": "I repeat the promise so it stays clear.",
+          "speaker": "jenny",
+          "audio": "audio/trust/13.mp3"
+        },
+        {
+          "text": "Honest means you tell the real truth.",
+          "speaker": "jenny",
+          "audio": "audio/trust/14.mp3"
+        },
+        {
+          "text": "You do not hide the hard part.",
+          "speaker": "jenny",
+          "audio": "audio/trust/15.mp3"
+        },
+        {
+          "text": "I stay honest even when it is hard.",
+          "speaker": "jenny",
+          "audio": "audio/trust/16.mp3"
+        },
+        {
+          "text": "An honest word can build respect.",
+          "speaker": "jenny",
+          "audio": "audio/trust/17.mp3"
+        },
+        {
+          "text": "People trust me because I stay honest.",
+          "speaker": "jenny",
+          "audio": "audio/trust/18.mp3"
+        },
+        {
+          "text": "Respect means you treat a person as important.",
+          "speaker": "jenny",
+          "audio": "audio/trust/19.mp3"
+        },
+        {
+          "text": "You listen and you do not mock them.",
+          "speaker": "jenny",
+          "audio": "audio/trust/20.mp3"
+        },
+        {
+          "text": "I show respect when I keep a promise.",
+          "speaker": "jenny",
+          "audio": "audio/trust/21.mp3"
+        },
+        {
+          "text": "Respect grows from honest daily acts.",
+          "speaker": "jenny",
+          "audio": "audio/trust/22.mp3"
+        },
+        {
+          "text": "I want respect, so I stay honest.",
+          "speaker": "jenny",
+          "audio": "audio/trust/23.mp3"
+        },
+        {
+          "text": "An honest promise earns quiet respect.",
+          "speaker": "jenny",
+          "audio": "audio/trust/24.mp3"
+        },
+        {
+          "text": "Trust stands on that kind of promise.",
+          "speaker": "jenny",
+          "audio": "audio/trust/25.mp3"
+        },
+        {
+          "text": "Promise, honest, and respect go together.",
+          "speaker": "jenny",
+          "audio": "audio/trust/26.mp3"
+        },
+        {
+          "text": "A team stays well when trust is real.",
+          "speaker": "jenny",
+          "audio": "audio/trust/27.mp3"
+        }
+      ]
+    },
+    {
+      "id": "promise",
+      "number": 28,
+      "center": "promise",
+      "scene": "plan",
+      "scene_label": "A plan to meet",
+      "key": "appointment",
+      "story_link": "I make an appointment to keep my promise. I write the day on my calendar. I remind myself on that morning.",
+      "center_word": {
+        "word": "promise",
+        "ipa": "/ˈprɑːmɪs/",
+        "pos": "noun",
+        "gloss": "承諾",
+        "definition": "A promise is a serious word you give to someone."
+      },
+      "words": [
+        {
+          "word": "appointment",
+          "ipa": "/əˈpɔɪntmənt/",
+          "pos": "noun",
+          "gloss": "預約",
+          "definition": "An appointment is a time to meet.",
+          "key": true
+        },
+        {
+          "word": "calendar",
+          "ipa": "/ˈkælɪndər/",
+          "pos": "noun",
+          "gloss": "日曆",
+          "definition": "A calendar shows the days and the months."
+        },
+        {
+          "word": "remind",
+          "ipa": "/rɪˈmaɪnd/",
+          "pos": "verb",
+          "gloss": "提醒",
+          "definition": "Remind means you help someone remember."
+        }
+      ],
+      "sentences": [
+        {
+          "text": "A promise is a word you will keep.",
+          "speaker": "jenny",
+          "audio": "audio/promise/01.mp3"
+        },
+        {
+          "text": "If you promise to meet, you must plan.",
+          "speaker": "jenny",
+          "audio": "audio/promise/02.mp3"
+        },
+        {
+          "text": "A time and a place make it real.",
+          "speaker": "jenny",
+          "audio": "audio/promise/03.mp3"
+        },
+        {
+          "text": "You write it down so you remember.",
+          "speaker": "jenny",
+          "audio": "audio/promise/04.mp3"
+        },
+        {
+          "text": "This story is about keeping that word.",
+          "speaker": "jenny",
+          "audio": "audio/promise/05.mp3"
+        },
+        {
+          "text": "I make an appointment to keep my promise.",
+          "speaker": "jenny",
+          "audio": "audio/promise/06.mp3"
+        },
+        {
+          "text": "I write the day on my calendar.",
+          "speaker": "jenny",
+          "audio": "audio/promise/07.mp3"
+        },
+        {
+          "text": "I remind myself on that morning.",
+          "speaker": "jenny",
+          "audio": "audio/promise/08.mp3"
+        },
+        {
+          "text": "An appointment is a set time to meet.",
+          "speaker": "jenny",
+          "audio": "audio/promise/09.mp3"
+        },
+        {
+          "text": "Both people know the hour and the place.",
+          "speaker": "jenny",
+          "audio": "audio/promise/10.mp3"
+        },
+        {
+          "text": "I set the appointment for Thursday at ten.",
+          "speaker": "jenny",
+          "audio": "audio/promise/11.mp3"
+        },
+        {
+          "text": "I do not miss an appointment I made.",
+          "speaker": "jenny",
+          "audio": "audio/promise/12.mp3"
+        },
+        {
+          "text": "The appointment helps me keep the promise.",
+          "speaker": "jenny",
+          "audio": "audio/promise/13.mp3"
+        },
+        {
+          "text": "A calendar shows the days of the year.",
+          "speaker": "jenny",
+          "audio": "audio/promise/14.mp3"
+        },
+        {
+          "text": "You can mark a meeting on it.",
+          "speaker": "jenny",
+          "audio": "audio/promise/15.mp3"
+        },
+        {
+          "text": "I circle the day on my calendar.",
+          "speaker": "jenny",
+          "audio": "audio/promise/16.mp3"
+        },
+        {
+          "text": "The calendar hangs on my kitchen wall.",
+          "speaker": "jenny",
+          "audio": "audio/promise/17.mp3"
+        },
+        {
+          "text": "I check the calendar every single morning.",
+          "speaker": "jenny",
+          "audio": "audio/promise/18.mp3"
+        },
+        {
+          "text": "Remind means you help a person remember.",
+          "speaker": "jenny",
+          "audio": "audio/promise/19.mp3"
+        },
+        {
+          "text": "A note or a bell can remind you.",
+          "speaker": "jenny",
+          "audio": "audio/promise/20.mp3"
+        },
+        {
+          "text": "I remind myself the night before.",
+          "speaker": "jenny",
+          "audio": "audio/promise/21.mp3"
+        },
+        {
+          "text": "Please remind me if I look busy.",
+          "speaker": "jenny",
+          "audio": "audio/promise/22.mp3"
+        },
+        {
+          "text": "A small note can remind me.",
+          "speaker": "jenny",
+          "audio": "audio/promise/23.mp3"
+        },
+        {
+          "text": "The appointment is written on the calendar.",
+          "speaker": "jenny",
+          "audio": "audio/promise/24.mp3"
+        },
+        {
+          "text": "I remind myself, and then I go.",
+          "speaker": "jenny",
+          "audio": "audio/promise/25.mp3"
+        },
+        {
+          "text": "Appointment, calendar, and remind go together.",
+          "speaker": "jenny",
+          "audio": "audio/promise/26.mp3"
+        },
+        {
+          "text": "That is how I keep a promise.",
+          "speaker": "jenny",
+          "audio": "audio/promise/27.mp3"
+        }
+      ]
+    },
+    {
+      "id": "appointment",
+      "number": 29,
+      "center": "appointment",
+      "scene": "health",
+      "scene_label": "Seeing a doctor",
+      "key": "doctor",
+      "story_link": "My appointment is at the clinic. The doctor asks how I feel. I describe my symptom in simple words.",
+      "center_word": {
+        "word": "appointment",
+        "ipa": "/əˈpɔɪntmənt/",
+        "pos": "noun",
+        "gloss": "預約",
+        "definition": "An appointment is a time to meet."
+      },
+      "words": [
+        {
+          "word": "clinic",
+          "ipa": "/ˈklɪnɪk/",
+          "pos": "noun",
+          "gloss": "診所",
+          "definition": "A clinic is a place where you see a doctor."
+        },
+        {
+          "word": "doctor",
+          "ipa": "/ˈdɑːktər/",
+          "pos": "noun",
+          "gloss": "醫生",
+          "definition": "A doctor is a person who helps sick people.",
+          "key": true
+        },
+        {
+          "word": "symptom",
+          "ipa": "/ˈsɪmptəm/",
+          "pos": "noun",
+          "gloss": "症狀",
+          "definition": "A symptom is a sign that your body is not well."
+        }
+      ],
+      "sentences": [
+        {
+          "text": "An appointment is a time set to meet.",
+          "speaker": "jenny",
+          "audio": "audio/appointment/01.mp3"
+        },
+        {
+          "text": "This appointment is for your health.",
+          "speaker": "jenny",
+          "audio": "audio/appointment/02.mp3"
+        },
+        {
+          "text": "You go because your body needs help.",
+          "speaker": "jenny",
+          "audio": "audio/appointment/03.mp3"
+        },
+        {
+          "text": "You should arrive a little early.",
+          "speaker": "jenny",
+          "audio": "audio/appointment/04.mp3"
+        },
+        {
+          "text": "This story is about that health visit.",
+          "speaker": "jenny",
+          "audio": "audio/appointment/05.mp3"
+        },
+        {
+          "text": "My appointment is at the clinic.",
+          "speaker": "jenny",
+          "audio": "audio/appointment/06.mp3"
+        },
+        {
+          "text": "The doctor asks how I feel.",
+          "speaker": "jenny",
+          "audio": "audio/appointment/07.mp3"
+        },
+        {
+          "text": "I describe my symptom in simple words.",
+          "speaker": "jenny",
+          "audio": "audio/appointment/08.mp3"
+        },
+        {
+          "text": "A clinic is a place for health care.",
+          "speaker": "jenny",
+          "audio": "audio/appointment/09.mp3"
+        },
+        {
+          "text": "It is smaller than a big hospital.",
+          "speaker": "jenny",
+          "audio": "audio/appointment/10.mp3"
+        },
+        {
+          "text": "I walk to the clinic for my appointment.",
+          "speaker": "jenny",
+          "audio": "audio/appointment/11.mp3"
+        },
+        {
+          "text": "The clinic is quiet and very clean.",
+          "speaker": "jenny",
+          "audio": "audio/appointment/12.mp3"
+        },
+        {
+          "text": "I wait at the clinic until called.",
+          "speaker": "jenny",
+          "audio": "audio/appointment/13.mp3"
+        },
+        {
+          "text": "A doctor helps people who are sick.",
+          "speaker": "jenny",
+          "audio": "audio/appointment/14.mp3"
+        },
+        {
+          "text": "They listen and they look with care.",
+          "speaker": "jenny",
+          "audio": "audio/appointment/15.mp3"
+        },
+        {
+          "text": "The doctor asks about my sleep and food.",
+          "speaker": "jenny",
+          "audio": "audio/appointment/16.mp3"
+        },
+        {
+          "text": "I answer the doctor in a clear voice.",
+          "speaker": "jenny",
+          "audio": "audio/appointment/17.mp3"
+        },
+        {
+          "text": "The doctor tells me what to do next.",
+          "speaker": "jenny",
+          "audio": "audio/appointment/18.mp3"
+        },
+        {
+          "text": "A symptom shows your body is unwell.",
+          "speaker": "jenny",
+          "audio": "audio/appointment/19.mp3"
+        },
+        {
+          "text": "It may be pain, heat, or a cough.",
+          "speaker": "jenny",
+          "audio": "audio/appointment/20.mp3"
+        },
+        {
+          "text": "My symptom started three days ago.",
+          "speaker": "jenny",
+          "audio": "audio/appointment/21.mp3"
+        },
+        {
+          "text": "I tell every symptom to the doctor.",
+          "speaker": "jenny",
+          "audio": "audio/appointment/22.mp3"
+        },
+        {
+          "text": "A clear symptom helps the doctor understand.",
+          "speaker": "jenny",
+          "audio": "audio/appointment/23.mp3"
+        },
+        {
+          "text": "I keep the appointment at the clinic.",
+          "speaker": "jenny",
+          "audio": "audio/appointment/24.mp3"
+        },
+        {
+          "text": "The doctor listens to each symptom.",
+          "speaker": "jenny",
+          "audio": "audio/appointment/25.mp3"
+        },
+        {
+          "text": "Clinic, doctor, and symptom go together.",
+          "speaker": "jenny",
+          "audio": "audio/appointment/26.mp3"
+        },
+        {
+          "text": "That visit is the start of getting well.",
+          "speaker": "jenny",
+          "audio": "audio/appointment/27.mp3"
+        }
+      ]
+    },
+    {
+      "id": "doctor",
+      "number": 30,
+      "center": "doctor",
+      "scene": "health",
+      "scene_label": "Seeing a doctor",
+      "key": "pharmacy",
+      "story_link": "The doctor gives me a diagnosis. Then he writes a prescription for me. I carry the prescription to the pharmacy.",
+      "center_word": {
+        "word": "doctor",
+        "ipa": "/ˈdɑːktər/",
+        "pos": "noun",
+        "gloss": "醫生",
+        "definition": "A doctor is a person who helps sick people."
+      },
+      "words": [
+        {
+          "word": "diagnosis",
+          "ipa": "/ˌdaɪəɡˈnoʊsɪs/",
+          "pos": "noun",
+          "gloss": "診斷",
+          "definition": "A diagnosis is the doctor's name for what is wrong."
+        },
+        {
+          "word": "prescription",
+          "ipa": "/prɪˈskrɪpʃən/",
+          "pos": "noun",
+          "gloss": "處方",
+          "definition": "A prescription is a paper that says which medicine you need."
+        },
+        {
+          "word": "pharmacy",
+          "ipa": "/ˈfɑːrməsi/",
+          "pos": "noun",
+          "gloss": "藥局",
+          "definition": "A pharmacy is a shop that sells medicine.",
+          "key": true
+        }
+      ],
+      "sentences": [
+        {
+          "text": "A doctor listens and then names the problem.",
+          "speaker": "jenny",
+          "audio": "audio/doctor/01.mp3"
+        },
+        {
+          "text": "Tell the truth about how you feel.",
+          "speaker": "jenny",
+          "audio": "audio/doctor/02.mp3"
+        },
+        {
+          "text": "They decide what care you need.",
+          "speaker": "jenny",
+          "audio": "audio/doctor/03.mp3"
+        },
+        {
+          "text": "You leave with a plan in hand.",
+          "speaker": "jenny",
+          "audio": "audio/doctor/04.mp3"
+        },
+        {
+          "text": "This story is about the paper you take.",
+          "speaker": "jenny",
+          "audio": "audio/doctor/05.mp3"
+        },
+        {
+          "text": "The doctor gives me a diagnosis.",
+          "speaker": "jenny",
+          "audio": "audio/doctor/06.mp3"
+        },
+        {
+          "text": "Then he writes a prescription for me.",
+          "speaker": "jenny",
+          "audio": "audio/doctor/07.mp3"
+        },
+        {
+          "text": "I carry the prescription to the pharmacy.",
+          "speaker": "jenny",
+          "audio": "audio/doctor/08.mp3"
+        },
+        {
+          "text": "A diagnosis names what is wrong.",
+          "speaker": "jenny",
+          "audio": "audio/doctor/09.mp3"
+        },
+        {
+          "text": "It comes after the doctor listens and looks.",
+          "speaker": "jenny",
+          "audio": "audio/doctor/10.mp3"
+        },
+        {
+          "text": "I ask the doctor to repeat the diagnosis.",
+          "speaker": "jenny",
+          "audio": "audio/doctor/11.mp3"
+        },
+        {
+          "text": "The diagnosis helps me understand my body.",
+          "speaker": "jenny",
+          "audio": "audio/doctor/12.mp3"
+        },
+        {
+          "text": "I write the diagnosis in my notes.",
+          "speaker": "jenny",
+          "audio": "audio/doctor/13.mp3"
+        },
+        {
+          "text": "A prescription says which medicine you need.",
+          "speaker": "jenny",
+          "audio": "audio/doctor/14.mp3"
+        },
+        {
+          "text": "The doctor signs it before you leave.",
+          "speaker": "jenny",
+          "audio": "audio/doctor/15.mp3"
+        },
+        {
+          "text": "I read the prescription before I go.",
+          "speaker": "jenny",
+          "audio": "audio/doctor/16.mp3"
+        },
+        {
+          "text": "I do not change the prescription by myself.",
+          "speaker": "jenny",
+          "audio": "audio/doctor/17.mp3"
+        },
+        {
+          "text": "The prescription has my name on it.",
+          "speaker": "jenny",
+          "audio": "audio/doctor/18.mp3"
+        },
+        {
+          "text": "A pharmacy is a shop for medicine.",
+          "speaker": "jenny",
+          "audio": "audio/doctor/19.mp3"
+        },
+        {
+          "text": "A trained person prepares what you need.",
+          "speaker": "jenny",
+          "audio": "audio/doctor/20.mp3"
+        },
+        {
+          "text": "The pharmacy is two streets from the clinic.",
+          "speaker": "jenny",
+          "audio": "audio/doctor/21.mp3"
+        },
+        {
+          "text": "I give the prescription to the pharmacy.",
+          "speaker": "jenny",
+          "audio": "audio/doctor/22.mp3"
+        },
+        {
+          "text": "The pharmacy checks the paper with care.",
+          "speaker": "jenny",
+          "audio": "audio/doctor/23.mp3"
+        },
+        {
+          "text": "The diagnosis leads to a prescription.",
+          "speaker": "jenny",
+          "audio": "audio/doctor/24.mp3"
+        },
+        {
+          "text": "Then the pharmacy prepares the medicine.",
+          "speaker": "jenny",
+          "audio": "audio/doctor/25.mp3"
+        },
+        {
+          "text": "Diagnosis, prescription, and pharmacy go together.",
+          "speaker": "jenny",
+          "audio": "audio/doctor/26.mp3"
+        },
+        {
+          "text": "The doctor sends me there with a plan.",
+          "speaker": "jenny",
+          "audio": "audio/doctor/27.mp3"
+        }
+      ]
+    },
+    {
+      "id": "pharmacy",
+      "number": 31,
+      "center": "pharmacy",
+      "scene": "health",
+      "scene_label": "Seeing a doctor",
+      "key": "recover",
+      "story_link": "I buy one tablet at the pharmacy. I check the dose before I take it. The right dose helps me recover.",
+      "center_word": {
+        "word": "pharmacy",
+        "ipa": "/ˈfɑːrməsi/",
+        "pos": "noun",
+        "gloss": "藥局",
+        "definition": "A pharmacy is a shop that sells medicine."
+      },
+      "words": [
+        {
+          "word": "tablet",
+          "ipa": "/ˈtæblət/",
+          "pos": "noun",
+          "gloss": "藥片",
+          "definition": "A tablet is a small piece of medicine you swallow."
+        },
+        {
+          "word": "dose",
+          "ipa": "/doʊs/",
+          "pos": "noun",
+          "gloss": "劑量",
+          "definition": "A dose is how much medicine you take one time."
+        },
+        {
+          "word": "recover",
+          "ipa": "/rɪˈkʌvər/",
+          "pos": "verb",
+          "gloss": "康復",
+          "definition": "Recover means you get well again.",
+          "key": true
+        }
+      ],
+      "sentences": [
+        {
+          "text": "A pharmacy sells the medicine a doctor names.",
+          "speaker": "jenny",
+          "audio": "audio/pharmacy/01.mp3"
+        },
+        {
+          "text": "You should ask if you do not understand.",
+          "speaker": "jenny",
+          "audio": "audio/pharmacy/02.mp3"
+        },
+        {
+          "text": "Read the box before you leave the shop.",
+          "speaker": "jenny",
+          "audio": "audio/pharmacy/03.mp3"
+        },
+        {
+          "text": "The amount matters as much as the kind.",
+          "speaker": "jenny",
+          "audio": "audio/pharmacy/04.mp3"
+        },
+        {
+          "text": "This story is about the right amount.",
+          "speaker": "jenny",
+          "audio": "audio/pharmacy/05.mp3"
+        },
+        {
+          "text": "I buy one tablet at the pharmacy.",
+          "speaker": "jenny",
+          "audio": "audio/pharmacy/06.mp3"
+        },
+        {
+          "text": "I check the dose before I take it.",
+          "speaker": "jenny",
+          "audio": "audio/pharmacy/07.mp3"
+        },
+        {
+          "text": "The right dose helps me recover.",
+          "speaker": "jenny",
+          "audio": "audio/pharmacy/08.mp3"
+        },
+        {
+          "text": "A tablet is a small piece of medicine.",
+          "speaker": "jenny",
+          "audio": "audio/pharmacy/09.mp3"
+        },
+        {
+          "text": "You swallow it with a glass of water.",
+          "speaker": "jenny",
+          "audio": "audio/pharmacy/10.mp3"
+        },
+        {
+          "text": "I take one tablet after breakfast.",
+          "speaker": "jenny",
+          "audio": "audio/pharmacy/11.mp3"
+        },
+        {
+          "text": "I never take someone else's tablet.",
+          "speaker": "jenny",
+          "audio": "audio/pharmacy/12.mp3"
+        },
+        {
+          "text": "The tablet is white and very small.",
+          "speaker": "jenny",
+          "audio": "audio/pharmacy/13.mp3"
+        },
+        {
+          "text": "A dose is the amount for one time.",
+          "speaker": "jenny",
+          "audio": "audio/pharmacy/14.mp3"
+        },
+        {
+          "text": "Too much can hurt you.",
+          "speaker": "jenny",
+          "audio": "audio/pharmacy/15.mp3"
+        },
+        {
+          "text": "I read the dose on the box.",
+          "speaker": "jenny",
+          "audio": "audio/pharmacy/16.mp3"
+        },
+        {
+          "text": "My dose is one tablet in the morning.",
+          "speaker": "jenny",
+          "audio": "audio/pharmacy/17.mp3"
+        },
+        {
+          "text": "I never guess the dose by myself.",
+          "speaker": "jenny",
+          "audio": "audio/pharmacy/18.mp3"
+        },
+        {
+          "text": "Recover means your body gets well again.",
+          "speaker": "jenny",
+          "audio": "audio/pharmacy/19.mp3"
+        },
+        {
+          "text": "It can take days, not only one hour.",
+          "speaker": "jenny",
+          "audio": "audio/pharmacy/20.mp3"
+        },
+        {
+          "text": "I rest so I can recover sooner.",
+          "speaker": "jenny",
+          "audio": "audio/pharmacy/21.mp3"
+        },
+        {
+          "text": "The right tablet and dose help me recover.",
+          "speaker": "jenny",
+          "audio": "audio/pharmacy/22.mp3"
+        },
+        {
+          "text": "I feel a little better as I recover.",
+          "speaker": "jenny",
+          "audio": "audio/pharmacy/23.mp3"
+        },
+        {
+          "text": "I take the tablet at the right dose.",
+          "speaker": "jenny",
+          "audio": "audio/pharmacy/24.mp3"
+        },
+        {
+          "text": "Then I give my body time to recover.",
+          "speaker": "jenny",
+          "audio": "audio/pharmacy/25.mp3"
+        },
+        {
+          "text": "Tablet, dose, and recover go together.",
+          "speaker": "jenny",
+          "audio": "audio/pharmacy/26.mp3"
+        },
+        {
+          "text": "The pharmacy starts that careful path.",
+          "speaker": "jenny",
+          "audio": "audio/pharmacy/27.mp3"
+        }
+      ]
+    },
+    {
+      "id": "recover",
+      "number": 32,
+      "center": "recover",
+      "scene": "heal",
+      "scene_label": "Getting well",
+      "key": "energy",
+      "story_link": "I relax at home while I recover. Slowly my energy starts to return. My appetite comes back with that energy.",
+      "center_word": {
+        "word": "recover",
+        "ipa": "/rɪˈkʌvər/",
+        "pos": "verb",
+        "gloss": "康復",
+        "definition": "Recover means you get well again."
+      },
+      "words": [
+        {
+          "word": "relax",
+          "ipa": "/rɪˈlæks/",
+          "pos": "verb",
+          "gloss": "放鬆",
+          "definition": "Relax means you rest and your body feels calm."
+        },
+        {
+          "word": "energy",
+          "ipa": "/ˈenərdʒi/",
+          "pos": "noun",
+          "gloss": "精力",
+          "definition": "Energy is the power you have to move and to work.",
+          "key": true
+        },
+        {
+          "word": "appetite",
+          "ipa": "/ˈæpətaɪt/",
+          "pos": "noun",
+          "gloss": "食慾",
+          "definition": "Appetite means you feel ready to eat."
+        }
+      ],
+      "sentences": [
+        {
+          "text": "Recover means you get well again.",
+          "speaker": "jenny",
+          "audio": "audio/recover/01.mp3"
+        },
+        {
+          "text": "You cannot rush every part of it.",
+          "speaker": "jenny",
+          "audio": "audio/recover/02.mp3"
+        },
+        {
+          "text": "You recover a little more each day.",
+          "speaker": "jenny",
+          "audio": "audio/recover/03.mp3"
+        },
+        {
+          "text": "You notice small good changes each day.",
+          "speaker": "jenny",
+          "audio": "audio/recover/04.mp3"
+        },
+        {
+          "text": "This story is about those good signs.",
+          "speaker": "jenny",
+          "audio": "audio/recover/05.mp3"
+        },
+        {
+          "text": "I relax at home while I recover.",
+          "speaker": "jenny",
+          "audio": "audio/recover/06.mp3"
+        },
+        {
+          "text": "Slowly my energy starts to return.",
+          "speaker": "jenny",
+          "audio": "audio/recover/07.mp3"
+        },
+        {
+          "text": "My appetite comes back with that energy.",
+          "speaker": "jenny",
+          "audio": "audio/recover/08.mp3"
+        },
+        {
+          "text": "Relax means you rest and feel calm.",
+          "speaker": "jenny",
+          "audio": "audio/recover/09.mp3"
+        },
+        {
+          "text": "Your shoulders drop and your breath slows.",
+          "speaker": "jenny",
+          "audio": "audio/recover/10.mp3"
+        },
+        {
+          "text": "I relax on the sofa in the afternoon.",
+          "speaker": "jenny",
+          "audio": "audio/recover/11.mp3"
+        },
+        {
+          "text": "Soft music helps me relax.",
+          "speaker": "jenny",
+          "audio": "audio/recover/12.mp3"
+        },
+        {
+          "text": "I relax, and then I sleep a little.",
+          "speaker": "jenny",
+          "audio": "audio/recover/13.mp3"
+        },
+        {
+          "text": "Energy is the power to move and work.",
+          "speaker": "jenny",
+          "audio": "audio/recover/14.mp3"
+        },
+        {
+          "text": "It was low, and now it rises.",
+          "speaker": "jenny",
+          "audio": "audio/recover/15.mp3"
+        },
+        {
+          "text": "My energy is better than yesterday.",
+          "speaker": "jenny",
+          "audio": "audio/recover/16.mp3"
+        },
+        {
+          "text": "A short walk gives me a little energy.",
+          "speaker": "jenny",
+          "audio": "audio/recover/17.mp3"
+        },
+        {
+          "text": "I do not use all my energy now.",
+          "speaker": "jenny",
+          "audio": "audio/recover/18.mp3"
+        },
+        {
+          "text": "Appetite means you want to eat.",
+          "speaker": "jenny",
+          "audio": "audio/recover/19.mp3"
+        },
+        {
+          "text": "A sick person may not want food.",
+          "speaker": "jenny",
+          "audio": "audio/recover/20.mp3"
+        },
+        {
+          "text": "My appetite returns at dinner time.",
+          "speaker": "jenny",
+          "audio": "audio/recover/21.mp3"
+        },
+        {
+          "text": "Soup tastes good when appetite comes back.",
+          "speaker": "jenny",
+          "audio": "audio/recover/22.mp3"
+        },
+        {
+          "text": "A healthy appetite is a good sign.",
+          "speaker": "jenny",
+          "audio": "audio/recover/23.mp3"
+        },
+        {
+          "text": "I relax, and my energy grows.",
+          "speaker": "jenny",
+          "audio": "audio/recover/24.mp3"
+        },
+        {
+          "text": "Then my appetite returns for a real meal.",
+          "speaker": "jenny",
+          "audio": "audio/recover/25.mp3"
+        },
+        {
+          "text": "Relax, energy, and appetite go together.",
+          "speaker": "jenny",
+          "audio": "audio/recover/26.mp3"
+        },
+        {
+          "text": "Those three signs mean I am recovering.",
+          "speaker": "jenny",
+          "audio": "audio/recover/27.mp3"
+        }
+      ]
+    },
+    {
+      "id": "energy",
+      "number": 33,
+      "center": "energy",
+      "scene": "sport",
+      "scene_label": "Moving again",
+      "key": "exercise",
+      "story_link": "I use my energy for some exercise. The exercise wakes each tired muscle. After that I stretch with care.",
+      "center_word": {
+        "word": "energy",
+        "ipa": "/ˈenərdʒi/",
+        "pos": "noun",
+        "gloss": "精力",
+        "definition": "Energy is the power you have to move and to work."
+      },
+      "words": [
+        {
+          "word": "exercise",
+          "ipa": "/ˈeksərsaɪz/",
+          "pos": "noun",
+          "gloss": "運動",
+          "definition": "Exercise is moving your body to make it stronger.",
+          "key": true
+        },
+        {
+          "word": "muscle",
+          "ipa": "/ˈmʌsəl/",
+          "pos": "noun",
+          "gloss": "肌肉",
+          "definition": "A muscle is a part of the body that helps you move."
+        },
+        {
+          "word": "stretch",
+          "ipa": "/stretʃ/",
+          "pos": "verb",
+          "gloss": "伸展",
+          "definition": "Stretch means you make your body long and loose."
+        }
+      ],
+      "sentences": [
+        {
+          "text": "Energy is power you can spend on moving.",
+          "speaker": "jenny",
+          "audio": "audio/energy/01.mp3"
+        },
+        {
+          "text": "When it returns, your body wants to move.",
+          "speaker": "jenny",
+          "audio": "audio/energy/02.mp3"
+        },
+        {
+          "text": "You start small so you stay safe.",
+          "speaker": "jenny",
+          "audio": "audio/energy/03.mp3"
+        },
+        {
+          "text": "A little each day is better.",
+          "speaker": "jenny",
+          "audio": "audio/energy/04.mp3"
+        },
+        {
+          "text": "This story is about moving again.",
+          "speaker": "jenny",
+          "audio": "audio/energy/05.mp3"
+        },
+        {
+          "text": "I use my energy for some exercise.",
+          "speaker": "jenny",
+          "audio": "audio/energy/06.mp3"
+        },
+        {
+          "text": "The exercise wakes each tired muscle.",
+          "speaker": "jenny",
+          "audio": "audio/energy/07.mp3"
+        },
+        {
+          "text": "After that I stretch with care.",
+          "speaker": "jenny",
+          "audio": "audio/energy/08.mp3"
+        },
+        {
+          "text": "Exercise is moving to make the body stronger.",
+          "speaker": "jenny",
+          "audio": "audio/energy/09.mp3"
+        },
+        {
+          "text": "It can be a walk or a run.",
+          "speaker": "jenny",
+          "audio": "audio/energy/10.mp3"
+        },
+        {
+          "text": "I do light exercise in the morning.",
+          "speaker": "jenny",
+          "audio": "audio/energy/11.mp3"
+        },
+        {
+          "text": "Exercise should match the energy you have.",
+          "speaker": "jenny",
+          "audio": "audio/energy/12.mp3"
+        },
+        {
+          "text": "I stop the exercise if I feel pain.",
+          "speaker": "jenny",
+          "audio": "audio/energy/13.mp3"
+        },
+        {
+          "text": "A muscle helps your body move.",
+          "speaker": "jenny",
+          "audio": "audio/energy/14.mp3"
+        },
+        {
+          "text": "It can feel stiff after too much rest.",
+          "speaker": "jenny",
+          "audio": "audio/energy/15.mp3"
+        },
+        {
+          "text": "I feel the muscle warm up slowly.",
+          "speaker": "jenny",
+          "audio": "audio/energy/16.mp3"
+        },
+        {
+          "text": "Each muscle needs a gentle start.",
+          "speaker": "jenny",
+          "audio": "audio/energy/17.mp3"
+        },
+        {
+          "text": "I thank the muscle by moving it slowly.",
+          "speaker": "jenny",
+          "audio": "audio/energy/18.mp3"
+        },
+        {
+          "text": "Stretch means you lengthen the body.",
+          "speaker": "jenny",
+          "audio": "audio/energy/19.mp3"
+        },
+        {
+          "text": "You hold the shape and you breathe.",
+          "speaker": "jenny",
+          "audio": "audio/energy/20.mp3"
+        },
+        {
+          "text": "I stretch my arms up over my head.",
+          "speaker": "jenny",
+          "audio": "audio/energy/21.mp3"
+        },
+        {
+          "text": "A slow stretch feels good after exercise.",
+          "speaker": "jenny",
+          "audio": "audio/energy/22.mp3"
+        },
+        {
+          "text": "I stretch every muscle I used today.",
+          "speaker": "jenny",
+          "audio": "audio/energy/23.mp3"
+        },
+        {
+          "text": "Exercise, then the muscle feels awake.",
+          "speaker": "jenny",
+          "audio": "audio/energy/24.mp3"
+        },
+        {
+          "text": "A stretch keeps that muscle comfortable.",
+          "speaker": "jenny",
+          "audio": "audio/energy/25.mp3"
+        },
+        {
+          "text": "Exercise, muscle, and stretch go together.",
+          "speaker": "jenny",
+          "audio": "audio/energy/26.mp3"
+        },
+        {
+          "text": "I spend my energy in this gentle way.",
+          "speaker": "jenny",
+          "audio": "audio/energy/27.mp3"
+        }
+      ]
+    },
+    {
+      "id": "exercise",
+      "number": 34,
+      "center": "exercise",
+      "scene": "sport",
+      "scene_label": "Moving again",
+      "key": "coach",
+      "story_link": "I do my exercise at the gym. The coach watches my every move. Soon I feel sweat on my face.",
+      "center_word": {
+        "word": "exercise",
+        "ipa": "/ˈeksərsaɪz/",
+        "pos": "noun",
+        "gloss": "運動",
+        "definition": "Exercise is moving your body to make it stronger."
+      },
+      "words": [
+        {
+          "word": "gym",
+          "ipa": "/dʒɪm/",
+          "pos": "noun",
+          "gloss": "健身房",
+          "definition": "A gym is a place where people exercise."
+        },
+        {
+          "word": "coach",
+          "ipa": "/koʊtʃ/",
+          "pos": "noun",
+          "gloss": "教練",
+          "definition": "A coach is a person who trains you.",
+          "key": true
+        },
+        {
+          "word": "sweat",
+          "ipa": "/swet/",
+          "pos": "noun",
+          "gloss": "汗",
+          "definition": "Sweat is the water on your skin when you work hard."
+        }
+      ],
+      "sentences": [
+        {
+          "text": "Exercise is planned moving for a stronger body.",
+          "speaker": "jenny",
+          "audio": "audio/exercise/01.mp3"
+        },
+        {
+          "text": "A place and a teacher can help you.",
+          "speaker": "jenny",
+          "audio": "audio/exercise/02.mp3"
+        },
+        {
+          "text": "You bring water and you wear light clothes.",
+          "speaker": "jenny",
+          "audio": "audio/exercise/03.mp3"
+        },
+        {
+          "text": "You warm up before the hard part.",
+          "speaker": "jenny",
+          "audio": "audio/exercise/04.mp3"
+        },
+        {
+          "text": "This story is about one session.",
+          "speaker": "jenny",
+          "audio": "audio/exercise/05.mp3"
+        },
+        {
+          "text": "I do my exercise at the gym.",
+          "speaker": "jenny",
+          "audio": "audio/exercise/06.mp3"
+        },
+        {
+          "text": "The coach watches my every move.",
+          "speaker": "jenny",
+          "audio": "audio/exercise/07.mp3"
+        },
+        {
+          "text": "Soon I feel sweat on my face.",
+          "speaker": "jenny",
+          "audio": "audio/exercise/08.mp3"
+        },
+        {
+          "text": "A gym is a place where people exercise.",
+          "speaker": "jenny",
+          "audio": "audio/exercise/09.mp3"
+        },
+        {
+          "text": "It has machines and open floor space.",
+          "speaker": "jenny",
+          "audio": "audio/exercise/10.mp3"
+        },
+        {
+          "text": "My gym opens early in the morning.",
+          "speaker": "jenny",
+          "audio": "audio/exercise/11.mp3"
+        },
+        {
+          "text": "I walk to the gym three days.",
+          "speaker": "jenny",
+          "audio": "audio/exercise/12.mp3"
+        },
+        {
+          "text": "The gym is bright and full of mirrors.",
+          "speaker": "jenny",
+          "audio": "audio/exercise/13.mp3"
+        },
+        {
+          "text": "A coach is a person who trains you.",
+          "speaker": "jenny",
+          "audio": "audio/exercise/14.mp3"
+        },
+        {
+          "text": "They show the move and they correct you.",
+          "speaker": "jenny",
+          "audio": "audio/exercise/15.mp3"
+        },
+        {
+          "text": "My coach knows my name and my goal.",
+          "speaker": "jenny",
+          "audio": "audio/exercise/16.mp3"
+        },
+        {
+          "text": "I listen when the coach counts for me.",
+          "speaker": "jenny",
+          "audio": "audio/exercise/17.mp3"
+        },
+        {
+          "text": "A good coach keeps the exercise safe.",
+          "speaker": "jenny",
+          "audio": "audio/exercise/18.mp3"
+        },
+        {
+          "text": "Sweat is water from hard work.",
+          "speaker": "jenny",
+          "audio": "audio/exercise/19.mp3"
+        },
+        {
+          "text": "It means your body is working hard.",
+          "speaker": "jenny",
+          "audio": "audio/exercise/20.mp3"
+        },
+        {
+          "text": "I wipe the sweat with a small towel.",
+          "speaker": "jenny",
+          "audio": "audio/exercise/21.mp3"
+        },
+        {
+          "text": "Sweat is normal during real exercise.",
+          "speaker": "jenny",
+          "audio": "audio/exercise/22.mp3"
+        },
+        {
+          "text": "I drink water when I see the sweat.",
+          "speaker": "jenny",
+          "audio": "audio/exercise/23.mp3"
+        },
+        {
+          "text": "The gym and the coach bring sweat.",
+          "speaker": "jenny",
+          "audio": "audio/exercise/24.mp3"
+        },
+        {
+          "text": "I finish the exercise and I smile.",
+          "speaker": "jenny",
+          "audio": "audio/exercise/25.mp3"
+        },
+        {
+          "text": "Gym, coach, and sweat go together.",
+          "speaker": "jenny",
+          "audio": "audio/exercise/26.mp3"
+        },
+        {
+          "text": "That is my exercise on a training day.",
+          "speaker": "jenny",
+          "audio": "audio/exercise/27.mp3"
+        }
+      ]
+    },
+    {
+      "id": "coach",
+      "number": 35,
+      "center": "coach",
+      "scene": "sport",
+      "scene_label": "Training",
+      "key": "race",
+      "story_link": "The coach gives us one hard drill. He sets a steady pace for it. The drill prepares us for the race.",
+      "center_word": {
+        "word": "coach",
+        "ipa": "/koʊtʃ/",
+        "pos": "noun",
+        "gloss": "教練",
+        "definition": "A coach is a person who trains you."
+      },
+      "words": [
+        {
+          "word": "drill",
+          "ipa": "/drɪl/",
+          "pos": "noun",
+          "gloss": "反覆訓練",
+          "definition": "A drill is a practice you repeat many times."
+        },
+        {
+          "word": "pace",
+          "ipa": "/peɪs/",
+          "pos": "noun",
+          "gloss": "步調",
+          "definition": "Pace is how fast or how slow you move."
+        },
+        {
+          "word": "race",
+          "ipa": "/reɪs/",
+          "pos": "noun",
+          "gloss": "比賽",
+          "definition": "A race is a contest to see who is fastest.",
+          "key": true
+        }
+      ],
+      "sentences": [
+        {
+          "text": "A coach trains your body and your mind.",
+          "speaker": "jenny",
+          "audio": "audio/coach/01.mp3"
+        },
+        {
+          "text": "They plan what you repeat and how fast.",
+          "speaker": "jenny",
+          "audio": "audio/coach/02.mp3"
+        },
+        {
+          "text": "A big day is coming, so you prepare.",
+          "speaker": "jenny",
+          "audio": "audio/coach/03.mp3"
+        },
+        {
+          "text": "You trust the plan when you are tired.",
+          "speaker": "jenny",
+          "audio": "audio/coach/04.mp3"
+        },
+        {
+          "text": "This story is about getting ready.",
+          "speaker": "jenny",
+          "audio": "audio/coach/05.mp3"
+        },
+        {
+          "text": "The coach gives us one hard drill.",
+          "speaker": "jenny",
+          "audio": "audio/coach/06.mp3"
+        },
+        {
+          "text": "He sets a steady pace for it.",
+          "speaker": "jenny",
+          "audio": "audio/coach/07.mp3"
+        },
+        {
+          "text": "The drill prepares us for the race.",
+          "speaker": "jenny",
+          "audio": "audio/coach/08.mp3"
+        },
+        {
+          "text": "A drill is practice you repeat many times.",
+          "speaker": "jenny",
+          "audio": "audio/coach/09.mp3"
+        },
+        {
+          "text": "The same move gets cleaner each time.",
+          "speaker": "jenny",
+          "audio": "audio/coach/10.mp3"
+        },
+        {
+          "text": "We do the drill until it feels smooth.",
+          "speaker": "jenny",
+          "audio": "audio/coach/11.mp3"
+        },
+        {
+          "text": "I do not skip the coach drill.",
+          "speaker": "jenny",
+          "audio": "audio/coach/12.mp3"
+        },
+        {
+          "text": "A short drill every day builds power.",
+          "speaker": "jenny",
+          "audio": "audio/coach/13.mp3"
+        },
+        {
+          "text": "Pace is how fast you go.",
+          "speaker": "jenny",
+          "audio": "audio/coach/14.mp3"
+        },
+        {
+          "text": "Too fast too soon can waste you.",
+          "speaker": "jenny",
+          "audio": "audio/coach/15.mp3"
+        },
+        {
+          "text": "The coach calls the pace out loud.",
+          "speaker": "jenny",
+          "audio": "audio/coach/16.mp3"
+        },
+        {
+          "text": "I keep that pace and do not rush.",
+          "speaker": "jenny",
+          "audio": "audio/coach/17.mp3"
+        },
+        {
+          "text": "A steady pace beats a wild start.",
+          "speaker": "jenny",
+          "audio": "audio/coach/18.mp3"
+        },
+        {
+          "text": "A race finds who is fastest.",
+          "speaker": "jenny",
+          "audio": "audio/coach/19.mp3"
+        },
+        {
+          "text": "People line up and then they go.",
+          "speaker": "jenny",
+          "audio": "audio/coach/20.mp3"
+        },
+        {
+          "text": "Our race is on Sunday morning.",
+          "speaker": "jenny",
+          "audio": "audio/coach/21.mp3"
+        },
+        {
+          "text": "The drill and the pace serve the race.",
+          "speaker": "jenny",
+          "audio": "audio/coach/22.mp3"
+        },
+        {
+          "text": "I want to be ready on race day.",
+          "speaker": "jenny",
+          "audio": "audio/coach/23.mp3"
+        },
+        {
+          "text": "We drill at the pace the coach chose.",
+          "speaker": "jenny",
+          "audio": "audio/coach/24.mp3"
+        },
+        {
+          "text": "Then we picture the race in our minds.",
+          "speaker": "jenny",
+          "audio": "audio/coach/25.mp3"
+        },
+        {
+          "text": "Drill, pace, and race go together.",
+          "speaker": "jenny",
+          "audio": "audio/coach/26.mp3"
+        },
+        {
+          "text": "The coach ties those three into one plan.",
+          "speaker": "jenny",
+          "audio": "audio/coach/27.mp3"
+        }
+      ]
+    },
+    {
+      "id": "race",
+      "number": 36,
+      "center": "race",
+      "scene": "sport",
+      "scene_label": "Race day",
+      "key": "medal",
+      "story_link": "A crowd lines the street for the race. They cheer when I come near. At the end I receive a medal.",
+      "center_word": {
+        "word": "race",
+        "ipa": "/reɪs/",
+        "pos": "noun",
+        "gloss": "比賽",
+        "definition": "A race is a contest to see who is fastest."
+      },
+      "words": [
+        {
+          "word": "crowd",
+          "ipa": "/kraʊd/",
+          "pos": "noun",
+          "gloss": "人群",
+          "definition": "A crowd is a large group of people in one place."
+        },
+        {
+          "word": "cheer",
+          "ipa": "/tʃɪr/",
+          "pos": "verb",
+          "gloss": "歡呼",
+          "definition": "Cheer means you shout to show joy and support."
+        },
+        {
+          "word": "medal",
+          "ipa": "/ˈmedəl/",
+          "pos": "noun",
+          "gloss": "獎牌",
+          "definition": "A medal is a small prize you wear for doing well.",
+          "key": true
+        }
+      ],
+      "sentences": [
+        {
+          "text": "A race shows all your training.",
+          "speaker": "jenny",
+          "audio": "audio/race/01.mp3"
+        },
+        {
+          "text": "You stand and wait for the start.",
+          "speaker": "jenny",
+          "audio": "audio/race/02.mp3"
+        },
+        {
+          "text": "Your legs know the pace from practice.",
+          "speaker": "jenny",
+          "audio": "audio/race/03.mp3"
+        },
+        {
+          "text": "People come to watch and hope.",
+          "speaker": "jenny",
+          "audio": "audio/race/04.mp3"
+        },
+        {
+          "text": "This story is about the race end.",
+          "speaker": "jenny",
+          "audio": "audio/race/05.mp3"
+        },
+        {
+          "text": "A crowd lines the street for the race.",
+          "speaker": "jenny",
+          "audio": "audio/race/06.mp3"
+        },
+        {
+          "text": "They cheer when I come near.",
+          "speaker": "jenny",
+          "audio": "audio/race/07.mp3"
+        },
+        {
+          "text": "At the end I receive a medal.",
+          "speaker": "jenny",
+          "audio": "audio/race/08.mp3"
+        },
+        {
+          "text": "A crowd is many people gathered close.",
+          "speaker": "jenny",
+          "audio": "audio/race/09.mp3"
+        },
+        {
+          "text": "You hear them before you see them.",
+          "speaker": "jenny",
+          "audio": "audio/race/10.mp3"
+        },
+        {
+          "text": "The crowd is kind and very loud.",
+          "speaker": "jenny",
+          "audio": "audio/race/11.mp3"
+        },
+        {
+          "text": "I see my family inside the crowd.",
+          "speaker": "jenny",
+          "audio": "audio/race/12.mp3"
+        },
+        {
+          "text": "A happy crowd lifts my tired legs.",
+          "speaker": "jenny",
+          "audio": "audio/race/13.mp3"
+        },
+        {
+          "text": "Cheer means you shout to give support.",
+          "speaker": "jenny",
+          "audio": "audio/race/14.mp3"
+        },
+        {
+          "text": "The sound is bright and full of joy.",
+          "speaker": "jenny",
+          "audio": "audio/race/15.mp3"
+        },
+        {
+          "text": "They cheer my name as I pass.",
+          "speaker": "jenny",
+          "audio": "audio/race/16.mp3"
+        },
+        {
+          "text": "I hear the cheer and I keep going.",
+          "speaker": "jenny",
+          "audio": "audio/race/17.mp3"
+        },
+        {
+          "text": "A loud cheer can carry you on.",
+          "speaker": "jenny",
+          "audio": "audio/race/18.mp3"
+        },
+        {
+          "text": "A medal is a prize you wear.",
+          "speaker": "jenny",
+          "audio": "audio/race/19.mp3"
+        },
+        {
+          "text": "It shows you finished and you did well.",
+          "speaker": "jenny",
+          "audio": "audio/race/20.mp3"
+        },
+        {
+          "text": "They place the medal in my hand.",
+          "speaker": "jenny",
+          "audio": "audio/race/21.mp3"
+        },
+        {
+          "text": "The medal is cool and surprisingly light.",
+          "speaker": "jenny",
+          "audio": "audio/race/22.mp3"
+        },
+        {
+          "text": "I will keep this medal for years.",
+          "speaker": "jenny",
+          "audio": "audio/race/23.mp3"
+        },
+        {
+          "text": "The crowd begins to cheer even louder.",
+          "speaker": "jenny",
+          "audio": "audio/race/24.mp3"
+        },
+        {
+          "text": "Then someone gives me the medal.",
+          "speaker": "jenny",
+          "audio": "audio/race/25.mp3"
+        },
+        {
+          "text": "Crowd, cheer, and medal go together.",
+          "speaker": "jenny",
+          "audio": "audio/race/26.mp3"
+        },
+        {
+          "text": "That is the joy after a race.",
+          "speaker": "jenny",
+          "audio": "audio/race/27.mp3"
+        }
+      ]
+    },
+    {
+      "id": "medal",
+      "number": 37,
+      "center": "medal",
+      "scene": "memory",
+      "scene_label": "A proud memory",
+      "key": "memory",
+      "story_link": "I feel pride when I hold the medal. Someone takes a photograph of that moment. The photograph becomes a happy memory.",
+      "center_word": {
+        "word": "medal",
+        "ipa": "/ˈmedəl/",
+        "pos": "noun",
+        "gloss": "獎牌",
+        "definition": "A medal is a small prize you wear for doing well."
+      },
+      "words": [
+        {
+          "word": "pride",
+          "ipa": "/praɪd/",
+          "pos": "noun",
+          "gloss": "自豪",
+          "definition": "Pride is a warm feeling when you or someone you love does well."
+        },
+        {
+          "word": "photograph",
+          "ipa": "/ˈfoʊtəɡræf/",
+          "pos": "noun",
+          "gloss": "照片",
+          "definition": "A photograph is a picture made with a camera."
+        },
+        {
+          "word": "memory",
+          "ipa": "/ˈmeməri/",
+          "pos": "noun",
+          "gloss": "回憶",
+          "definition": "A memory is something you keep in your mind from the past.",
+          "key": true
+        }
+      ],
+      "sentences": [
+        {
+          "text": "A medal shows what you did.",
+          "speaker": "jenny",
+          "audio": "audio/medal/01.mp3"
+        },
+        {
+          "text": "You can hold it and show it.",
+          "speaker": "jenny",
+          "audio": "audio/medal/02.mp3"
+        },
+        {
+          "text": "The feeling lasts longer than the day.",
+          "speaker": "jenny",
+          "audio": "audio/medal/03.mp3"
+        },
+        {
+          "text": "A picture helps you keep the feeling.",
+          "speaker": "jenny",
+          "audio": "audio/medal/04.mp3"
+        },
+        {
+          "text": "This story is about keeping that day.",
+          "speaker": "jenny",
+          "audio": "audio/medal/05.mp3"
+        },
+        {
+          "text": "I feel pride when I hold the medal.",
+          "speaker": "jenny",
+          "audio": "audio/medal/06.mp3"
+        },
+        {
+          "text": "Someone takes a photograph of that moment.",
+          "speaker": "jenny",
+          "audio": "audio/medal/07.mp3"
+        },
+        {
+          "text": "The photograph becomes a happy memory.",
+          "speaker": "jenny",
+          "audio": "audio/medal/08.mp3"
+        },
+        {
+          "text": "Pride is a warm feeling about good work.",
+          "speaker": "jenny",
+          "audio": "audio/medal/09.mp3"
+        },
+        {
+          "text": "It is quiet joy, not a loud boast.",
+          "speaker": "jenny",
+          "audio": "audio/medal/10.mp3"
+        },
+        {
+          "text": "Pride fills me when I see the medal.",
+          "speaker": "jenny",
+          "audio": "audio/medal/11.mp3"
+        },
+        {
+          "text": "I share that pride with my helpers.",
+          "speaker": "jenny",
+          "audio": "audio/medal/12.mp3"
+        },
+        {
+          "text": "Healthy pride can push you to try again.",
+          "speaker": "jenny",
+          "audio": "audio/medal/13.mp3"
+        },
+        {
+          "text": "A photograph is a picture from a camera.",
+          "speaker": "jenny",
+          "audio": "audio/medal/14.mp3"
+        },
+        {
+          "text": "It saves one second you can revisit.",
+          "speaker": "jenny",
+          "audio": "audio/medal/15.mp3"
+        },
+        {
+          "text": "I look at the photograph the next morning.",
+          "speaker": "jenny",
+          "audio": "audio/medal/16.mp3"
+        },
+        {
+          "text": "The photograph shows the medal in my hand.",
+          "speaker": "jenny",
+          "audio": "audio/medal/17.mp3"
+        },
+        {
+          "text": "I send the photograph to my family.",
+          "speaker": "jenny",
+          "audio": "audio/medal/18.mp3"
+        },
+        {
+          "text": "A memory is something from the past.",
+          "speaker": "jenny",
+          "audio": "audio/medal/19.mp3"
+        },
+        {
+          "text": "You can visit it inside your mind.",
+          "speaker": "jenny",
+          "audio": "audio/medal/20.mp3"
+        },
+        {
+          "text": "This memory is bright and very clear.",
+          "speaker": "jenny",
+          "audio": "audio/medal/21.mp3"
+        },
+        {
+          "text": "The photograph keeps the memory from fading.",
+          "speaker": "jenny",
+          "audio": "audio/medal/22.mp3"
+        },
+        {
+          "text": "I smile each time the memory returns.",
+          "speaker": "jenny",
+          "audio": "audio/medal/23.mp3"
+        },
+        {
+          "text": "Pride and the photograph stay with me.",
+          "speaker": "jenny",
+          "audio": "audio/medal/24.mp3"
+        },
+        {
+          "text": "The medal started all three of them.",
+          "speaker": "jenny",
+          "audio": "audio/medal/25.mp3"
+        },
+        {
+          "text": "Pride, photograph, and memory go together.",
+          "speaker": "jenny",
+          "audio": "audio/medal/26.mp3"
+        },
+        {
+          "text": "A small medal can hold a large memory.",
+          "speaker": "jenny",
+          "audio": "audio/medal/27.mp3"
+        }
+      ]
+    },
+    {
+      "id": "memory",
+      "number": 38,
+      "center": "memory",
+      "scene": "home",
+      "scene_label": "Back home",
+      "key": "hometown",
+      "story_link": "This memory comes from my childhood. The place in it is my hometown. A relative stands beside me there.",
+      "center_word": {
+        "word": "memory",
+        "ipa": "/ˈmeməri/",
+        "pos": "noun",
+        "gloss": "回憶",
+        "definition": "A memory is something you keep in your mind from the past."
+      },
+      "words": [
+        {
+          "word": "childhood",
+          "ipa": "/ˈtʃaɪldhʊd/",
+          "pos": "noun",
+          "gloss": "童年",
+          "definition": "Childhood is the time when you are a child."
+        },
+        {
+          "word": "hometown",
+          "ipa": "/ˈhoʊmtaʊn/",
+          "pos": "noun",
+          "gloss": "故鄉",
+          "definition": "Your hometown is where you grew up.",
+          "key": true
+        },
+        {
+          "word": "relative",
+          "ipa": "/ˈrelətɪv/",
+          "pos": "noun",
+          "gloss": "親戚",
+          "definition": "A relative is a person in your family."
+        }
+      ],
+      "sentences": [
+        {
+          "text": "A memory can carry you back in time.",
+          "speaker": "jenny",
+          "audio": "audio/memory/01.mp3"
+        },
+        {
+          "text": "The strongest ones come from early years.",
+          "speaker": "jenny",
+          "audio": "audio/memory/02.mp3"
+        },
+        {
+          "text": "A place and a person make them sharp.",
+          "speaker": "jenny",
+          "audio": "audio/memory/03.mp3"
+        },
+        {
+          "text": "You can almost hear the old sounds.",
+          "speaker": "jenny",
+          "audio": "audio/memory/04.mp3"
+        },
+        {
+          "text": "This story is about one old picture.",
+          "speaker": "jenny",
+          "audio": "audio/memory/05.mp3"
+        },
+        {
+          "text": "This memory comes from my childhood.",
+          "speaker": "jenny",
+          "audio": "audio/memory/06.mp3"
+        },
+        {
+          "text": "The place in it is my hometown.",
+          "speaker": "jenny",
+          "audio": "audio/memory/07.mp3"
+        },
+        {
+          "text": "A relative stands beside me there.",
+          "speaker": "jenny",
+          "audio": "audio/memory/08.mp3"
+        },
+        {
+          "text": "Childhood is the time when you are young.",
+          "speaker": "jenny",
+          "audio": "audio/memory/09.mp3"
+        },
+        {
+          "text": "You learn your first streets in those years.",
+          "speaker": "jenny",
+          "audio": "audio/memory/10.mp3"
+        },
+        {
+          "text": "My childhood was full of long summers.",
+          "speaker": "jenny",
+          "audio": "audio/memory/11.mp3"
+        },
+        {
+          "text": "I remember the games of my childhood.",
+          "speaker": "jenny",
+          "audio": "audio/memory/12.mp3"
+        },
+        {
+          "text": "A childhood memory can feel very close.",
+          "speaker": "jenny",
+          "audio": "audio/memory/13.mp3"
+        },
+        {
+          "text": "Your hometown is where you grew up.",
+          "speaker": "jenny",
+          "audio": "audio/memory/14.mp3"
+        },
+        {
+          "text": "You know its smells and its turns.",
+          "speaker": "jenny",
+          "audio": "audio/memory/15.mp3"
+        },
+        {
+          "text": "My hometown has a river and a bridge.",
+          "speaker": "jenny",
+          "audio": "audio/memory/16.mp3"
+        },
+        {
+          "text": "I have not seen my hometown for years.",
+          "speaker": "jenny",
+          "audio": "audio/memory/17.mp3"
+        },
+        {
+          "text": "The memory puts me back in my hometown.",
+          "speaker": "jenny",
+          "audio": "audio/memory/18.mp3"
+        },
+        {
+          "text": "A relative is a person in your family.",
+          "speaker": "jenny",
+          "audio": "audio/memory/19.mp3"
+        },
+        {
+          "text": "It may be an aunt or a cousin.",
+          "speaker": "jenny",
+          "audio": "audio/memory/20.mp3"
+        },
+        {
+          "text": "That relative is smiling in the memory.",
+          "speaker": "jenny",
+          "audio": "audio/memory/21.mp3"
+        },
+        {
+          "text": "I loved that relative very much.",
+          "speaker": "jenny",
+          "audio": "audio/memory/22.mp3"
+        },
+        {
+          "text": "A relative can be the heart of it.",
+          "speaker": "jenny",
+          "audio": "audio/memory/23.mp3"
+        },
+        {
+          "text": "Childhood, hometown, and one relative fill the picture.",
+          "speaker": "jenny",
+          "audio": "audio/memory/24.mp3"
+        },
+        {
+          "text": "I hold the memory with care.",
+          "speaker": "jenny",
+          "audio": "audio/memory/25.mp3"
+        },
+        {
+          "text": "Childhood, hometown, and relative go together.",
+          "speaker": "jenny",
+          "audio": "audio/memory/26.mp3"
+        },
+        {
+          "text": "That is the home inside my memory.",
+          "speaker": "jenny",
+          "audio": "audio/memory/27.mp3"
+        }
+      ]
+    },
+    {
+      "id": "hometown",
+      "number": 39,
+      "center": "hometown",
+      "scene": "home",
+      "scene_label": "Back home",
+      "key": "festival",
+      "story_link": "My neighbor still lives in my hometown. We used to meet at the market. The market is brightest during the festival.",
+      "center_word": {
+        "word": "hometown",
+        "ipa": "/ˈhoʊmtaʊn/",
+        "pos": "noun",
+        "gloss": "故鄉",
+        "definition": "Your hometown is where you grew up."
+      },
+      "words": [
+        {
+          "word": "neighbor",
+          "ipa": "/ˈneɪbər/",
+          "pos": "noun",
+          "gloss": "鄰居",
+          "definition": "A neighbor lives near your home."
+        },
+        {
+          "word": "market",
+          "ipa": "/ˈmɑːrkɪt/",
+          "pos": "noun",
+          "gloss": "市場",
+          "definition": "A market is a place where people buy and sell food."
+        },
+        {
+          "word": "festival",
+          "ipa": "/ˈfestəvəl/",
+          "pos": "noun",
+          "gloss": "慶典",
+          "definition": "A festival is a special day of music, food, and joy.",
+          "key": true
+        }
+      ],
+      "sentences": [
+        {
+          "text": "Your hometown is the town that raised you.",
+          "speaker": "jenny",
+          "audio": "audio/hometown/01.mp3"
+        },
+        {
+          "text": "The people and the streets stay in you.",
+          "speaker": "jenny",
+          "audio": "audio/hometown/02.mp3"
+        },
+        {
+          "text": "Even far away, you can picture a corner.",
+          "speaker": "jenny",
+          "audio": "audio/hometown/03.mp3"
+        },
+        {
+          "text": "A visit brings the old life back.",
+          "speaker": "jenny",
+          "audio": "audio/hometown/04.mp3"
+        },
+        {
+          "text": "This story is about one busy day there.",
+          "speaker": "jenny",
+          "audio": "audio/hometown/05.mp3"
+        },
+        {
+          "text": "My neighbor still lives in my hometown.",
+          "speaker": "jenny",
+          "audio": "audio/hometown/06.mp3"
+        },
+        {
+          "text": "We used to meet at the market.",
+          "speaker": "jenny",
+          "audio": "audio/hometown/07.mp3"
+        },
+        {
+          "text": "The market is brightest during the festival.",
+          "speaker": "jenny",
+          "audio": "audio/hometown/08.mp3"
+        },
+        {
+          "text": "A neighbor lives close to your home.",
+          "speaker": "jenny",
+          "audio": "audio/hometown/09.mp3"
+        },
+        {
+          "text": "You share a street and sometimes a story.",
+          "speaker": "jenny",
+          "audio": "audio/hometown/10.mp3"
+        },
+        {
+          "text": "My neighbor knew me when I was small.",
+          "speaker": "jenny",
+          "audio": "audio/hometown/11.mp3"
+        },
+        {
+          "text": "I wave to that neighbor from the road.",
+          "speaker": "jenny",
+          "audio": "audio/hometown/12.mp3"
+        },
+        {
+          "text": "A kind neighbor makes a hometown warmer.",
+          "speaker": "jenny",
+          "audio": "audio/hometown/13.mp3"
+        },
+        {
+          "text": "A market is where people sell food.",
+          "speaker": "jenny",
+          "audio": "audio/hometown/14.mp3"
+        },
+        {
+          "text": "You hear prices, greetings, and laughter.",
+          "speaker": "jenny",
+          "audio": "audio/hometown/15.mp3"
+        },
+        {
+          "text": "The market opens early in my hometown.",
+          "speaker": "jenny",
+          "audio": "audio/hometown/16.mp3"
+        },
+        {
+          "text": "I buy fruit at the market there.",
+          "speaker": "jenny",
+          "audio": "audio/hometown/17.mp3"
+        },
+        {
+          "text": "The market smells like bread and oranges.",
+          "speaker": "jenny",
+          "audio": "audio/hometown/18.mp3"
+        },
+        {
+          "text": "A festival is a day of public joy.",
+          "speaker": "jenny",
+          "audio": "audio/hometown/19.mp3"
+        },
+        {
+          "text": "The whole town comes out for it.",
+          "speaker": "jenny",
+          "audio": "audio/hometown/20.mp3"
+        },
+        {
+          "text": "The festival fills the market with lights.",
+          "speaker": "jenny",
+          "audio": "audio/hometown/21.mp3"
+        },
+        {
+          "text": "I return to my hometown for the festival.",
+          "speaker": "jenny",
+          "audio": "audio/hometown/22.mp3"
+        },
+        {
+          "text": "My neighbor saves me a festival seat.",
+          "speaker": "jenny",
+          "audio": "audio/hometown/23.mp3"
+        },
+        {
+          "text": "Neighbor, market, and festival fill one day.",
+          "speaker": "jenny",
+          "audio": "audio/hometown/24.mp3"
+        },
+        {
+          "text": "That day is my hometown at its best.",
+          "speaker": "jenny",
+          "audio": "audio/hometown/25.mp3"
+        },
+        {
+          "text": "Neighbor, market, and festival go together.",
+          "speaker": "jenny",
+          "audio": "audio/hometown/26.mp3"
+        },
+        {
+          "text": "I can see that hometown day very clearly.",
+          "speaker": "jenny",
+          "audio": "audio/hometown/27.mp3"
+        }
+      ]
+    },
+    {
+      "id": "festival",
+      "number": 40,
+      "center": "festival",
+      "scene": "home",
+      "scene_label": "Back home",
+      "key": null,
+      "story_link": "We carry a lantern at the festival. A firework opens in the night sky. Then the music starts and we dance.",
+      "center_word": {
+        "word": "festival",
+        "ipa": "/ˈfestəvəl/",
+        "pos": "noun",
+        "gloss": "慶典",
+        "definition": "A festival is a special day of music, food, and joy."
+      },
+      "words": [
+        {
+          "word": "lantern",
+          "ipa": "/ˈlæntərn/",
+          "pos": "noun",
+          "gloss": "燈籠",
+          "definition": "A lantern is a light you can carry."
+        },
+        {
+          "word": "firework",
+          "ipa": "/ˈfaɪərwɜːrk/",
+          "pos": "noun",
+          "gloss": "煙火",
+          "definition": "A firework is a bright light that bursts in the sky."
+        },
+        {
+          "word": "dance",
+          "ipa": "/dæns/",
+          "pos": "noun",
+          "gloss": "舞蹈",
+          "definition": "A dance is moving your body to music."
+        }
+      ],
+      "sentences": [
+        {
+          "text": "A festival is a day the town celebrates.",
+          "speaker": "jenny",
+          "audio": "audio/festival/01.mp3"
+        },
+        {
+          "text": "Lights, sound, and moving bodies fill the street.",
+          "speaker": "jenny",
+          "audio": "audio/festival/02.mp3"
+        },
+        {
+          "text": "You come with family and with neighbors.",
+          "speaker": "jenny",
+          "audio": "audio/festival/03.mp3"
+        },
+        {
+          "text": "The night can shine like the day.",
+          "speaker": "jenny",
+          "audio": "audio/festival/04.mp3"
+        },
+        {
+          "text": "This story is about that bright night.",
+          "speaker": "jenny",
+          "audio": "audio/festival/05.mp3"
+        },
+        {
+          "text": "We carry a lantern at the festival.",
+          "speaker": "jenny",
+          "audio": "audio/festival/06.mp3"
+        },
+        {
+          "text": "A firework opens in the night sky.",
+          "speaker": "jenny",
+          "audio": "audio/festival/07.mp3"
+        },
+        {
+          "text": "Then the music starts and we dance.",
+          "speaker": "jenny",
+          "audio": "audio/festival/08.mp3"
+        },
+        {
+          "text": "A lantern is a light you can carry.",
+          "speaker": "jenny",
+          "audio": "audio/festival/09.mp3"
+        },
+        {
+          "text": "Paper and a small flame make it glow.",
+          "speaker": "jenny",
+          "audio": "audio/festival/10.mp3"
+        },
+        {
+          "text": "My lantern is red and very light.",
+          "speaker": "jenny",
+          "audio": "audio/festival/11.mp3"
+        },
+        {
+          "text": "I hold the lantern up high.",
+          "speaker": "jenny",
+          "audio": "audio/festival/12.mp3"
+        },
+        {
+          "text": "Every child wants a lantern at the festival.",
+          "speaker": "jenny",
+          "audio": "audio/festival/13.mp3"
+        },
+        {
+          "text": "A firework bursts bright in the sky.",
+          "speaker": "jenny",
+          "audio": "audio/festival/14.mp3"
+        },
+        {
+          "text": "It booms, and then it rains color.",
+          "speaker": "jenny",
+          "audio": "audio/festival/15.mp3"
+        },
+        {
+          "text": "We look up when the firework begins.",
+          "speaker": "jenny",
+          "audio": "audio/festival/16.mp3"
+        },
+        {
+          "text": "The firework paints the dark above the town.",
+          "speaker": "jenny",
+          "audio": "audio/festival/17.mp3"
+        },
+        {
+          "text": "A firework makes the crowd gasp and smile.",
+          "speaker": "jenny",
+          "audio": "audio/festival/18.mp3"
+        },
+        {
+          "text": "A dance moves your body to a beat.",
+          "speaker": "jenny",
+          "audio": "audio/festival/19.mp3"
+        },
+        {
+          "text": "You do not need to be perfect.",
+          "speaker": "jenny",
+          "audio": "audio/festival/20.mp3"
+        },
+        {
+          "text": "We dance in the street after the firework.",
+          "speaker": "jenny",
+          "audio": "audio/festival/21.mp3"
+        },
+        {
+          "text": "My neighbor joins the dance and laughs.",
+          "speaker": "jenny",
+          "audio": "audio/festival/22.mp3"
+        },
+        {
+          "text": "The dance lasts until the lanterns burn low.",
+          "speaker": "jenny",
+          "audio": "audio/festival/23.mp3"
+        },
+        {
+          "text": "Lantern light, a firework, and a dance.",
+          "speaker": "jenny",
+          "audio": "audio/festival/24.mp3"
+        },
+        {
+          "text": "The festival holds all three in one night.",
+          "speaker": "jenny",
+          "audio": "audio/festival/25.mp3"
+        },
+        {
+          "text": "Lantern, firework, and dance go together.",
+          "speaker": "jenny",
+          "audio": "audio/festival/26.mp3"
+        },
+        {
+          "text": "I carry that night home in my mind.",
+          "speaker": "jenny",
+          "audio": "audio/festival/27.mp3"
         }
       ]
     }
